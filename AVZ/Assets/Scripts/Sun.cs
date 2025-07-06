@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Sun : MonoBehaviour
 {
-    private float dropToYPos;
+    public float dropToYPos;
     private float speed = .15f;
     public LayerMask sunMask;
     private Gamemanager gms;
@@ -10,14 +10,12 @@ public class Sun : MonoBehaviour
     private void Start()
     {
         gms = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
-        transform.position = new Vector3(Random.Range(-3.75f, 8.35f), 6, 0);
-        dropToYPos = Random.Range(2f, -3f);
         Destroy(gameObject, 10);
     }
 
     private void Update()
     {
-        if (transform.position.y >= dropToYPos)
+        if (transform.position.y > dropToYPos)
         {
             transform.position -= new Vector3(0, speed * Time.fixedDeltaTime, 0);
         }

@@ -102,7 +102,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.008
-  Hp: 10
+  health: 10
+  damage: 1
+  range: 0.5
+  eatCooldown: 1
+  plantMask:
+    serializedVersion: 2
+    m_Bits: 512
+  tileMask:
+    serializedVersion: 2
+    m_Bits: 64
+  targetPlant: {fileID: 0}
 --- !u!61 &4422542984436263558
 BoxCollider2D:
   m_ObjectHideFlags: 0
