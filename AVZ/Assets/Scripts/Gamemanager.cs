@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using TMPro;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class Gamemanager : MonoBehaviour
     public Sprite currentPlantSprite;
     public Transform tiles;
     public LayerMask tileMask;
+    public int suns;
+    public TextMeshProUGUI sunText;
 
     public void BuyPlant(GameObject plant, Sprite sprite)
     {
@@ -16,6 +19,8 @@ public class Gamemanager : MonoBehaviour
 
     private void Update()
     {
+        sunText.text = suns.ToString();
+
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, tileMask);
 
         foreach (Transform tile in tiles)
