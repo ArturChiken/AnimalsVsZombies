@@ -123,9 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
-  tileMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!61 &-5272898198091303159
 BoxCollider2D:
   m_ObjectHideFlags: 0

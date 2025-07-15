@@ -2,14 +2,26 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-    public float speed;
-    public int health;
-    public int damage;
-    public float range;
-    public float eatCooldown;
+    private float speed;
+    private int health;
+    private int damage;
+    private float range;
+    private float eatCooldown;
     private bool canEat = true;
+    public ZombieType type;
     public LayerMask plantMask;
     public Plant targetPlant;
+
+    private void Start()
+    {
+        speed = type.speed;
+        health = type.health;
+        damage = type.damage;
+        range = type.range;
+        eatCooldown = type.eatCooldown;
+
+        GetComponent<SpriteRenderer>().sprite = type.sprite;
+    }
 
     private void Update()
     {
@@ -19,6 +31,10 @@ public class Zombie : MonoBehaviour
         {
             targetPlant = hit.collider.GetComponent<Plant>();
             Eat();
+        }
+        if (health == 2)
+        {
+            GetComponent<SpriteRenderer>().sprite = type.deathSprite;
         }
     }
 

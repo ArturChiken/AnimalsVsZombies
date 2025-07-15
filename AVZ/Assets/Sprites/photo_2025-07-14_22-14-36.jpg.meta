@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: be457aaf458cf0e4ba0c21ecf24e9614
+guid: 22d6c5fec9ef35c4e9ebc7edf2f47dab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3675247853582719284
-    second: sunFlower_0
+      213: 4043124285830459982
+    second: photo_2025-07-14_22-14-36_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -76,7 +76,7 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
-    compressionQuality: 50
+    compressionQuality: 0
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sunFlower_0
+      name: photo_2025-07-14_22-14-36_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 104
-        height: 116
+        x: 0
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4399056537a110330800000000000000
-      internalID: 3675247853582719284
+      spriteID: e42fda7dd101c1830800000000000000
+      internalID: 4043124285830459982
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sunFlower_0: 3675247853582719284
+      photo_2025-07-14_22-14-36_0: 4043124285830459982
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

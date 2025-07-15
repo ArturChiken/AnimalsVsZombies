@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: be457aaf458cf0e4ba0c21ecf24e9614
+guid: f899467538bcb234594b6e8239fc0120
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3675247853582719284
-    second: sunFlower_0
+      213: 7151955249762826636
+    second: zombieBucket_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sunFlower_0
+      name: zombieBucket_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 104
-        height: 116
+        x: 10
+        y: 14
+        width: 90
+        height: 178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4399056537a110330800000000000000
-      internalID: 3675247853582719284
+      spriteID: c897a9f2869d04360800000000000000
+      internalID: 7151955249762826636
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sunFlower_0: 3675247853582719284
+      zombieBucket_0: 7151955249762826636
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
