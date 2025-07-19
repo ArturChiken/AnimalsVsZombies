@@ -18,4 +18,5 @@ MonoBehaviour:
   range: 0.5
   eatCooldown: 1
   sprite: {fileID: 0}
-  deathSprite: {fileID: 0}
+  animation: {fileID: 7400000, guid: 023a73f272c797a45bb40afb1f769eef, type: 2}
+  animatorController: {fileID: 9100000, guid: 6366fd30f7f156f4caa31cf64a427144, type: 2}
