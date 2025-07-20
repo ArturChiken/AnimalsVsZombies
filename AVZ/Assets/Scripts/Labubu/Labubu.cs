@@ -12,8 +12,8 @@ public class Labubu : MonoBehaviour
     public LabubuType type;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
-    public LayerMask plantMask;
-    //public Plant targetPlant;
+    public LayerMask animalMask;
+    public Animal targetAnimal;
 
     private void Start()
     {
@@ -23,20 +23,69 @@ public class Labubu : MonoBehaviour
         range = type.range;
         eatCooldown = type.eatCooldown;
 
-        // Установка компонента пустого спрайта, для рендера анимации
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
-        spriteRenderer.sprite = type.sprite;
-        spriteRenderer.sortingOrder = 1;
-
         // Установка компонента анимки и самой анимки
         animator = gameObject.AddComponent<Animator>();
         animator.runtimeAnimatorController = type.animatorController;
         animator.Play(type.animatorController.name, 0);
     }
 
+    private void Update()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, range, animalMask);
+
+        if (hit.collider)
+        {
+            targetAnimal = hit.collider.GetComponent<Animal>();
+            Eat();
+        }
+    }
+
+    void Eat()
+    {
+        if (!canEat || !targetAnimal) return;
+
+        canEat = false;
+        Invoke("ResetCooldown", eatCooldown);
+
+        targetAnimal.AnimalGetHit(damage);
+    }
+
     private void FixedUpdate()
     {
-        transform.position -= new Vector3(speed, 0, 0);
+        if (!targetAnimal)
+        {
+            transform.position -= new Vector3(speed, 0, 0);
+        }
+    }
+
+    void ResetCooldown()
+    {
+        canEat = true;
+    }
+
+    public void LabubuGetHit(int damage, bool freeze = false)
+    {
+        health -= damage;
+        if (freeze)
+        {
+            Freeze();
+        }
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    void Freeze()
+    {
+        CancelInvoke("UnFreeze");
+        GetComponent<SpriteRenderer>().color = Color.blue;
+        speed = type.speed / 2;
+        Invoke("UnFreeze", 5);
+    }
+
+    void UnFreeze()
+    {
+        GetComponent<SpriteRenderer>().color = Color.white;
+        speed = type.speed;
     }
 }
