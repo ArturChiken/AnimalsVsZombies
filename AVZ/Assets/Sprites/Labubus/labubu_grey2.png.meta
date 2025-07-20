@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 295dd133c9bd6ef42aa5fa1a2c828766
+guid: c44e1ee8a7af0da488347f5d80dfe164
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1257719477286625022
-    second: lalubu_sport_0
+      213: -6673418184538135348
+    second: lalubu_grey2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lalubu_sport_0
+      name: lalubu_grey2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 99
-        height: 183
+        width: 103
+        height: 179
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: efe52ce6331547110800000000000000
-      internalID: 1257719477286625022
+      spriteID: cc4e8f8b4814363a0800000000000000
+      internalID: -6673418184538135348
       vertices: []
       indices: 
       edges: []
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lalubu_grey2_0: -6673418184538135348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
