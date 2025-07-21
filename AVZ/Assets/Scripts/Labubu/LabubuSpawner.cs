@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LabubuSpawner : MonoBehaviour
 {
     public Transform[] spawnPoints;
     public GameObject labubu;
     public LabubuType[] labubuTypes;
+    public Slider progressBar;
 
     public float labubuDelay;
     public float labubuSpawnTime;
@@ -14,6 +16,12 @@ public class LabubuSpawner : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("SpawnLabubu", labubuDelay, labubuSpawnTime);
+        progressBar.maxValue = labubuMax;
+    }
+
+    private void Update()
+    {
+        progressBar.value = labubuSpawned;
     }
 
     void SpawnLabubu()
