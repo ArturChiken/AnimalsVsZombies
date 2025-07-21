@@ -25,8 +25,6 @@ public class AnimalSlot : MonoBehaviour
             gameManager.coffees -= price;
             gameManager.BuyAnimal(animalObject, animalSprite);
         }
-
-        gameManager.BuyAnimal(animalObject, animalSprite);
     }
 
     private void OnValidate()

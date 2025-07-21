@@ -16,7 +16,7 @@ MonoBehaviour:
   speed: 0.015
   damage: 2
   range: 0.5
-  eatCooldown: 0.75
+  eatCooldown: 2
   sprite: {fileID: 0}
   animation: {fileID: 7400000, guid: dd23d7681b9d5eb448d2219b8350494b, type: 2}
   animatorController: {fileID: 9100000, guid: e15dd7487954618478c9fb6b016c5522, type: 2}
