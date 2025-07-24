@@ -1,7 +1,9 @@
 using NUnit.Framework.Internal;
+using UnityEditor.Build.Content;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-[CreateAssetMenu(fileName = "New LevelsType", menuName = "Level")] 
+[CreateAssetMenu(fileName = "New LevelType", menuName = "Level")] 
 public class LevelType : ScriptableObject
 {
     //LabubuSpawner
@@ -15,5 +17,5 @@ public class LevelType : ScriptableObject
     public int coffees = 200;
 
     //SceneManager
-    //public int Scene scene;
+    //public Scene scene;
 }
