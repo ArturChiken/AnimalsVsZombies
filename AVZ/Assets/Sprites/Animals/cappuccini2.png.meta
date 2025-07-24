@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 2034ded96f5642a41b0b6811e269a36d
+guid: 4125ca010a0cd5a4fb9691a2d3f23378
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4233714390842700295
-    second: game field 1 row_0
-  - first:
-      213: -1056887981902725565
-    second: game field 1 row_1
-  - first:
-      213: 3253437257316530087
-    second: game field 1 row_2
+      213: -1916435909499384300
+    second: cappuccini2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: game field 1 row_0
+      name: cappuccini2_0
       rect:
         serializedVersion: 2
-        x: 457
-        y: 741
-        width: 122
-        height: 122
+        x: 0
+        y: 0
+        width: 54
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,52 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 70273aaaecc21ca30800000000000000
-      internalID: 4233714390842700295
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: game field 1 row_1
-      rect:
-        serializedVersion: 2
-        x: 578
-        y: 742
-        width: 718
-        height: 126
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 34efe47eafd2551f0800000000000000
-      internalID: -1056887981902725565
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: game field 1 row_2
-      rect:
-        serializedVersion: 2
-        x: 1296
-        y: 740
-        width: 240
-        height: 123
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a77f55b2f7862d20800000000000000
-      internalID: 3253437257316530087
+      spriteID: 41e8c7ba1b37765e0800000000000000
+      internalID: -1916435909499384300
       vertices: []
       indices: 
       edges: []
@@ -197,10 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      game field 1 row_0: 4233714390842700295
-      game field 1 row_1: -1056887981902725565
-      game field 1 row_2: 3253437257316530087
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
