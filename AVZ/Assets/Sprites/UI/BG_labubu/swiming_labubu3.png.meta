@@ -135,6 +135,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -459,7 +472,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      swiming_labubu3_0: -3897307866368690629
+      swiming_labubu3_1: -1248926511170674324
+      swiming_labubu3_10: 307154633298035605
+      swiming_labubu3_11: 8576405740951177419
+      swiming_labubu3_12: -1945039768286078355
+      swiming_labubu3_13: 1753668306427573325
+      swiming_labubu3_2: -1704164941432240696
+      swiming_labubu3_3: 7478406010005581484
+      swiming_labubu3_4: 2028935636940551997
+      swiming_labubu3_5: 3363891930799379584
+      swiming_labubu3_6: 2710596001268441491
+      swiming_labubu3_7: 878641805946604753
+      swiming_labubu3_8: -4281990934486225414
+      swiming_labubu3_9: -6295098622677334618
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
