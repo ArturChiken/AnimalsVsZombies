@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2395577562173693064}
   - component: {fileID: 3278989325238198912}
   - component: {fileID: 1303422179334794499}
+  - component: {fileID: -6389532899064597617}
   m_Layer: 9
   m_Name: Sahur
   m_TagString: Untagged
@@ -104,7 +105,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
-  isKami: 0
   tile: {fileID: 0}
 --- !u!114 &3278989325238198912
 MonoBehaviour:
@@ -126,6 +126,7 @@ MonoBehaviour:
   shootMask:
     serializedVersion: 2
     m_Bits: 128
+  anim: {fileID: -6389532899064597617}
 --- !u!61 &1303422179334794499
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,6 +173,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.58, y: 0.96}
   m_EdgeRadius: 0
+--- !u!95 &-6389532899064597617
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7293593946226548247}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d019b305ac78eb943b0647fdfe96c7c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9142925998768293455
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class BobritoShooter : MonoBehaviour
     public Transform shootOrigin;
     public LayerMask shootMask;
     private GameObject target;
+    public Animator anim;
 
 
     private void Start()
@@ -49,6 +50,8 @@ public class BobritoShooter : MonoBehaviour
 
     void RealShoot()
     {
+        anim.Play("Attack");
         GameObject muBullet = Instantiate(bullet, shootOrigin.position, Quaternion.identity);
+        anim.Play("Idle");
     }
 }
