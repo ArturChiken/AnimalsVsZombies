@@ -43,7 +43,7 @@ public class Crocodillo : MonoBehaviour
                 {
                     yPos = transform.position.y;
                     transform.position += new Vector3(0, 1f * Time.deltaTime, 0);
-                    boxCollider.offset -= new Vector2(0f, 1f * Time.deltaTime);
+                    boxCollider.offset -= new Vector2(2f * Time.deltaTime, 1f * Time.deltaTime);
                 }
                 if (!isDropping)
                 {
