@@ -10,6 +10,7 @@ public class BasicShooter : MonoBehaviour
     public Transform shootOrigin;
     private GameObject target;
     public LayerMask shootMask;
+    public Animator anim;
 
     private void Start()
     {
@@ -39,6 +40,8 @@ public class BasicShooter : MonoBehaviour
         canShoot = false;
         Invoke("ResetCooldown", cooldown);
 
+        anim.Play("Attack");
         GameObject myBullet = Instantiate(bullet, shootOrigin.position, Quaternion.identity);
+        anim.Play("Idle");
     }
 }

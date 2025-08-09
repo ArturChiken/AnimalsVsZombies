@@ -7,6 +7,7 @@ public class LabubuSpawner : MonoBehaviour
     public GameObject labubu;
     public LabubuType[] labubuTypes;
     public Slider progressBar;
+    public LevelManager diff;
 
     public float labubuDelay;
     public float labubuSpawnTime;
@@ -15,6 +16,24 @@ public class LabubuSpawner : MonoBehaviour
 
     private void Start()
     {
+        switch (diff.difOut)
+        {
+            case 1:
+                {
+                    labubuDelay *= 2;
+                    labubuMax /= 2;
+                    labubuSpawnTime *= 2;
+                    break;
+                }
+            case 3:
+                {
+                    labubuDelay /= 2;
+                    labubuMax *= 2;
+                    labubuSpawnTime /= 2;
+                    break;
+                }
+        }
+
         InvokeRepeating("SpawnLabubu", labubuDelay, labubuSpawnTime);
         progressBar.maxValue = labubuMax;
     }
