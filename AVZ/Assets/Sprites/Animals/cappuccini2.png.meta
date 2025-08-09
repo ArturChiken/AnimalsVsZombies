@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cappuccini2_0: -1916435909499384300
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
