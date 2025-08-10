@@ -3,12 +3,25 @@ using TMPro;
 
 public class Gamemanager : MonoBehaviour
 {
+    public static string coinPrefsName = "Coins_Player";
+
     public GameObject currentAnimal;
     public Sprite currentAnimalSprite;
     public Transform tiles;
     public LayerMask tileMask;
     public int coffees;
     public TextMeshProUGUI coffeeText;
+
+    public static int currentCoinAmount;
+    public int preCurrentAmount = -1;
+    public TMP_Text coinDisplay;
+
+
+    private void Start()
+    {
+        currentCoinAmount = PlayerPrefs.GetInt(coinPrefsName);
+        coinDisplay.SetText(currentCoinAmount + "");
+    }
 
     public void BuyAnimal(GameObject animal, Sprite sprite)
     {
@@ -21,6 +34,12 @@ public class Gamemanager : MonoBehaviour
         coffeeText.text = coffees.ToString();
 
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, tileMask);
+
+        if (preCurrentAmount != currentCoinAmount)
+        {
+            preCurrentAmount = currentCoinAmount;
+            coinDisplay.SetText(currentCoinAmount + "");
+        }
 
         foreach (Transform tile in tiles)
         {
@@ -46,5 +65,15 @@ public class Gamemanager : MonoBehaviour
         plant.GetComponent<Animal>().tile = hit.GetComponent<Tile>();
         currentAnimal = null;
         currentAnimalSprite = null;
+    }
+
+    public static void IncrementCoins(int value)
+    {
+        currentCoinAmount += value;
+    }
+
+    public void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt(coinPrefsName, currentCoinAmount);
     }
 }

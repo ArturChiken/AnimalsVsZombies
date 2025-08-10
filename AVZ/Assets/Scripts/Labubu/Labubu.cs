@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class Labubu : MonoBehaviour
 {
+
     private int health;
     private float speed;
     private int damage;
     private float range;
     private float eatCooldown;
     private bool canEat = true;
+
+    public GameObject coinPrefab;
 
     public LabubuType type;
     private Animator animator;
@@ -73,6 +76,14 @@ public class Labubu : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            int randomInt = Random.Range(0, 1);
+
+            if (randomInt <= type.coinDropPercent)
+            {
+                GameObject coinObj = Instantiate(coinPrefab, transform.position, Quaternion.identity);
+
+                coinObj.transform.SetParent(null);
+            }
         }
     }
     void Freeze()

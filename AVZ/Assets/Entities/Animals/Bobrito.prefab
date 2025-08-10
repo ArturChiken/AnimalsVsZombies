@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9191779638617395431}
   - component: {fileID: 1408047542037071490}
   - component: {fileID: 63618388088299013}
+  - component: {fileID: 2489901672223618249}
   m_Layer: 9
   m_Name: Bobrito
   m_TagString: Untagged
@@ -104,7 +105,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
-  isKami: 0
   tile: {fileID: 0}
 --- !u!114 &1408047542037071490
 MonoBehaviour:
@@ -126,6 +126,7 @@ MonoBehaviour:
   shootMask:
     serializedVersion: 2
     m_Bits: 128
+  anim: {fileID: 2489901672223618249}
 --- !u!61 &63618388088299013
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,6 +173,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.88, y: 0.96}
   m_EdgeRadius: 0
+--- !u!95 &2489901672223618249
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2575450532751479056}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 494c35c28b5fd8b4fbf812bfafd3b5a4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7481069631524670167
 GameObject:
   m_ObjectHideFlags: 0
