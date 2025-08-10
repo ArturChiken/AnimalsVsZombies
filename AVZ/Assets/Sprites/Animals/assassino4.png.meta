@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      assassino4_0: 2074588689845286352
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

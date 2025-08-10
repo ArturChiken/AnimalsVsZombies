@@ -112,7 +112,8 @@ public class LevelSelectorManager : MonoBehaviour
                 _ActContainer.SetActive(true);
                 break;
             case LevelContainerButtons.level:
-                StartCoroutine(TransitionScene(1));
+                _LevelsContainer.SetActive(false);
+                _DiffContainer.SetActive(true);
                 break;
         }
     }
@@ -123,10 +124,13 @@ public class LevelSelectorManager : MonoBehaviour
         switch (buttonClicked)
         {
             case DiffContainerButtons.easy:
+                StartCoroutine(TransitionScene(1));
                 break;
             case DiffContainerButtons.normal:
+                StartCoroutine(TransitionScene(1));
                 break;
             case DiffContainerButtons.hard:
+                StartCoroutine(TransitionScene(1));
                 break;
             case DiffContainerButtons.back:
                 _DiffContainer.SetActive(false);

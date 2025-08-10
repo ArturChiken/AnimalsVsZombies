@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class LabubuSpawner : MonoBehaviour
 {
@@ -7,7 +8,6 @@ public class LabubuSpawner : MonoBehaviour
     public GameObject labubu;
     public LabubuType[] labubuTypes;
     public Slider progressBar;
-    public LevelManager diff;
 
     public float labubuDelay;
     public float labubuSpawnTime;
@@ -16,7 +16,7 @@ public class LabubuSpawner : MonoBehaviour
 
     private void Start()
     {
-        switch (diff.difOut)
+        switch (DiffMenuButtonsManager.currDiff)
         {
             case 1:
                 {
@@ -34,7 +34,7 @@ public class LabubuSpawner : MonoBehaviour
                 }
         }
 
-        InvokeRepeating("SpawnLabubu", labubuDelay, labubuSpawnTime);
+        StartCoroutine(SpawnLabubuDelay());
         progressBar.maxValue = labubuMax;
     }
 
@@ -52,5 +52,12 @@ public class LabubuSpawner : MonoBehaviour
         int randomType = Random.Range(0, labubuTypes.Length);
         GameObject myLabubu = Instantiate(labubu, spawnPoints[randomPoint].position, Quaternion.identity);
         myLabubu.GetComponent<Labubu>().type = labubuTypes[randomType];
+    }
+
+    //задержка епта
+    IEnumerator SpawnLabubuDelay()
+    {
+        yield return new WaitForSeconds(0.0001f); 
+        InvokeRepeating("SpawnLabubu", labubuDelay, labubuSpawnTime);
     }
 }

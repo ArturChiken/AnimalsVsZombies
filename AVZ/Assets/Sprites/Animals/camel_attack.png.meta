@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      camel_attack_0: 2234211698607741043
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

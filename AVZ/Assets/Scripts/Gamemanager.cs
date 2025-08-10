@@ -11,17 +11,16 @@ public class Gamemanager : MonoBehaviour
     public LayerMask tileMask;
     public int coffees;
     public TextMeshProUGUI coffeeText;
-    public GameObject[] levels;
 
-    public static int currentAmount;
+    public static int currentCoinAmount;
     public int preCurrentAmount = -1;
     public TMP_Text coinDisplay;
 
 
     private void Start()
     {
-        currentAmount = PlayerPrefs.GetInt(coinPrefsName);
-        coinDisplay.SetText(currentAmount + "");
+        currentCoinAmount = PlayerPrefs.GetInt(coinPrefsName);
+        coinDisplay.SetText(currentCoinAmount + "");
     }
 
     public void BuyAnimal(GameObject animal, Sprite sprite)
@@ -36,10 +35,10 @@ public class Gamemanager : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, tileMask);
 
-        if (preCurrentAmount != currentAmount)
+        if (preCurrentAmount != currentCoinAmount)
         {
-            preCurrentAmount = currentAmount;
-            coinDisplay.SetText(currentAmount + "");
+            preCurrentAmount = currentCoinAmount;
+            coinDisplay.SetText(currentCoinAmount + "");
         }
 
         foreach (Transform tile in tiles)
@@ -70,11 +69,11 @@ public class Gamemanager : MonoBehaviour
 
     public static void IncrementCoins(int value)
     {
-        currentAmount += value;
+        currentCoinAmount += value;
     }
 
     public void OnApplicationQuit()
     {
-        PlayerPrefs.SetInt(coinPrefsName, currentAmount);
+        PlayerPrefs.SetInt(coinPrefsName, currentCoinAmount);
     }
 }

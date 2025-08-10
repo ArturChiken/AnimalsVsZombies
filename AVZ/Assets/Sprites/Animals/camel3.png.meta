@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      camel3_0: -3163554850332190955
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

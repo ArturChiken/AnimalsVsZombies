@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shark_attack2_0: -6621802339143946365
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

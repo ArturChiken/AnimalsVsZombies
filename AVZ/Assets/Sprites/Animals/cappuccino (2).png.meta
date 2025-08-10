@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cappuccino (2)_0: 5322005325143110406
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
