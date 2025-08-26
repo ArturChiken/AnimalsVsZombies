@@ -2580,6 +2580,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &269186528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 269186529}
+  - component: {fileID: 269186530}
+  m_Layer: 0
+  m_Name: LabubuSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &269186529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269186528}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.8001, y: -0.4668, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1913366987}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &269186530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269186528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796dd513b7b63e448b5994cf3d455501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 1537206693}
+  - {fileID: 1705467958}
+  - {fileID: 2003453037}
+  labubu: {fileID: 284891485169689408, guid: 793483f068c22e845a2052408d245f7b, type: 3}
+  labubuTypes:
+  - {fileID: 11400000, guid: 7c5d06ffda5e8494aa5564fe8a35a047, type: 2}
+  - {fileID: 11400000, guid: 2c0d79e1ea2771448bd8589fc6438c59, type: 2}
+  - {fileID: 11400000, guid: 2f537f81ae0ca4b4fb1bb49ed735983c, type: 2}
+  progressBar: {fileID: 1793242436}
+  Rules: []
+  labubuDelay: 3
+  labubuSpawnTime: 3
+  labubuMax: 15
+  labubuSpawned: 0
 --- !u!1 &278997424
 GameObject:
   m_ObjectHideFlags: 0
@@ -6008,7 +6067,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1188390846}
+  - {fileID: 907383771}
   - {fileID: 704838225}
   - {fileID: 745057222}
   m_Father: {fileID: 1193647385}
@@ -6056,14 +6115,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796dd513b7b63e448b5994cf3d455501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints: []
+  spawnPoints:
+  - {fileID: 1705467958}
   labubu: {fileID: 284891485169689408, guid: 793483f068c22e845a2052408d245f7b, type: 3}
-  labubuTypes: []
+  labubuTypes:
+  - {fileID: 11400000, guid: 7c5d06ffda5e8494aa5564fe8a35a047, type: 2}
+  - {fileID: 11400000, guid: 2c0d79e1ea2771448bd8589fc6438c59, type: 2}
+  - {fileID: 11400000, guid: 2f537f81ae0ca4b4fb1bb49ed735983c, type: 2}
   progressBar: {fileID: 1793242436}
   Rules: []
-  labubuDelay: 0
-  labubuSpawnTime: 0
-  labubuMax: 0
+  labubuDelay: 3
+  labubuSpawnTime: 3
+  labubuMax: 10
   labubuSpawned: 0
 --- !u!4 &692762378
 Transform:
@@ -6074,11 +6137,11 @@ Transform:
   m_GameObject: {fileID: 692762376}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.8, y: -0.47, z: 0}
+  m_LocalPosition: {x: 11.8001, y: -0.4668, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1741770228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &704224984
 GameObject:
@@ -8080,6 +8143,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &907383770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 907383771}
+  - component: {fileID: 907383772}
+  m_Layer: 0
+  m_Name: LabubuSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &907383771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907383770}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.8001, y: -0.4668, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 685605841}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &907383772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907383770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796dd513b7b63e448b5994cf3d455501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 997821887}
+  - {fileID: 1537206693}
+  - {fileID: 1705467958}
+  - {fileID: 2003453037}
+  - {fileID: 1707520577}
+  labubu: {fileID: 284891485169689408, guid: 793483f068c22e845a2052408d245f7b, type: 3}
+  labubuTypes:
+  - {fileID: 11400000, guid: 7c5d06ffda5e8494aa5564fe8a35a047, type: 2}
+  - {fileID: 11400000, guid: 2c0d79e1ea2771448bd8589fc6438c59, type: 2}
+  - {fileID: 11400000, guid: 2f537f81ae0ca4b4fb1bb49ed735983c, type: 2}
+  progressBar: {fileID: 1793242436}
+  Rules: []
+  labubuDelay: 3
+  labubuSpawnTime: 3
+  labubuMax: 19
+  labubuSpawned: 0
 --- !u!1 &932999282
 GameObject:
   m_ObjectHideFlags: 0
@@ -10550,65 +10674,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1188390845
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1188390846}
-  - component: {fileID: 1188390847}
-  m_Layer: 0
-  m_Name: SpawnRule
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1188390846
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188390845}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 685605841}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1188390847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188390845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c529ba4c1dfda34aa07cc29f534832d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labubuDelay: 5
-  labubuSpawnTime: 5
-  labubuMax: 9
-  labubuSpawned: 0
-  spawnPoints:
-  - {fileID: 997821887}
-  - {fileID: 1537206693}
-  - {fileID: 1705467958}
-  - {fileID: 2003453037}
-  - {fileID: 1707520577}
-  labubuTypes:
-  - {fileID: 11400000, guid: 7c5d06ffda5e8494aa5564fe8a35a047, type: 2}
-  - {fileID: 11400000, guid: 2c0d79e1ea2771448bd8589fc6438c59, type: 2}
-  - {fileID: 11400000, guid: 2f537f81ae0ca4b4fb1bb49ed735983c, type: 2}
-  spawner: {fileID: 692762377}
 --- !u!1 &1193647383
 GameObject:
   m_ObjectHideFlags: 0
@@ -11820,61 +11885,6 @@ MonoBehaviour:
   animalObject: {fileID: 2058064800290969149, guid: 385a0241372f4aa42a18a2c9e2bcba8f, type: 3}
   icon: {fileID: 1237259608}
   priceText: {fileID: 1643515621}
---- !u!1 &1331967236
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1331967237}
-  - component: {fileID: 1331967238}
-  m_Layer: 0
-  m_Name: SpawnRule
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1331967237
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1331967236}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1741770228}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1331967238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1331967236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c529ba4c1dfda34aa07cc29f534832d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labubuDelay: 5
-  labubuSpawnTime: 5
-  labubuMax: 1
-  labubuSpawned: 0
-  spawnPoints:
-  - {fileID: 1705467958}
-  labubuTypes:
-  - {fileID: 11400000, guid: 7c5d06ffda5e8494aa5564fe8a35a047, type: 2}
-  - {fileID: 11400000, guid: 2c0d79e1ea2771448bd8589fc6438c59, type: 2}
-  - {fileID: 11400000, guid: 2f537f81ae0ca4b4fb1bb49ed735983c, type: 2}
-  spawner: {fileID: 692762377}
 --- !u!1 &1334343064
 GameObject:
   m_ObjectHideFlags: 0
@@ -16189,7 +16199,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1331967237}
+  - {fileID: 692762378}
   - {fileID: 1525866586}
   - {fileID: 131277461}
   - {fileID: 1680841152}
@@ -17720,7 +17730,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2034515017}
+  - {fileID: 269186529}
   - {fileID: 278997425}
   - {fileID: 1160285227}
   - {fileID: 1133924843}
@@ -18705,63 +18715,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2034515016
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2034515017}
-  - component: {fileID: 2034515018}
-  m_Layer: 0
-  m_Name: SpawnRule
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2034515017
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034515016}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1913366987}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2034515018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034515016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c529ba4c1dfda34aa07cc29f534832d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labubuDelay: 5
-  labubuSpawnTime: 5
-  labubuMax: 5
-  labubuSpawned: 0
-  spawnPoints:
-  - {fileID: 1537206693}
-  - {fileID: 1705467958}
-  - {fileID: 2003453037}
-  labubuTypes:
-  - {fileID: 11400000, guid: 7c5d06ffda5e8494aa5564fe8a35a047, type: 2}
-  - {fileID: 11400000, guid: 2c0d79e1ea2771448bd8589fc6438c59, type: 2}
-  - {fileID: 11400000, guid: 2f537f81ae0ca4b4fb1bb49ed735983c, type: 2}
-  spawner: {fileID: 692762377}
 --- !u!1 &2095525776
 GameObject:
   m_ObjectHideFlags: 0
@@ -19353,7 +19306,6 @@ SceneRoots:
   - {fileID: 1707520577}
   - {fileID: 560122504}
   - {fileID: 477301851}
-  - {fileID: 692762378}
   - {fileID: 2003709653}
   - {fileID: 1423375197}
   - {fileID: 1193647385}
