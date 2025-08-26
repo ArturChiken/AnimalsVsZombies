@@ -23,6 +23,11 @@ public class Gamemanager : MonoBehaviour
         coinDisplay.SetText(currentCoinAmount + "");
     }
 
+    public void Win()
+    {
+        Debug.Log("HUII!");
+    }
+
     public void BuyAnimal(GameObject animal, Sprite sprite)
     {
         currentAnimal = animal;

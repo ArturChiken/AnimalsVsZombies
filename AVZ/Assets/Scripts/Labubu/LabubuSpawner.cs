@@ -13,6 +13,8 @@ public class LabubuSpawner : MonoBehaviour
     public float labubuSpawnTime;
     public int labubuMax;
     public int labubuSpawned;
+    public int labubuDead;
+    private bool willWin = true;
 
     private void Start()
     {
@@ -39,7 +41,16 @@ public class LabubuSpawner : MonoBehaviour
     private void Update()
     {
         progressBar.maxValue = labubuMax;
-        progressBar.value = labubuSpawned;
+        progressBar.value = labubuDead;
+
+        if (labubuDead >= labubuMax)
+        {
+            if(willWin)
+            {
+                GameObject.Find("Gamemanager").GetComponent<Gamemanager>().Win();
+                willWin = false;
+            }
+        }
     }
 
     void SpawnLabubu()

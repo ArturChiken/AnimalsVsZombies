@@ -1087,6 +1087,7 @@ MonoBehaviour:
   labubuSpawnTime: 3
   labubuMax: 15
   labubuSpawned: 0
+  labubuDead: 0
 --- !u!1 &272637053
 GameObject:
   m_ObjectHideFlags: 0
@@ -4117,8 +4118,9 @@ MonoBehaviour:
   progressBar: {fileID: 1793242436}
   labubuDelay: 3
   labubuSpawnTime: 3
-  labubuMax: 10
+  labubuMax: 3
   labubuSpawned: 0
+  labubuDead: 0
 --- !u!4 &692762378
 Transform:
   m_ObjectHideFlags: 0
@@ -5837,6 +5839,7 @@ MonoBehaviour:
   labubuSpawnTime: 3
   labubuMax: 19
   labubuSpawned: 0
+  labubuDead: 0
 --- !u!1 &934281340
 GameObject:
   m_ObjectHideFlags: 0
