@@ -8,6 +8,7 @@ public class LabubuSpawner : MonoBehaviour
     public GameObject labubu;
     public LabubuType[] labubuTypes;
     public Slider progressBar;
+    public SpawnRule[] Rules;
 
     public float labubuDelay;
     public float labubuSpawnTime;
@@ -33,13 +34,13 @@ public class LabubuSpawner : MonoBehaviour
                     break;
                 }
         }
-
-        StartCoroutine(SpawnLabubuDelay());
-        progressBar.maxValue = labubuMax;
+        //StartCoroutine(SpawnLabubuDelay());
+        InvokeRepeating("SpawnLabubu", labubuDelay, labubuSpawnTime);
     }
 
     private void Update()
     {
+        progressBar.maxValue = labubuMax;
         progressBar.value = labubuSpawned;
     }
 
@@ -55,9 +56,11 @@ public class LabubuSpawner : MonoBehaviour
     }
 
     //задержка епта
+    /*
     IEnumerator SpawnLabubuDelay()
     {
         yield return new WaitForSeconds(0.0001f); 
         InvokeRepeating("SpawnLabubu", labubuDelay, labubuSpawnTime);
     }
+    */
 }
