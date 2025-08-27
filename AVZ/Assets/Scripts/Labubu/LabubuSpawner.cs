@@ -13,6 +13,8 @@ public class LabubuSpawner : MonoBehaviour
     public float labubuSpawnTime;
     public int labubuMax;
     public int labubuSpawned;
+    public int labubuDead;
+    private bool willWin = true;
 
     private void Start()
     {
@@ -33,14 +35,22 @@ public class LabubuSpawner : MonoBehaviour
                     break;
                 }
         }
-
         StartCoroutine(SpawnLabubuDelay());
-        progressBar.maxValue = labubuMax;
     }
 
     private void Update()
     {
-        progressBar.value = labubuSpawned;
+        progressBar.maxValue = labubuMax;
+        progressBar.value = labubuDead;
+
+        if (labubuDead >= labubuMax)
+        {
+            if(willWin)
+            {
+                GameObject.Find("Gamemanager").GetComponent<Gamemanager>().Win();
+                willWin = false;
+            }
+        }
     }
 
     void SpawnLabubu()

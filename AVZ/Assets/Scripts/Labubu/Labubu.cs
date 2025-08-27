@@ -75,6 +75,7 @@ public class Labubu : MonoBehaviour
         }
         if (health <= 0)
         {
+            GameObject.Find("LabubuSpawner").GetComponent<LabubuSpawner>().labubuDead++;
             Destroy(gameObject);
             int randomInt = Random.Range(0, 1);
 
