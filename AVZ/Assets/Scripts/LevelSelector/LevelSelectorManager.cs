@@ -14,6 +14,9 @@ public class LevelSelectorManager : MonoBehaviour
     public enum DiffContainerButtons { back, easy, normal, hard };
     public enum OtherButtons { tg };
 
+    public static int UnlockedLevels;
+    public LevelObject[] levelObjects;
+
     [SerializeField] CanvasGroup _fadeCanvasGroup, _ActContainerButtons;
     [SerializeField] GameObject _ActContainer, _LevelsContainer, _DiffContainer;
     [SerializeField] Animator _Act1Animation, _Act2Animation, _Act3Animation;
@@ -34,6 +37,14 @@ public class LevelSelectorManager : MonoBehaviour
         _ActContainer.SetActive(true);
         _LevelsContainer.SetActive(false);
         _DiffContainer.SetActive(false);
+        UnlockedLevels = PlayerPrefs.GetInt("UnlockedLevels", 0);
+        for (int i = 0; i < levelObjects.Length; i++)
+        {
+            if (UnlockedLevels >= i)
+            {
+                levelObjects[i].levelButton.interactable = true;
+            }
+        }
     }
 
     //актовые кнопки

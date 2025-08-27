@@ -1,8 +1,11 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Gamemanager : MonoBehaviour
 {
+    //ןנופû
     public static string coinPrefsName = "Coins_Player";
 
     public GameObject currentAnimal;
@@ -12,6 +15,10 @@ public class Gamemanager : MonoBehaviour
     public int coffees;
     public TextMeshProUGUI coffeeText;
 
+    [SerializeField] CanvasGroup _fadeCanvasGroup;
+    [SerializeField] int _sceneToLoadAfterPressedBack;
+    [SerializeField] float _fadeDuration = 1f;
+
     public static int currentCoinAmount;
     public int preCurrentAmount = -1;
     public TMP_Text coinDisplay;
@@ -19,6 +26,7 @@ public class Gamemanager : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(Fade(1f, 0f));
         currentCoinAmount = PlayerPrefs.GetInt(coinPrefsName);
         coinDisplay.SetText(currentCoinAmount + "");
     }
@@ -70,6 +78,26 @@ public class Gamemanager : MonoBehaviour
     public static void IncrementCoins(int value)
     {
         currentCoinAmount += value;
+    }
+
+    private IEnumerator TransitionScene()
+    {
+        yield return StartCoroutine(Fade(0f, 1f));
+        SceneManager.LoadScene(_sceneToLoadAfterPressedBack);
+    }
+
+    private IEnumerator Fade(float startAlpha, float targetAlpha)
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < _fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            _fadeCanvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / _fadeDuration);
+            yield return null;
+        }
+
+        _fadeCanvasGroup.alpha = targetAlpha;
     }
 
     public void OnApplicationQuit()
