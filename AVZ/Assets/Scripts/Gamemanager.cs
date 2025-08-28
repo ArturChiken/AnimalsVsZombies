@@ -23,6 +23,7 @@ public class Gamemanager : MonoBehaviour
     public int preCurrentAmount = -1;
     public TMP_Text coinDisplay;
 
+    public int cardAmount;
 
     private void Start()
     {
