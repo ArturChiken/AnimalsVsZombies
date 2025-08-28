@@ -4,14 +4,14 @@ using UnityEngine.UI;
 public class StartButton : MonoBehaviour
 {
     private Gamemanager gameManager;
-    private Animator animator;
     public Transform cardSelector;
+    public Animator animator;
+
     //public Transform pauseButton;
 
     private void Start()
     {
         GetComponent<Button>().onClick.AddListener(StartGame);
-        animator = GetComponent<Animator>();
         gameManager = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
     }
 
@@ -25,7 +25,7 @@ public class StartButton : MonoBehaviour
             gameObject.SetActive(false);
             //pauseButton.gameObject.SetActive(True);
 
-            animator.SetTrigger("StartGame");
+            animator.Play("LabubuPreAni");
         }
         else
         {

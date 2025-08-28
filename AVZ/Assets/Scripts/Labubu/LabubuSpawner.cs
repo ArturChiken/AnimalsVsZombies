@@ -26,16 +26,16 @@ public class LabubuSpawner : MonoBehaviour
         {
             case 1:
                 {
-                    labubuDelay *= 2;
+                    labubuDelay *= 1.5f;
                     labubuMax /= 2;
-                    labubuSpawnTime *= 2;
+                    labubuSpawnTime *= 1.5f;
                     break;
                 }
             case 3:
                 {
-                    labubuDelay /= 2;
+                    labubuDelay /= 1.15f;
                     labubuMax *= 2;
-                    labubuSpawnTime /= 2;
+                    labubuSpawnTime /= 1.25f;
                     break;
                 }
         }
