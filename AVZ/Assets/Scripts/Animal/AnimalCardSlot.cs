@@ -1,46 +1,57 @@
-using TMPro;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AnimalCardSlot : MonoBehaviour
 {
-    public int price;
     public bool isUnlocked;
+    private bool isUsed;
 
+    public Image icon;
     public GameObject cardObject;
     public Transform canvas;
+    private Gamemanager gameManager;
+
+    private GameObject currentCardInstance;
 
     private void Start()
     {
         if (!isUnlocked)
         {
-            //GetComponent<SpriteRenderer>().color = Color.black;
+            icon.GetComponent<Image>().color = new Color(60 / 255f, 60 / 255f, 60 / 255f);
+            gameObject.GetComponent<Image>().color = new Color(40 / 255f, 40 / 255f, 40 / 255f);
             return;
         }
 
         GetComponent<Button>().onClick.AddListener(AddPrefabToLayout);
+        gameManager = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
     }
     public void AddPrefabToLayout()
     {
-        if (!isUnlocked)
+        if (isUnlocked && !isUsed && gameManager.cardAmount < 8)
         {
-            return;
+            currentCardInstance = Instantiate(cardObject, canvas);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(canvas as RectTransform);
+            gameManager.cardAmount++;
+            isUsed = true;
         }
-
-        // Создаем экземпляр префаба
-        GameObject newItem = Instantiate(cardObject, canvas);
-        /*
-        // Настраиваем RectTransform (опционально)
-        RectTransform rectTransform = newItem.GetComponent<RectTransform>();
-        if (rectTransform != null)
+        else if (isUnlocked && isUsed)
         {
-            rectTransform.localScale = Vector3.one;
-            rectTransform.anchoredPosition = Vector2.zero;
+            Destroy(currentCardInstance);
+            gameManager.cardAmount--;
+            isUsed = false;
         }
-        */
-
-        // Обновляем layout (может потребоваться для немедленного обновления)
-        LayoutRebuilder.ForceRebuildLayoutImmediate(canvas as RectTransform);
     }
-
 }
+
+/*
+// Настраиваем RectTransform (опционально)
+RectTransform rectTransform = newItem.GetComponent<RectTransform>();
+if (rectTransform != null)
+{
+    rectTransform.localScale = Vector3.one;
+    rectTransform.anchoredPosition = Vector2.zero;
+}
+*/
+
+// Обновляем layout (может потребоваться для немедленного обновления)
