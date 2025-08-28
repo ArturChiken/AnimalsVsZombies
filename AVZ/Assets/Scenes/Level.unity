@@ -1337,7 +1337,7 @@ GameObject:
   - component: {fileID: 207825355}
   - component: {fileID: 207825354}
   m_Layer: 5
-  m_Name: Cappuccino (5)
+  m_Name: Shark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1421,9 +1421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbf8f81511ea9343b97c424e098faba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 50
-  animalSprite: {fileID: -1182038677901021211, guid: 9f74b2d28f9f3134c8dc7c97652ab98e, type: 3}
-  animalObject: {fileID: 2488789785549908363, guid: 44207fa8b56c61549ad35ace8ece0a38, type: 3}
+  price: 200
+  animalSprite: {fileID: 8861480726252175340, guid: 5affd9a74a3a7f949aed7f260945dacd, type: 3}
+  animalObject: {fileID: 5929175766431381012, guid: 70b8a052da3abb24aad60bdf31bf461e, type: 3}
   icon: {fileID: 991766230}
   priceText: {fileID: 1219187447}
 --- !u!1 &224671518
@@ -1483,7 +1483,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1182038677901021211, guid: 9f74b2d28f9f3134c8dc7c97652ab98e, type: 3}
+  m_Sprite: {fileID: 1601295613631968034, guid: e1219202bd4556347a4aab306db4d70a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5820,7 +5820,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1182038677901021211, guid: 9f74b2d28f9f3134c8dc7c97652ab98e, type: 3}
+  m_Sprite: {fileID: 8861480726252175340, guid: 5affd9a74a3a7f949aed7f260945dacd, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5937,7 +5937,7 @@ GameObject:
   - component: {fileID: 1006950074}
   - component: {fileID: 1006950073}
   m_Layer: 5
-  m_Name: Cappuccino (7)
+  m_Name: Dove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6021,9 +6021,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbf8f81511ea9343b97c424e098faba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 50
-  animalSprite: {fileID: -1182038677901021211, guid: 9f74b2d28f9f3134c8dc7c97652ab98e, type: 3}
-  animalObject: {fileID: 2488789785549908363, guid: 44207fa8b56c61549ad35ace8ece0a38, type: 3}
+  price: 225
+  animalSprite: {fileID: -2946224621641151013, guid: ad04c35c6e52040428b33427b0ce707c, type: 3}
+  animalObject: {fileID: 2058064800290969149, guid: 385a0241372f4aa42a18a2c9e2bcba8f, type: 3}
   icon: {fileID: 1640311583}
   priceText: {fileID: 2047682466}
 --- !u!1 &1007048652
@@ -6843,7 +6843,7 @@ GameObject:
   - component: {fileID: 1129011078}
   - component: {fileID: 1129011077}
   m_Layer: 5
-  m_Name: Cappuccino (6)
+  m_Name: Assassini
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6927,9 +6927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbf8f81511ea9343b97c424e098faba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 50
-  animalSprite: {fileID: -1182038677901021211, guid: 9f74b2d28f9f3134c8dc7c97652ab98e, type: 3}
-  animalObject: {fileID: 2488789785549908363, guid: 44207fa8b56c61549ad35ace8ece0a38, type: 3}
+  price: 250
+  animalSprite: {fileID: 518365762053865977, guid: 2acdb82d61b83b54a887586cd9e4e9c1, type: 3}
+  animalObject: {fileID: 3425816003025650745, guid: 7613a0ee3fbae3945b0a1ed0dacf975b, type: 3}
   icon: {fileID: 1951506411}
   priceText: {fileID: 1743947494}
 --- !u!1 &1146965917
@@ -7149,7 +7149,7 @@ GameObject:
   - component: {fileID: 1157248302}
   - component: {fileID: 1157248301}
   m_Layer: 5
-  m_Name: Cappuccino (1)
+  m_Name: Sahur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7233,9 +7233,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbf8f81511ea9343b97c424e098faba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 50
-  animalSprite: {fileID: -1182038677901021211, guid: 9f74b2d28f9f3134c8dc7c97652ab98e, type: 3}
-  animalObject: {fileID: 2488789785549908363, guid: 44207fa8b56c61549ad35ace8ece0a38, type: 3}
+  price: 75
+  animalSprite: {fileID: 1271414341304111292, guid: ed1882b5e730352489ec0af2a7ec185b, type: 3}
+  animalObject: {fileID: 7293593946226548247, guid: 8b09cd967fa0af64ba3729a3197b2c3d, type: 3}
   icon: {fileID: 2025563175}
   priceText: {fileID: 1414132552}
 --- !u!1 &1193647383
@@ -7554,7 +7554,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: 200
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 887fdb9886e1f3345a1b596d1382e5c1, type: 2}
   m_sharedMaterial: {fileID: -4202373307568878233, guid: 887fdb9886e1f3345a1b596d1382e5c1, type: 2}
@@ -8065,7 +8065,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 887fdb9886e1f3345a1b596d1382e5c1, type: 2}
   m_sharedMaterial: {fileID: -4202373307568878233, guid: 887fdb9886e1f3345a1b596d1382e5c1, type: 2}
@@ -9326,7 +9326,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: 75
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 887fdb9886e1f3345a1b596d1382e5c1, type: 2}
   m_sharedMaterial: {fileID: -4202373307568878233, guid: 887fdb9886e1f3345a1b596d1382e5c1, type: 2}
@@ -9417,7 +9417,7 @@ GameObject:
   - component: {fileID: 1414247800}
   - component: {fileID: 1414247799}
   m_Layer: 5
-  m_Name: Cappuccino (2)
+  m_Name: Larila
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9502,8 +9502,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 50
-  animalSprite: {fileID: -1182038677901021211, guid: 9f74b2d28f9f3134c8dc7c97652ab98e, type: 3}
-  animalObject: {fileID: 2488789785549908363, guid: 44207fa8b56c61549ad35ace8ece0a38, type: 3}
+  animalSprite: {fileID: 1601295613631968034, guid: e1219202bd4556347a4aab306db4d70a, type: 3}
+  animalObject: {fileID: 703357952437252330, guid: aedec4a1052b49945b8937c4c960374e, type: 3}
   icon: {fileID: 224671520}
   priceText: {fileID: 1684608756}
 --- !u!1 &1423375196
@@ -10064,7 +10064,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: 125
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 887fdb9886e1f3345a1b596d1382e5c1, type: 2}
   m_sharedMaterial: {fileID: -4202373307568878233, guid: 887fdb9886e1f3345a1b596d1382e5c1, type: 2}
@@ -10200,7 +10200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1182038677901021211, guid: 9f74b2d28f9f3134c8dc7c97652ab98e, type: 3}
+  m_Sprite: {fileID: -6244348089769218222, guid: 8fd7d297c9c09164ebc5f1aa20206cfe, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -11732,7 +11732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1182038677901021211, guid: 9f74b2d28f9f3134c8dc7c97652ab98e, type: 3}
+  m_Sprite: {fileID: -2946224621641151013, guid: ad04c35c6e52040428b33427b0ce707c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -12396,7 +12396,7 @@ GameObject:
   - component: {fileID: 1711070649}
   - component: {fileID: 1711070648}
   m_Layer: 5
-  m_Name: Cappuccino (3)
+  m_Name: Camel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12480,9 +12480,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbf8f81511ea9343b97c424e098faba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 50
-  animalSprite: {fileID: -1182038677901021211, guid: 9f74b2d28f9f3134c8dc7c97652ab98e, type: 3}
-  animalObject: {fileID: 2488789785549908363, guid: 44207fa8b56c61549ad35ace8ece0a38, type: 3}
+  price: 100
+  animalSprite: {fileID: -927097501176452272, guid: f5ee9db4ed98b4744a427c7abe6c5ee4, type: 3}
+  animalObject: {fileID: 4922216108972227907, guid: 456bf3db17e5ae84ba9a4769266a4a4b, type: 3}
   icon: {fileID: 1744838147}
   priceText: {fileID: 1245996038}
 --- !u!1 &1721192899
@@ -12893,7 +12893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: 250
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 887fdb9886e1f3345a1b596d1382e5c1, type: 2}
   m_sharedMaterial: {fileID: -4202373307568878233, guid: 887fdb9886e1f3345a1b596d1382e5c1, type: 2}
@@ -13029,7 +13029,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1182038677901021211, guid: 9f74b2d28f9f3134c8dc7c97652ab98e, type: 3}
+  m_Sprite: {fileID: -927097501176452272, guid: f5ee9db4ed98b4744a427c7abe6c5ee4, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -14403,7 +14403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1182038677901021211, guid: 9f74b2d28f9f3134c8dc7c97652ab98e, type: 3}
+  m_Sprite: {fileID: 518365762053865977, guid: 2acdb82d61b83b54a887586cd9e4e9c1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -14956,7 +14956,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1182038677901021211, guid: 9f74b2d28f9f3134c8dc7c97652ab98e, type: 3}
+  m_Sprite: {fileID: 1271414341304111292, guid: ed1882b5e730352489ec0af2a7ec185b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -15181,7 +15181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: 225
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 887fdb9886e1f3345a1b596d1382e5c1, type: 2}
   m_sharedMaterial: {fileID: -4202373307568878233, guid: 887fdb9886e1f3345a1b596d1382e5c1, type: 2}
@@ -15272,7 +15272,7 @@ GameObject:
   - component: {fileID: 2062632244}
   - component: {fileID: 2062632243}
   m_Layer: 5
-  m_Name: Cappuccino (4)
+  m_Name: Bobrito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15356,9 +15356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbf8f81511ea9343b97c424e098faba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 50
-  animalSprite: {fileID: -1182038677901021211, guid: 9f74b2d28f9f3134c8dc7c97652ab98e, type: 3}
-  animalObject: {fileID: 2488789785549908363, guid: 44207fa8b56c61549ad35ace8ece0a38, type: 3}
+  price: 125
+  animalSprite: {fileID: -6244348089769218222, guid: 8fd7d297c9c09164ebc5f1aa20206cfe, type: 3}
+  animalObject: {fileID: 2575450532751479056, guid: 69442a7a687f1404489c8d9e94734aed, type: 3}
   icon: {fileID: 1494839115}
   priceText: {fileID: 1475260694}
 --- !u!1 &2074227740
