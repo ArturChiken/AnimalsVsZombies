@@ -1638,10 +1638,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1311326199}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.07, y: 0.19800001}
-  m_AnchorMax: {x: 0.20467745, y: 0.78132206}
-  m_AnchoredPosition: {x: -0.022155762, y: -0.26309967}
-  m_SizeDelta: {x: -0.2514038, y: -0.42200089}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -156.02216, y: -1.2630997}
+  m_SizeDelta: {x: 57.748596, y: 57.578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &243259003
 MonoBehaviour:
@@ -3569,6 +3569,9 @@ MonoBehaviour:
     m_Bits: 64
   coffees: 1000
   coffeeText: {fileID: 36411959}
+  _fadeCanvasGroup: {fileID: 0}
+  _sceneToLoadAfterPressedBack: 0
+  _fadeDuration: 1
   preCurrentAmount: -1
   coinDisplay: {fileID: 1498099414}
 --- !u!4 &477301851
