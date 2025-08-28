@@ -8,6 +8,7 @@ public class LabubuSpawner : MonoBehaviour
     public GameObject labubu;
     public LabubuType[] labubuTypes;
     public Slider progressBar;
+    private Gamemanager gameManager;
 
     public float labubuDelay;
     public float labubuSpawnTime;
@@ -15,9 +16,12 @@ public class LabubuSpawner : MonoBehaviour
     public int labubuSpawned;
     public int labubuDead;
     private bool willWin = true;
+    private bool isGameStarted = true;
 
     private void Start()
     {
+        gameManager = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
+
         switch (DiffMenuButtonsManager.currDiff)
         {
             case 1:
@@ -35,13 +39,18 @@ public class LabubuSpawner : MonoBehaviour
                     break;
                 }
         }
-        StartCoroutine(SpawnLabubuDelay());
     }
 
     private void Update()
     {
         progressBar.maxValue = labubuMax;
         progressBar.value = labubuDead;
+
+        if (isGameStarted && gameManager.isGameStarted)
+        {
+            isGameStarted = false;
+            StartCoroutine(SpawnLabubuDelay());
+        }
 
         if (labubuDead >= labubuMax)
         {

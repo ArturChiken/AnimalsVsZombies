@@ -17,6 +17,7 @@ public class Gamemanager : MonoBehaviour
     public TMP_Text coinDisplay;
 
     public int cardAmount;
+    public bool isGameStarted;
 
     private void Start()
     {

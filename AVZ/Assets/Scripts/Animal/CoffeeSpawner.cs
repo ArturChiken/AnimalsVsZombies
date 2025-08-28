@@ -4,10 +4,22 @@ using UnityEngine;
 public class CoffeeSpawner : MonoBehaviour
 {
     public GameObject coffeeObject;
+    private Gamemanager gameManager;
+
+    private bool isGameStarted = true;
 
     private void Start()
     {
-        SpawnCoffee();
+        gameManager = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
+    }
+
+    private void Update()
+    {
+        if (isGameStarted && gameManager.isGameStarted)
+        {
+            isGameStarted = false;
+            SpawnCoffee();
+        }
     }
 
     void SpawnCoffee()
