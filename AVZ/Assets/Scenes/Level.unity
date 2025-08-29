@@ -4475,7 +4475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 1
+  isUnlocked: 0
   icon: {fileID: 1283493605}
   cardObject: {fileID: 8192852850897776819, guid: 39ce4a6d24ecf724093642bb60e889ad, type: 3}
   canvas: {fileID: 231996139}
@@ -6166,6 +6166,7 @@ MonoBehaviour:
     m_Bits: 64
   coffees: 100
   coffeeText: {fileID: 36411959}
+  _sceneToLoadAfterPressedBack: 0
   preCurrentAmount: -1
   coinDisplay: {fileID: 1498099414}
   cardAmount: 0
@@ -7732,7 +7733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 1
+  isUnlocked: 0
   icon: {fileID: 1609567724}
   cardObject: {fileID: 8609762905330256254, guid: b4a4df44c88450c48985cec422271616, type: 3}
   canvas: {fileID: 231996139}
@@ -11231,7 +11232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 1
+  isUnlocked: 0
   icon: {fileID: 1974270144}
   cardObject: {fileID: 8948953321268572537, guid: e501f172fccce2f4aa7de42974c0283b, type: 3}
   canvas: {fileID: 231996139}
@@ -13792,7 +13793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 1
+  isUnlocked: 0
   icon: {fileID: 1626762167}
   cardObject: {fileID: 9052203265132674478, guid: fb2a43d5c699f2543a4c862afb99d130, type: 3}
   canvas: {fileID: 231996139}
@@ -14514,7 +14515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 1
+  isUnlocked: 0
   icon: {fileID: 195773879}
   cardObject: {fileID: 4379672533713431726, guid: f399af849af58a3489a30ff63799cf96, type: 3}
   canvas: {fileID: 231996139}

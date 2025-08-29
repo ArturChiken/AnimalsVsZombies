@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5c7fca3c512be4fb298877b46cdaa5, type: 3}
+  m_Name: AssasinoCard
+  m_EditorClassIdentifier: 
+  name: "\u0410\u0441\u0441\u0430\u0441\u0438\u043D\u043E"
+  description: VISNYA
+  icon: {fileID: -293961232951849327, guid: bdb494a4460688d44bce1282a0491581, type: 3}
+  cost: 0
+  isPermanent: 1
+  useCount: 0

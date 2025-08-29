@@ -1,8 +1,11 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Gamemanager : MonoBehaviour
 {
+    //ןנופû
     public static string coinPrefsName = "Coins_Player";
 
     public GameObject currentAnimal;
@@ -11,6 +14,8 @@ public class Gamemanager : MonoBehaviour
     public LayerMask tileMask;
     public int coffees;
     public TextMeshProUGUI coffeeText;
+
+    [SerializeField] int _sceneToLoadAfterPressedBack;
 
     public static int currentCoinAmount;
     public int preCurrentAmount = -1;
@@ -25,9 +30,16 @@ public class Gamemanager : MonoBehaviour
         coinDisplay.SetText(currentCoinAmount + "");
     }
 
-    public void Win()
+    public void Win(int starsAquired)
     {
-        Debug.Log("HUII!");
+        //setactive win ui screen pause game
+        if (LevelMenuButtonManager.currLevel == LevelSelectorManager.UnlockedLevels)
+        {
+            LevelSelectorManager.UnlockedLevels++;
+            PlayerPrefs.SetInt("UnlockedLevels", LevelSelectorManager.UnlockedLevels);
+        }
+        if (starsAquired > PlayerPrefs.GetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), 0))
+        PlayerPrefs.SetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), starsAquired);
     }
 
     public void BuyAnimal(GameObject animal, Sprite sprite)

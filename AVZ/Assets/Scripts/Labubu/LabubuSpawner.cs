@@ -56,8 +56,22 @@ public class LabubuSpawner : MonoBehaviour
         {
             if(willWin)
             {
-                GameObject.Find("Gamemanager").GetComponent<Gamemanager>().Win();
-                willWin = false;
+                switch (DiffMenuButtonsManager.currDiff)
+                {
+                    case 1:
+                        GameObject.Find("Gamemanager").GetComponent<Gamemanager>().Win(1);
+                        willWin = false;
+                        break;
+                    case 2:
+                        GameObject.Find("Gamemanager").GetComponent<Gamemanager>().Win(2);
+                        willWin = false;
+                        break;
+                    case 3:
+                        GameObject.Find("Gamemanager").GetComponent<Gamemanager>().Win(3);
+                        willWin = false;
+                        break;
+
+                }
             }
         }
     }
