@@ -40,6 +40,8 @@ public class Gamemanager : MonoBehaviour
         }
         if (starsAquired > PlayerPrefs.GetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), 0))
         PlayerPrefs.SetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), starsAquired);
+
+        SceneManager.LoadScene(1);
     }
 
     public void BuyAnimal(GameObject animal, Sprite sprite)
