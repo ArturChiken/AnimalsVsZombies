@@ -39,7 +39,9 @@ public class Gamemanager : MonoBehaviour
             PlayerPrefs.SetInt("UnlockedLevels", LevelSelectorManager.UnlockedLevels);
         }
         if (starsAquired > PlayerPrefs.GetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), 0))
-        PlayerPrefs.SetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), starsAquired);
+        {
+            PlayerPrefs.SetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), starsAquired);
+        }
 
         SceneManager.LoadScene(1);
     }
