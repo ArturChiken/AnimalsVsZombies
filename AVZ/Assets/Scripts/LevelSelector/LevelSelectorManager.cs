@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using JetBrains.Annotations;
+using System.Drawing;
 
 public class LevelSelectorManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class LevelSelectorManager : MonoBehaviour
 
     public static int UnlockedLevels;
     public LevelObject[] levelObjects;
+    public Sprite goldenStarSprite;
 
     [SerializeField] CanvasGroup _fadeCanvasGroup, _ActContainerButtons;
     [SerializeField] GameObject _ActContainer, _LevelsContainer, _DiffContainer;
@@ -43,6 +45,12 @@ public class LevelSelectorManager : MonoBehaviour
             if (UnlockedLevels >= i)
             {
                 levelObjects[i].levelButton.interactable = true;
+                int stars = PlayerPrefs.GetInt("stars" + i.ToString(), 0);
+                for (int j = 0; j < stars; j++)
+                {
+                    levelObjects[i].stars[j].sprite = goldenStarSprite;
+                    levelObjects[i].stars[j].color = new UnityEngine.Color(1f, 0.5f, 0.3f);
+                }
             }
         }
     }

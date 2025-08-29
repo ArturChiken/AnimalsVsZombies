@@ -15,9 +15,7 @@ public class Gamemanager : MonoBehaviour
     public int coffees;
     public TextMeshProUGUI coffeeText;
 
-    [SerializeField] CanvasGroup _fadeCanvasGroup;
     [SerializeField] int _sceneToLoadAfterPressedBack;
-    [SerializeField] float _fadeDuration = 1f;
 
     public static int currentCoinAmount;
     public int preCurrentAmount = -1;
@@ -27,14 +25,20 @@ public class Gamemanager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(Fade(1f, 0f));
         currentCoinAmount = PlayerPrefs.GetInt(coinPrefsName);
         coinDisplay.SetText(currentCoinAmount + "");
     }
 
-    public void Win()
+    public void Win(int starsAquired)
     {
-        Debug.Log("HUII!");
+        //setactive win ui screen pause game
+        if (LevelMenuButtonManager.currLevel == LevelSelectorManager.UnlockedLevels)
+        {
+            LevelSelectorManager.UnlockedLevels++;
+            PlayerPrefs.SetInt("UnlockedLevels", LevelSelectorManager.UnlockedLevels);
+        }
+        if (starsAquired > PlayerPrefs.GetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), 0))
+        PlayerPrefs.SetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), starsAquired);
     }
 
     public void BuyAnimal(GameObject animal, Sprite sprite)
@@ -84,26 +88,6 @@ public class Gamemanager : MonoBehaviour
     public static void IncrementCoins(int value)
     {
         currentCoinAmount += value;
-    }
-
-    private IEnumerator TransitionScene()
-    {
-        yield return StartCoroutine(Fade(0f, 1f));
-        SceneManager.LoadScene(_sceneToLoadAfterPressedBack);
-    }
-
-    private IEnumerator Fade(float startAlpha, float targetAlpha)
-    {
-        float elapsedTime = 0f;
-
-        while (elapsedTime < _fadeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            _fadeCanvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / _fadeDuration);
-            yield return null;
-        }
-
-        _fadeCanvasGroup.alpha = targetAlpha;
     }
 
     public void OnApplicationQuit()

@@ -10,8 +10,6 @@ public class ShopManager : MonoBehaviour
 
     //префы
 
-    public static string coinPrefsName = "Coins_Player";
-
     //только back и tg
     public enum ShopContainerButtons { back, tg, shopitem };
     public enum PreviewContainerButtons { back };
@@ -26,7 +24,9 @@ public class ShopManager : MonoBehaviour
     [SerializeField] int _sceneToLoadAfterPressedBack;
     [SerializeField] float _fadeDuration = 1f;
 
-    PreviewScriptableObject _activeSO;
+    public PreviewScriptableObject _activePreviewSO;
+
+    public ShopItemScriptableObject _activeShopItemSOInPreview;
 
     public TMP_Text coinDisplay;
 
@@ -41,7 +41,7 @@ public class ShopManager : MonoBehaviour
     public void Start()
     {
         StartCoroutine(Fade(1f, 0f));
-        currentCoinAmount = PlayerPrefs.GetInt(coinPrefsName);
+        currentCoinAmount = PlayerPrefs.GetInt("Coins_Player");
         coinDisplay.SetText(currentCoinAmount + "");
     }
 
@@ -86,6 +86,18 @@ public class ShopManager : MonoBehaviour
         }
     }
 
+
+    //смена SO в превью
+    public void ChangePreviewSO(PreviewScriptableObject _newPreviewSO)
+    {
+        _activePreviewSO = _newPreviewSO;
+    }
+
+    public void ChangeShopItemSOInPreview(ShopItemScriptableObject _newShopItemSoInPreview)
+    {
+        _activeShopItemSOInPreview = _newShopItemSoInPreview;
+    }
+
     public static void BuyItem(ShopItemScriptableObject item)
     {
         if (currentCoinAmount < item.cost || item.isBought)
@@ -97,12 +109,6 @@ public class ShopManager : MonoBehaviour
 
         PlayerPrefs.SetInt(item.name, 1);
         PlayerPrefs.SetInt($"{item.name}_count", item.useCount);
-    }
-
-    //смена SO в превью
-    public void ChangePreviewSO(PreviewScriptableObject _newSO)
-    {
-        _activeSO = _newSO;
     }
 
 
@@ -129,6 +135,6 @@ public class ShopManager : MonoBehaviour
 
     public void OnApplicationQuit()
     {
-        PlayerPrefs.SetInt(coinPrefsName, currentCoinAmount);
+        PlayerPrefs.SetInt("Coins_Player", currentCoinAmount);
     }
 }
