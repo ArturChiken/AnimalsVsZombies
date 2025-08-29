@@ -45,43 +45,29 @@ public class LabubuSpawner : MonoBehaviour
 
         if (labubuDead >= labubuMax)
         {
-            if(willWin)
+            if (willWin)
             {
-                switch (DiffMenuButtonsManager.currDiff)
-                {
-                    case 1:
-                        GameObject.Find("Gamemanager").GetComponent<Gamemanager>().Win(1);
-                        willWin = false;
-                        break;
-                    case 2:
-                        GameObject.Find("Gamemanager").GetComponent<Gamemanager>().Win(2);
-                        willWin = false;
-                        break;
-                    case 3:
-                        GameObject.Find("Gamemanager").GetComponent<Gamemanager>().Win(3);
-                        willWin = false;
-                        break;
-
-                }
+                GameObject.Find("Gamemanager").GetComponent<Gamemanager>().Win(DiffMenuButtonsManager.currDiff);
+                willWin = false;
             }
         }
     }
 
-    void SpawnLabubu()
-    {
-        if (labubuSpawned >= labubuMax) return;
-        labubuSpawned++;
+        void SpawnLabubu()
+        {
+            if (labubuSpawned >= labubuMax) return;
+            labubuSpawned++;
 
-        int randomPoint = Random.Range(0, spawnPoints.Length);
-        int randomType = Random.Range(0, labubuTypes.Length);
-        GameObject myLabubu = Instantiate(labubu, spawnPoints[randomPoint].position, Quaternion.identity);
-        myLabubu.GetComponent<Labubu>().type = labubuTypes[randomType];
-    }
+            int randomPoint = Random.Range(0, spawnPoints.Length);
+            int randomType = Random.Range(0, labubuTypes.Length);
+            GameObject myLabubu = Instantiate(labubu, spawnPoints[randomPoint].position, Quaternion.identity);
+            myLabubu.GetComponent<Labubu>().type = labubuTypes[randomType];
+        }
 
-    //задержка епта
-    IEnumerator SpawnLabubuDelay()
-    {
-        yield return new WaitForSeconds(0.0001f); 
-        InvokeRepeating("SpawnLabubu", labubuDelay, labubuSpawnTime);
-    }
+        //задержка епта
+        IEnumerator SpawnLabubuDelay()
+        {
+            yield return new WaitForSeconds(0.0001f);
+            InvokeRepeating("SpawnLabubu", labubuDelay, labubuSpawnTime);
+        }
 }
