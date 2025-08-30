@@ -5,7 +5,7 @@ using System.Collections;
 
 public class Gamemanager : MonoBehaviour
 {
-    //ïðåôû
+    //ï¿½ï¿½ï¿½ï¿½ï¿½
     public static string coinPrefsName = "Coins_Player";
 
     public GameObject currentAnimal;
@@ -42,7 +42,6 @@ public class Gamemanager : MonoBehaviour
         {
             PlayerPrefs.SetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), starsAquired);
         }
-
         SceneManager.LoadScene(1);
     }
 
