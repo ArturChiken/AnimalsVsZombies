@@ -13793,7 +13793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 1
+  isUnlocked: 0
   icon: {fileID: 1626762167}
   cardObject: {fileID: 9052203265132674478, guid: fb2a43d5c699f2543a4c862afb99d130, type: 3}
   canvas: {fileID: 231996139}
@@ -14515,7 +14515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 1
+  isUnlocked: 0
   icon: {fileID: 195773879}
   cardObject: {fileID: 4379672533713431726, guid: f399af849af58a3489a30ff63799cf96, type: 3}
   canvas: {fileID: 231996139}
@@ -19809,7 +19809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 1
+  isUnlocked: 0
   icon: {fileID: 6368613}
   cardObject: {fileID: 5333022099412958178, guid: cb30696d24947c64bbd8881b1e75f748, type: 3}
   canvas: {fileID: 231996139}
