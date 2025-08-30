@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using JetBrains.Annotations;
+using System.Drawing;
 
 public class LevelSelectorManager : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class LevelSelectorManager : MonoBehaviour
     public enum LevelContainerButtons { back, level };
     public enum DiffContainerButtons { back, easy, normal, hard };
     public enum OtherButtons { tg };
+
+    public static int UnlockedLevels;
+    public LevelObject[] levelObjects;
+    public Sprite goldenStarSprite;
 
     [SerializeField] CanvasGroup _fadeCanvasGroup, _ActContainerButtons;
     [SerializeField] GameObject _ActContainer, _LevelsContainer, _DiffContainer;
@@ -34,6 +39,20 @@ public class LevelSelectorManager : MonoBehaviour
         _ActContainer.SetActive(true);
         _LevelsContainer.SetActive(false);
         _DiffContainer.SetActive(false);
+        UnlockedLevels = PlayerPrefs.GetInt("UnlockedLevels", 1);
+        for (int i = 1; i < levelObjects.Length + 1; i++)
+        {
+            if (UnlockedLevels >= i)
+            {
+                levelObjects[i].levelButton.interactable = true;
+                int stars = PlayerPrefs.GetInt("stars" + i.ToString(), 0);
+                for (int j = 0; j < stars; j++)
+                {
+                    levelObjects[i].stars[j].sprite = goldenStarSprite;
+                    levelObjects[i].stars[j].color = new UnityEngine.Color(255f, 255f, 255f);
+                }
+            }
+        }
     }
 
     //актовые кнопки

@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5908ca9a7b004ae468785fed87e7ed21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 6
+  health: 12
   tile: {fileID: 0}
 --- !u!114 &8038774523560291067
 MonoBehaviour:

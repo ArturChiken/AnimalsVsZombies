@@ -13,5 +13,11 @@ public class ShopItemScriptableObject : ScriptableObject
     public bool isPermanent;
     public int useCount;
 
-    public bool isBought;
+    public bool isBought
+    {
+        get
+        {
+            return PlayerPrefs.GetInt(name, 0) == 1;
+        }
+    }
 }
