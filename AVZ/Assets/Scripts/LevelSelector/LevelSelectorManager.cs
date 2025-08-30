@@ -39,8 +39,8 @@ public class LevelSelectorManager : MonoBehaviour
         _ActContainer.SetActive(true);
         _LevelsContainer.SetActive(false);
         _DiffContainer.SetActive(false);
-        UnlockedLevels = PlayerPrefs.GetInt("UnlockedLevels", 0);
-        for (int i = 0; i < levelObjects.Length; i++)
+        UnlockedLevels = PlayerPrefs.GetInt("UnlockedLevels", 1);
+        for (int i = 1; i < levelObjects.Length + 1; i++)
         {
             if (UnlockedLevels >= i)
             {
@@ -49,7 +49,7 @@ public class LevelSelectorManager : MonoBehaviour
                 for (int j = 0; j < stars; j++)
                 {
                     levelObjects[i].stars[j].sprite = goldenStarSprite;
-                    levelObjects[i].stars[j].color = new UnityEngine.Color(1f, 0.5f, 0.3f);
+                    levelObjects[i].stars[j].color = new UnityEngine.Color(255f, 255f, 255f);
                 }
             }
         }

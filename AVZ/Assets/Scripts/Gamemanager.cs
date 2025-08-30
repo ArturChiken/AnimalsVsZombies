@@ -22,7 +22,7 @@ public class Gamemanager : MonoBehaviour
     public TMP_Text coinDisplay;
 
     public int cardAmount;
-    public bool isGameStarted;
+    public bool isGameStarted = false;
 
     private void Start()
     {
@@ -39,8 +39,9 @@ public class Gamemanager : MonoBehaviour
             PlayerPrefs.SetInt("UnlockedLevels", LevelSelectorManager.UnlockedLevels);
         }
         if (starsAquired > PlayerPrefs.GetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), 0))
-        PlayerPrefs.SetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), starsAquired);
-
+        {
+            PlayerPrefs.SetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), starsAquired);
+        }
         SceneManager.LoadScene(1);
     }
 
