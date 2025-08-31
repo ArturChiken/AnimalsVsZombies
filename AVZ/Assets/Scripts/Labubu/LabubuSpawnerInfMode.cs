@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
-public class LabubuSpawner : MonoBehaviour
+public class LabubuSpawnerInfMode : MonoBehaviour
 {
     public Transform[] spawnPoints;
     public GameObject labubu;
@@ -15,30 +14,13 @@ public class LabubuSpawner : MonoBehaviour
     public int labubuMax;
     public int labubuSpawned;
     public int labubuDead;
-    private bool willWin = true;
     private bool isGameStarted;
+
+    private int waveCount;
 
     private void Start()
     {
         gameManager = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
-
-        switch (DiffMenuButtonsManager.currDiff)
-        {
-            case 1:
-                {
-                    labubuDelay *= 1.5f;
-                    labubuMax /= 2;
-                    labubuSpawnTime *= 1.5f;
-                    break;
-                }
-            case 3:
-                {
-                    labubuDelay /= 1.15f;
-                    labubuMax *= 2;
-                    labubuSpawnTime /= 1.25f;
-                    break;
-                }
-        }
     }
 
     private void Update()
@@ -49,22 +31,17 @@ public class LabubuSpawner : MonoBehaviour
         if (!isGameStarted && gameManager.isGameStarted)
         {
             isGameStarted = true;
-            StartCoroutine(SpawnLabubuDelay());
-        }
-
-        if (labubuDead >= labubuMax)
-        {
-            if(willWin)
-            {
-                willWin = false;
-                GameObject.Find("Gamemanager").GetComponent<Gamemanager>().Win(DiffMenuButtonsManager.currDiff);
-            }
+            InvokeRepeating("SpawnLabubu", labubuDelay, labubuSpawnTime);
         }
     }
 
     void SpawnLabubu()
     {
-        if (labubuSpawned >= labubuMax) return;
+        if (labubuSpawned >= labubuMax)
+        {
+            CancelInvoke("SpawnLabubu");
+            WavePause();
+        }
         labubuSpawned++;
 
         int randomPoint = Random.Range(0, spawnPoints.Length);
@@ -73,10 +50,20 @@ public class LabubuSpawner : MonoBehaviour
         myLabubu.GetComponent<Labubu>().type = labubuTypes[randomType];
     }
 
-    //задержка епта
-    IEnumerator SpawnLabubuDelay()
+    private void WavePause()
     {
-        yield return new WaitForSeconds(0.0001f); 
+        Invoke("WaveTide", 10f);
+        waveCount++;
+    }
+
+    private void WaveTide()
+    {
+        labubuSpawned = 0;
+        labubuDead = 0;
+        labubuMax *= (int)(1.35f);
+
+        gameManager.coffees += 15*waveCount;
+
         InvokeRepeating("SpawnLabubu", labubuDelay, labubuSpawnTime);
     }
 }

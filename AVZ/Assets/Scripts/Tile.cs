@@ -5,22 +5,25 @@ using UnityEngine.Rendering;
 public class Tile : MonoBehaviour
 {
     public bool hasAnimal = false;
+    public bool infMode = false;
     public int[] actNums;
     public int[] lvlNums;
 
     private void Start()
     {
         gameObject.SetActive(true);
-
-        foreach (int act in actNums)
+        if (!infMode)
         {
-            if (act == ActMenuButtonsManager.currAct)
+            foreach (int act in actNums)
             {
-                foreach(int lvl in lvlNums)
+                if (act == ActMenuButtonsManager.currAct)
                 {
-                    if (lvl == LevelMenuButtonManager.currLevel)
+                    foreach (int lvl in lvlNums)
                     {
-                        gameObject.SetActive(false);
+                        if (lvl == LevelMenuButtonManager.currLevel)
+                        {
+                            gameObject.SetActive(false);
+                        }
                     }
                 }
             }
