@@ -45,5 +45,6 @@ public class LeaderBoard : MonoBehaviour
     {
         scoreWrited = true;
         //Проверка в учетке пользователя, что новый рекорд больше предыдущего (ЭТО ВАЖНО)
+        YG2.SetLBTimeConvert("InfinityMode", score);
     }
 }
