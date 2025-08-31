@@ -16,7 +16,7 @@ public class LabubuSpawnerInfMode : MonoBehaviour
     public int labubuDead;
     private bool isGameStarted;
 
-    private int waveCount;
+    private int waveCount = 1;
 
     private void Start()
     {

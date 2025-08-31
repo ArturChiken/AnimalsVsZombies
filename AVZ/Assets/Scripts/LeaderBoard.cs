@@ -1,7 +1,4 @@
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UIElements;
 using YG;
 
 public class LeaderBoard : MonoBehaviour
@@ -29,7 +26,6 @@ public class LeaderBoard : MonoBehaviour
         if (!isGameStarted && gameManager.isGameStarted)
         {
             isGameStarted = true;
-            //timer starts
         }
         if (!gameManager.isGameStarted && loseTrigger.isGameFinish)
         {
