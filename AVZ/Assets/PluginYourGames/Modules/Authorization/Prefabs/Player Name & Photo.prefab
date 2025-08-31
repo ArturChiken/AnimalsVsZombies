@@ -32,7 +32,6 @@ RectTransform:
   - {fileID: 340534006149981300}
   - {fileID: 340534005286727360}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -52,8 +51,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNameText: {fileID: 340534006149981301}
-  playerNameTMP: {fileID: 0}
   photoImageLoad: {fileID: 340534005286727361}
+  playerNameTMP: {fileID: 0}
+  unauthorizedTexture: {fileID: 0}
 --- !u!1 &340534004835935822
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +85,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 340534005286727360}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -158,7 +157,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 340534005286727360}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -237,7 +235,6 @@ RectTransform:
   - {fileID: 340534004958424558}
   - {fileID: 340534004835935823}
   m_Father: {fileID: 340534004792608242}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -295,11 +292,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startLoad: 0
+  urlImage: 
   rawImage: {fileID: 340534004835935824}
   spriteImage: {fileID: 0}
-  urlImage: 
   loadAnimObj: {fileID: 340534004958424557}
-  debug: 0
+  log: 0
 --- !u!1 &340534006149981299
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +328,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 340534004792608242}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}

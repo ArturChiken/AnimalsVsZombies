@@ -7,14 +7,13 @@ public class LeaderBoard : MonoBehaviour
     private Lose loseTrigger;
     private bool isGameStarted;
     private float score;
-    private float time;
+    private float time = 0f;
     private bool scoreWrited;
 
     private void Start()
     {
         gameManager = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
         loseTrigger = GameObject.Find("LoseTrigger").GetComponent<Lose>();
-        time = 0f;
     }
 
     private void Update()
@@ -40,7 +39,6 @@ public class LeaderBoard : MonoBehaviour
     private void LeaderBoardScoreSave()
     {
         scoreWrited = true;
-        //Проверка в учетке пользователя, что новый рекорд больше предыдущего (ЭТО ВАЖНО)
-        YG2.SetLBTimeConvert("InfinityMode", score);
+        if (score > YG2.saves.score) YG2.SetLBTimeConvert("InfinityModeLB", score);
     }
 }
