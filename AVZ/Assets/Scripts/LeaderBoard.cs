@@ -2,6 +2,7 @@ using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
+using YG;
 
 public class LeaderBoard : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class LeaderBoard : MonoBehaviour
     private bool isGameStarted;
     private float score;
     private float time;
+    private bool scoreWrited;
 
     private void Start()
     {
@@ -32,7 +34,16 @@ public class LeaderBoard : MonoBehaviour
         if (!gameManager.isGameStarted && loseTrigger.isGameFinish)
         {
             score = time;
-            Debug.Log(score);
         }
+        if (!scoreWrited && !gameManager.isGameStarted && loseTrigger.isGameFinish)
+        {
+            LeaderBoardScoreSave();
+        }
+    }
+
+    private void LeaderBoardScoreSave()
+    {
+        scoreWrited = true;
+        //Проверка в учетке пользователя, что новый рекорд больше предыдущего (ЭТО ВАЖНО)
     }
 }

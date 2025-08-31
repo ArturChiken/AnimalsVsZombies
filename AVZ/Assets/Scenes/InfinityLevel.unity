@@ -993,7 +993,7 @@ MonoBehaviour:
   - {fileID: 1705467958}
   - {fileID: 2003453037}
   - {fileID: 1707520577}
-  labubu: {fileID: 284891485169689408, guid: 793483f068c22e845a2052408d245f7b, type: 3}
+  labubu: {fileID: 284891485169689408, guid: fa4f78bc61117cd408b005269374aa12, type: 3}
   labubuTypes:
   - {fileID: 11400000, guid: 7c5d06ffda5e8494aa5564fe8a35a047, type: 2}
   - {fileID: 11400000, guid: 2c0d79e1ea2771448bd8589fc6438c59, type: 2}
