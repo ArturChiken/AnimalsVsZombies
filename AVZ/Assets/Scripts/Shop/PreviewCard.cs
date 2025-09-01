@@ -20,12 +20,6 @@ public class PreviewCard : MonoBehaviour
     public void Buy()
     {
         ShopManager.BuyItem(ShopManager._._activeShopItemSOInPreview);
-    }
-
-
-    [ContextMenu("Is Bought")]
-    public void DebugItsBought()
-    {
-        Debug.Log(ShopManager._._activeShopItemSOInPreview.isBought);
+        ShopManager._.RefreshAllCards();
     }
 }

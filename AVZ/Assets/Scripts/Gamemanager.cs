@@ -5,7 +5,6 @@ using System.Collections;
 
 public class Gamemanager : MonoBehaviour
 {
-    //�����
     public static string coinPrefsName = "Coins_Player";
 
     public GameObject currentAnimal;
@@ -29,7 +28,6 @@ public class Gamemanager : MonoBehaviour
         currentCoinAmount = PlayerPrefs.GetInt(coinPrefsName);
         coinDisplay.SetText(currentCoinAmount + "");
     }
-
     public void Win(int starsAquired)
     {
         //setactive win ui screen pause game

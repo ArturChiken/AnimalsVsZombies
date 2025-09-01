@@ -28,6 +28,8 @@ public class ShopManager : MonoBehaviour
 
     public ShopItemScriptableObject _activeShopItemSOInPreview;
 
+    public AnimalCardSlot[] cardSlots;
+
     public TMP_Text coinDisplay;
 
     public void Awake()
@@ -98,18 +100,41 @@ public class ShopManager : MonoBehaviour
         _activeShopItemSOInPreview = _newShopItemSoInPreview;
     }
 
-    public static void BuyItem(ShopItemScriptableObject item)
+    public static bool BuyItem(ShopItemScriptableObject item)
     {
-        if (currentCoinAmount < item.cost || item.isBought)
+        if (SaveSystem.CurrentCoinAmount < item.cost || SaveSystem.IsItemUnlocked(item.itemId))
         {
-            Debug.LogError("Not enough coins");
-            return;
+            Debug.LogWarning("Not enough coins or already bought");
+            return false;
         }
-        currentCoinAmount -= item.cost;
 
-        PlayerPrefs.SetInt(item.name, 1);
-        PlayerPrefs.SetInt($"{item.name}_count", item.useCount);
+        SaveSystem.CurrentCoinAmount -= item.cost;
+        SaveSystem.UnlockItem(item.itemId);
+
+        // для ограниченных айтемов
+        if (item.useCount > 0)
+        {
+            SaveSystem.SetItemUses(item.itemId, item.useCount);
+        }
+        // для перманентных айтемов -1
+        else
+        {
+            SaveSystem.SetItemUses(item.itemId, -1);
+        }
+
+        Debug.Log($"Item {item.name} purchased successfully!");
+        return true;
+
     }
+
+    public void RefreshAllCards()
+    {
+        foreach (var card in cardSlots)
+        {
+            card.RefreshCard();
+        }
+    }
+
 
 
     //переход

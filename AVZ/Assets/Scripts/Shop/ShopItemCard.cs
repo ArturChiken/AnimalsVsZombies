@@ -13,7 +13,7 @@ public class ShopItemCard : MonoBehaviour
     private void Awake()
     {
         _itemIcon.sprite = thisItem.icon;
-        _itemName.text = thisItem.name;
+        _itemName.text = thisItem.displayName;
         _itemCost.text = $"{thisItem.cost}";
     }
 }
