@@ -10,6 +10,8 @@ public class Labubu : MonoBehaviour
     private float eatCooldown;
     private bool canEat = true;
 
+    public bool infMode;
+
     public GameObject coinPrefab;
 
     public LabubuType type;
@@ -75,7 +77,14 @@ public class Labubu : MonoBehaviour
         }
         if (health <= 0)
         {
-            GameObject.Find("LabubuSpawner").GetComponent<LabubuSpawner>().labubuDead++;
+            if (infMode)
+            {
+                GameObject.Find("LabubuSpawner").GetComponent<LabubuSpawnerInfMode>().labubuDead++;
+            }
+            else if (!infMode)
+            {
+                GameObject.Find("LabubuSpawner").GetComponent<LabubuSpawner>().labubuDead++;
+            }
             Destroy(gameObject);
             int randomInt = Random.Range(0, 1);
 

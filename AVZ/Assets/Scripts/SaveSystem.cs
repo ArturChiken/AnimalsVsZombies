@@ -1,13 +1,10 @@
 using UnityEngine;
 
-namespace YG
+    namespace YG
 {
     public partial class SavesYG
     {
-        //данные дл€ сохранени€
-
-        public int playerCoins = 0;
+        // ¬аши данные дл€ сохранени€
         public float score = 0;
-        
     }
 }

@@ -209,7 +209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &12970545
 Transform:
   m_ObjectHideFlags: 0
@@ -1205,7 +1205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &53118900
 Transform:
   m_ObjectHideFlags: 0
@@ -2606,6 +2606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 
   lvlNums: 
 --- !u!212 &134297921
@@ -2843,6 +2844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &136615884
@@ -4137,6 +4139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &272637057
@@ -4287,6 +4290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 
   lvlNums: 
 --- !u!212 &276438574
@@ -4359,7 +4363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &317993992
 Transform:
   m_ObjectHideFlags: 0
@@ -4815,6 +4819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &351115310
@@ -4965,6 +4970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &360480899
@@ -5353,6 +5359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 
   lvlNums: 
 --- !u!212 &380144132
@@ -5898,6 +5905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &413543474
@@ -6652,6 +6660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 
   lvlNums: 
 --- !u!212 &537993025
@@ -7137,6 +7146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &573657876
@@ -7287,6 +7297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &574565300
@@ -8384,6 +8395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &709079479
@@ -8534,6 +8546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &711037514
@@ -8606,7 +8619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &717940841
 Transform:
   m_ObjectHideFlags: 0
@@ -8791,6 +8804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &758015711
@@ -9635,6 +9649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 
   lvlNums: 
 --- !u!212 &824495274
@@ -10362,6 +10377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 
   lvlNums: 
 --- !u!212 &951718899
@@ -11078,6 +11094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &1007048656
@@ -11619,6 +11636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 
   lvlNums: 
 --- !u!212 &1054087163
@@ -12144,6 +12162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 
   lvlNums: 
 --- !u!212 &1112564974
@@ -12294,6 +12313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &1113549848
@@ -12975,6 +12995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &1196424212
@@ -13047,7 +13068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1214665850
 Transform:
   m_ObjectHideFlags: 0
@@ -13159,6 +13180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 
   lvlNums: 
 --- !u!212 &1236755417
@@ -13396,6 +13418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &1239665987
@@ -14119,6 +14142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &1262101689
@@ -14572,7 +14596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1305647804
 Transform:
   m_ObjectHideFlags: 0
@@ -15343,6 +15367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &1341885151
@@ -15446,7 +15471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1375875501
 Transform:
   m_ObjectHideFlags: 0
@@ -15556,6 +15581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &1377259287
@@ -15911,6 +15937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &1388467489
@@ -16197,6 +16224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &1402236086
@@ -16628,6 +16656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &1435416992
@@ -17070,6 +17099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &1444214285
@@ -18053,6 +18083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 
   lvlNums: 
 --- !u!212 &1545972538
@@ -18290,6 +18321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &1558575833
@@ -18440,6 +18472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &1559548098
@@ -18590,6 +18623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &1563389492
@@ -18815,6 +18849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &1598604991
@@ -18992,6 +19027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathScreen: {fileID: 0}
+  isGameFinish: 0
 --- !u!50 &1602824250
 Rigidbody2D:
   serializedVersion: 5
@@ -19533,7 +19569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1613738729
 Transform:
   m_ObjectHideFlags: 0
@@ -20180,6 +20216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &1680442961
@@ -20847,6 +20884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &1721192903
@@ -21202,6 +21240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &1731066676
@@ -21588,6 +21627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &1783316654
@@ -21828,6 +21868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &1795066602
@@ -22550,6 +22591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &1841470736
@@ -22921,6 +22963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &1865844203
@@ -23592,7 +23635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1916502719
 Transform:
   m_ObjectHideFlags: 0
@@ -24018,6 +24061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &1962258919
@@ -24865,6 +24909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 01000000020000000300000004000000
 --- !u!212 &2038269456
@@ -25316,7 +25361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2074227741
 Transform:
   m_ObjectHideFlags: 0
@@ -26196,6 +26241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAnimal: 0
+  infMode: 0
   actNums: 01000000
   lvlNums: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!212 &2129922016

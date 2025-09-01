@@ -30,6 +30,7 @@ public class Gamemanager : MonoBehaviour
     }
     public void Win(int starsAquired)
     {
+        isGameStarted = false;
         //setactive win ui screen pause game
         if (LevelMenuButtonManager.currLevel == LevelSelectorManager.UnlockedLevels)
         {
@@ -41,6 +42,11 @@ public class Gamemanager : MonoBehaviour
             PlayerPrefs.SetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), starsAquired);
         }
         SceneManager.LoadScene(1);
+    }
+
+    public void Lose()
+    {
+        isGameStarted = false;
     }
 
     public void BuyAnimal(GameObject animal, Sprite sprite)
