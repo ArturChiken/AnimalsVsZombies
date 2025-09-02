@@ -9,14 +9,14 @@ public class MainMenuManager : MonoBehaviour
 
     bool nameholderIsActive = false;
     public enum MenuButtons { playAdv, playInf, shop };
-    public enum OtherButtons { tg, nameholder, options };
+    public enum OtherButtons { tg, nameholder, leaderboard, options };
     public enum CreditsButtons { back, artur, renat, dmitriy };
     public enum OptionsButtons { back, credits };
 
     [SerializeField] CanvasGroup _MainMenuCanvasGroup, _fadeCanvasGroup;
     [SerializeField] GameObject _BlurFrame, _MainMenuContainer, _OptionsContainer, _CreditsContainer, _LeaderboardFrame;
     [SerializeField] Animator _nameholderAnimator;
-    [SerializeField] int _sceneToLoadAfterPlayAdvPressed, _sceneToLoadAfterShopPressed, _sceneToLoadAfterPlayInfPressed;
+    [SerializeField] int _sceneToLoadAfterPlayAdvPressed, _sceneToLoadAfterShopPressed, _sceneToLoadAfterPlayInfPressed, _sceneToLoadAfterLeaderboardPressed;
     [SerializeField] float _fadeDuration = 1f;
 
     public void Awake()
@@ -78,7 +78,9 @@ public class MainMenuManager : MonoBehaviour
                     StartCoroutine(PlayNameholderAnimation(true));
                 }
                 break;
+            case OtherButtons.leaderboard:
 
+                break;
             case OtherButtons.tg:
                 websiteLink = "https://t.me/afterpartygames";
                 if (websiteLink != "")
@@ -198,6 +200,11 @@ public class MainMenuManager : MonoBehaviour
         StartCoroutine(TransitionScene(3));
     }
 
+    public void LeaderboardClicked()
+    {
+        StartCoroutine(TransitionScene(4));
+    }
+
     // затемнение+переход на сцену
     private IEnumerator TransitionScene(int numberOfButton)
     {
@@ -213,6 +220,9 @@ public class MainMenuManager : MonoBehaviour
                 break;
             case 3:
                 SceneManager.LoadScene(_sceneToLoadAfterShopPressed);
+                break;
+            case 4:
+                SceneManager.LoadScene(_sceneToLoadAfterLeaderboardPressed);
                 break;
         }
 

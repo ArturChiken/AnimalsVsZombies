@@ -2,10 +2,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using YG;
 
 public class Gamemanager : MonoBehaviour
 {
-    public static string coinPrefsName = "Coins_Player";
 
     public GameObject currentAnimal;
     public Sprite currentAnimalSprite;
@@ -16,7 +16,6 @@ public class Gamemanager : MonoBehaviour
 
     [SerializeField] int _sceneToLoadAfterPressedBack;
 
-    public static int currentCoinAmount;
     public int preCurrentAmount = -1;
     public TMP_Text coinDisplay;
 
@@ -25,8 +24,7 @@ public class Gamemanager : MonoBehaviour
 
     private void Start()
     {
-        currentCoinAmount = PlayerPrefs.GetInt(coinPrefsName);
-        coinDisplay.SetText(currentCoinAmount + "");
+        coinDisplay.SetText(YG2.saves.playerCoins + "");
     }
     public void Win(int starsAquired)
     {
@@ -61,10 +59,10 @@ public class Gamemanager : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, tileMask);
 
-        if (preCurrentAmount != currentCoinAmount)
+        if (preCurrentAmount != YG2.saves.playerCoins)
         {
-            preCurrentAmount = currentCoinAmount;
-            coinDisplay.SetText(currentCoinAmount + "");
+            preCurrentAmount = YG2.saves.playerCoins;
+            coinDisplay.SetText(YG2.saves.playerCoins + "");
         }
 
         foreach (Transform tile in tiles)
@@ -95,11 +93,7 @@ public class Gamemanager : MonoBehaviour
 
     public static void IncrementCoins(int value)
     {
-        currentCoinAmount += value;
+        YG2.saves.playerCoins += value;
     }
 
-    public void OnApplicationQuit()
-    {
-        PlayerPrefs.SetInt(coinPrefsName, currentCoinAmount);
-    }
 }

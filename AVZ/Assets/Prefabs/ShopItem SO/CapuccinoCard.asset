@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5c7fca3c512be4fb298877b46cdaa5, type: 3}
   m_Name: CapuccinoCard
   m_EditorClassIdentifier: 
-  name: "\u041A\u0430\u043F\u0443\u0447\u0438\u043D\u043E"
-  description: "\u0441\u043E\u043B\u043D\u044B\u0448\u043A\u043E"
-  icon: {fileID: -293961232951849327, guid: bdb494a4460688d44bce1282a0491581, type: 3}
-  cost: 1
-  isPermanent: 1
-  useCount: 0
+  itemId: cappuccino
+  displayName: "\u0411\u0430\u043B\u0435\u0440\u0438\u043D\u043E \u041A\u0430\u043F\u0443\u0447\u0438\u043D\u043E"
+  cost: 2
+  useCount: -1
+  icon: {fileID: 5793619030968854215, guid: 80beb2383b561f24c9ca5d5dfddc92e1, type: 3}
+  prefab: {fileID: 0}

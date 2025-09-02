@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using TMPro;
+using YG;
 
 public class ShopManager : MonoBehaviour
 {
@@ -14,10 +15,7 @@ public class ShopManager : MonoBehaviour
     public enum ShopContainerButtons { back, tg, shopitem };
     public enum PreviewContainerButtons { back };
 
-    public static int currentCoinAmount;
     public int preCurrentAmount = -1;
-
-    
 
     [SerializeField] CanvasGroup _fadeCanvasGroup;
     [SerializeField] GameObject _ShopContainer, _PreviewContainer;
@@ -27,8 +25,6 @@ public class ShopManager : MonoBehaviour
     public PreviewScriptableObject _activePreviewSO;
 
     public ShopItemScriptableObject _activeShopItemSOInPreview;
-
-    public AnimalCardSlot[] cardSlots;
 
     public TMP_Text coinDisplay;
 
@@ -43,16 +39,15 @@ public class ShopManager : MonoBehaviour
     public void Start()
     {
         StartCoroutine(Fade(1f, 0f));
-        currentCoinAmount = PlayerPrefs.GetInt("Coins_Player");
-        coinDisplay.SetText(currentCoinAmount + "");
+        coinDisplay.SetText(YG2.saves.playerCoins + "");
     }
 
     public void Update()
     {
-        if (preCurrentAmount != currentCoinAmount)
+        if (preCurrentAmount != YG2.saves.playerCoins)
         {
-            preCurrentAmount = currentCoinAmount;
-            coinDisplay.SetText(currentCoinAmount + "");
+            preCurrentAmount = YG2.saves.playerCoins;
+            coinDisplay.SetText(YG2.saves.playerCoins + "");
         }
     }
     public void ShopContainerButtonsClicked(ShopContainerButtons buttonClicked)
@@ -93,49 +88,46 @@ public class ShopManager : MonoBehaviour
     public void ChangePreviewSO(PreviewScriptableObject _newPreviewSO)
     {
         _activePreviewSO = _newPreviewSO;
+        PreviewCard._?.UpdateUI();
     }
 
-    public void ChangeShopItemSOInPreview(ShopItemScriptableObject _newShopItemSoInPreview)
+    public void ChangeShopItemSOInPreview(ShopItemScriptableObject _newShopItemSOInPreview)
     {
-        _activeShopItemSOInPreview = _newShopItemSoInPreview;
+        _activeShopItemSOInPreview = _newShopItemSOInPreview;
     }
 
-    public static bool BuyItem(ShopItemScriptableObject item)
+    public static bool BuyInfiniteItem(ShopItemScriptableObject item)
     {
-        if (SaveSystem.CurrentCoinAmount < item.cost || SaveSystem.IsItemUnlocked(item.itemId))
+        if (YG2.saves.playerCoins < item.cost || SaveSystem.IsItemUnlocked(item.itemId))
         {
             Debug.LogWarning("Not enough coins or already bought");
             return false;
         }
 
-        SaveSystem.CurrentCoinAmount -= item.cost;
+        YG2.saves.playerCoins -= item.cost;
         SaveSystem.UnlockItem(item.itemId);
 
-        // для ограниченных айтемов
-        if (item.useCount > 0)
-        {
-            SaveSystem.SetItemUses(item.itemId, item.useCount);
-        }
-        // для перманентных айтемов -1
-        else
-        {
-            SaveSystem.SetItemUses(item.itemId, -1);
-        }
 
         Debug.Log($"Item {item.name} purchased successfully!");
         return true;
 
     }
 
-    public void RefreshAllCards()
+    public static bool BuyCrocodilo(ShopItemScriptableObject crocodilo)
     {
-        foreach (var card in cardSlots)
+        if (YG2.saves.playerCoins < crocodilo.cost)
         {
-            card.RefreshCard();
+            Debug.LogWarning("Not enough coins or already bought");
+            return false;
         }
+        YG2.saves.playerCoins -= crocodilo.cost;
+        SaveSystem.UnlockItem(crocodilo.itemId);
+
+        YG2.saves.crocodiloUses += 1;
+
+        Debug.Log($"Item {crocodilo.name} purchased successfully!");
+        return true;
     }
-
-
 
     //переход
     private IEnumerator TransitionScene()
@@ -158,8 +150,4 @@ public class ShopManager : MonoBehaviour
         _fadeCanvasGroup.alpha = targetAlpha;
     }
 
-    public void OnApplicationQuit()
-    {
-        PlayerPrefs.SetInt("Coins_Player", currentCoinAmount);
-    }
 }

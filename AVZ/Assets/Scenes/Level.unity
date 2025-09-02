@@ -4479,10 +4479,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 0
+  itemId: 
   icon: {fileID: 1283493605}
   cardObject: {fileID: 8192852850897776819, guid: 39ce4a6d24ecf724093642bb60e889ad, type: 3}
   canvas: {fileID: 231996139}
+  cardButton: {fileID: 322979270}
 --- !u!114 &322979272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5565,10 +5566,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 0
+  itemId: 
   icon: {fileID: 510415072}
   cardObject: {fileID: 3771206677532657340, guid: 6cdf005954616a54baa0f1e6c7d38117, type: 3}
   canvas: {fileID: 231996139}
+  cardButton: {fileID: 401570887}
 --- !u!114 &401570889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7674,7 +7676,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602299498}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7744,10 +7746,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 0
+  itemId: 
   icon: {fileID: 1609567724}
   cardObject: {fileID: 8609762905330256254, guid: b4a4df44c88450c48985cec422271616, type: 3}
   canvas: {fileID: 231996139}
+  cardButton: {fileID: 602299500}
 --- !u!114 &602299502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11249,10 +11252,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 0
+  itemId: 
   icon: {fileID: 1974270144}
   cardObject: {fileID: 8948953321268572537, guid: e501f172fccce2f4aa7de42974c0283b, type: 3}
   canvas: {fileID: 231996139}
+  cardButton: {fileID: 1024694144}
 --- !u!114 &1024694146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11791,10 +11795,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 0
+  itemId: 
   icon: {fileID: 372149859}
   cardObject: {fileID: 2668573562174011178, guid: b1f173259235eb243bea9b5efb66dfe9, type: 3}
   canvas: {fileID: 231996139}
+  cardButton: {fileID: 1056758495}
 --- !u!114 &1056758497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13816,10 +13821,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 0
+  itemId: 
   icon: {fileID: 1626762167}
   cardObject: {fileID: 9052203265132674478, guid: fb2a43d5c699f2543a4c862afb99d130, type: 3}
   canvas: {fileID: 231996139}
+  cardButton: {fileID: 1244577154}
 --- !u!1 &1246198183
 GameObject:
   m_ObjectHideFlags: 0
@@ -14539,10 +14545,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 0
+  itemId: 
   icon: {fileID: 195773879}
   cardObject: {fileID: 4379672533713431726, guid: f399af849af58a3489a30ff63799cf96, type: 3}
   canvas: {fileID: 231996139}
+  cardButton: {fileID: 1290177018}
 --- !u!114 &1290177020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19845,10 +19852,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnlocked: 0
+  itemId: Assasino
   icon: {fileID: 6368613}
   cardObject: {fileID: 5333022099412958178, guid: cb30696d24947c64bbd8881b1e75f748, type: 3}
   canvas: {fileID: 231996139}
+  cardButton: {fileID: 1658775178}
 --- !u!114 &1658775180
 MonoBehaviour:
   m_ObjectHideFlags: 0
