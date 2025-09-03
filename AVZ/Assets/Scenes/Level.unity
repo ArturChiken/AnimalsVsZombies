@@ -4462,7 +4462,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 322979272}
   m_OnClick:
     m_PersistentCalls:
@@ -4479,7 +4479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 
+  itemId: camel
   icon: {fileID: 1283493605}
   cardObject: {fileID: 8192852850897776819, guid: 39ce4a6d24ecf724093642bb60e889ad, type: 3}
   canvas: {fileID: 231996139}
@@ -5549,7 +5549,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 401570889}
   m_OnClick:
     m_PersistentCalls:
@@ -5566,7 +5566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 
+  itemId: shark
   icon: {fileID: 510415072}
   cardObject: {fileID: 3771206677532657340, guid: 6cdf005954616a54baa0f1e6c7d38117, type: 3}
   canvas: {fileID: 231996139}
@@ -7729,7 +7729,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 602299502}
   m_OnClick:
     m_PersistentCalls:
@@ -7746,7 +7746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 
+  itemId: bobrito
   icon: {fileID: 1609567724}
   cardObject: {fileID: 8609762905330256254, guid: b4a4df44c88450c48985cec422271616, type: 3}
   canvas: {fileID: 231996139}
@@ -11235,7 +11235,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1024694146}
   m_OnClick:
     m_PersistentCalls:
@@ -11252,7 +11252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 
+  itemId: larila
   icon: {fileID: 1974270144}
   cardObject: {fileID: 8948953321268572537, guid: e501f172fccce2f4aa7de42974c0283b, type: 3}
   canvas: {fileID: 231996139}
@@ -11778,7 +11778,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1056758497}
   m_OnClick:
     m_PersistentCalls:
@@ -11795,7 +11795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 
+  itemId: dove
   icon: {fileID: 372149859}
   cardObject: {fileID: 2668573562174011178, guid: b1f173259235eb243bea9b5efb66dfe9, type: 3}
   canvas: {fileID: 231996139}
@@ -13804,7 +13804,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1244577152}
   m_OnClick:
     m_PersistentCalls:
@@ -13821,7 +13821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 
+  itemId: cappuccino
   icon: {fileID: 1626762167}
   cardObject: {fileID: 9052203265132674478, guid: fb2a43d5c699f2543a4c862afb99d130, type: 3}
   canvas: {fileID: 231996139}
@@ -14528,7 +14528,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1290177020}
   m_OnClick:
     m_PersistentCalls:
@@ -14545,7 +14545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 
+  itemId: sahur
   icon: {fileID: 195773879}
   cardObject: {fileID: 4379672533713431726, guid: f399af849af58a3489a30ff63799cf96, type: 3}
   canvas: {fileID: 231996139}
@@ -19835,7 +19835,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1658775180}
   m_OnClick:
     m_PersistentCalls:
@@ -19852,7 +19852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bae509b127e048b7e0aa7dcab1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: Assasino
+  itemId: assassino
   icon: {fileID: 6368613}
   cardObject: {fileID: 5333022099412958178, guid: cb30696d24947c64bbd8881b1e75f748, type: 3}
   canvas: {fileID: 231996139}

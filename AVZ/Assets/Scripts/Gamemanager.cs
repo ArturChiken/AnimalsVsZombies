@@ -28,6 +28,7 @@ public class Gamemanager : MonoBehaviour
     }
     public void Win(int starsAquired)
     {
+        YG2.SaveProgress();
         isGameStarted = false;
         //setactive win ui screen pause game
         if (LevelMenuButtonManager.currLevel == LevelSelectorManager.UnlockedLevels)
@@ -39,11 +40,16 @@ public class Gamemanager : MonoBehaviour
         {
             PlayerPrefs.SetInt("stars" + LevelMenuButtonManager.currLevel.ToString(), starsAquired);
         }
+
+        YG2.SaveProgress();
+
         SceneManager.LoadScene(1);
     }
 
     public void Lose()
     {
+        YG2.SaveProgress();
+
         isGameStarted = false;
     }
 

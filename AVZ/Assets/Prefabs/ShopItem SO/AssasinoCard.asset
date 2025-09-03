@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5c7fca3c512be4fb298877b46cdaa5, type: 3}
   m_Name: AssasinoCard
   m_EditorClassIdentifier: 
-  itemId: assasino
+  itemId: assassino
   displayName: "\u041A\u0430\u043F\u0443\u0447\u0438\u043D\u043E \u0410\u0441\u0441\u0430\u0441\u0438\u043D\u043E"
   cost: 5
   useCount: -1

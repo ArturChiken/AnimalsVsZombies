@@ -79,7 +79,9 @@ public class MainMenuManager : MonoBehaviour
                 }
                 break;
             case OtherButtons.leaderboard:
-
+                {
+                    LeaderboardClicked();
+                }
                 break;
             case OtherButtons.tg:
                 websiteLink = "https://t.me/afterpartygames";

@@ -20,8 +20,8 @@ public class AnimalCardSlot : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<Button>().onClick.AddListener(AddPrefabToLayout);
         gameManager = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
+        InitializeCard();
     }
 
     private void InitializeCard()
@@ -33,24 +33,25 @@ public class AnimalCardSlot : MonoBehaviour
             icon.color = new Color(0.24f, 0.24f, 0.24f);
             GetComponent<Image>().color = new Color(0.16f, 0.16f, 0.16f);
             cardButton.interactable = false;
-            return;
+            Debug.Log("нет");
         }
-
-        cardButton.interactable = true;
-        GetComponent<Button>().onClick.AddListener(AddPrefabToLayout);
-
+        else
+        {
+            cardButton.interactable = true;
+            cardButton.onClick.AddListener(AddPrefabToLayout);
+            Debug.Log("да");
+        }
     }
     public void AddPrefabToLayout()
     {
 
-        if (!isUsed)
+        if ((!isUsed) && gameManager.cardAmount < 8)
         {
-            // Для предметов с ограниченным использованием
-
             currentCardInstance = Instantiate(cardObject, canvas);
             LayoutRebuilder.ForceRebuildLayoutImmediate(canvas as RectTransform);
             gameManager.cardAmount++;
             isUsed = true;
+            Debug.Log("ты нажал");
         }
         else
         {

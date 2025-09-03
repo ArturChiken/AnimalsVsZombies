@@ -109,6 +109,7 @@ public class ShopManager : MonoBehaviour
 
 
         Debug.Log($"Item {item.name} purchased successfully!");
+        YG2.SaveProgress();
         return true;
 
     }
@@ -126,6 +127,7 @@ public class ShopManager : MonoBehaviour
         YG2.saves.crocodiloUses += 1;
 
         Debug.Log($"Item {crocodilo.name} purchased successfully!");
+        YG2.SaveProgress();
         return true;
     }
 
