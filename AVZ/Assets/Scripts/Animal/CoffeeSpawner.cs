@@ -6,7 +6,7 @@ public class CoffeeSpawner : MonoBehaviour
     public GameObject coffeeObject;
     private Gamemanager gameManager;
 
-    private bool isGameStarted = true;
+    private bool isGameStarted;
 
     private void Start()
     {
@@ -15,9 +15,9 @@ public class CoffeeSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (isGameStarted && gameManager.isGameStarted)
+        if (!isGameStarted && gameManager.isGameStarted)
         {
-            isGameStarted = false;
+            isGameStarted = true;
             SpawnCoffee();
         }
     }

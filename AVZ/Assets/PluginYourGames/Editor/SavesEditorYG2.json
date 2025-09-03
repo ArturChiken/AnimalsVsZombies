@@ -1,0 +1,17 @@
+{
+    "intExample": 5,
+    "strExample": "Hello!",
+    "boolExample": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "idSave": 3,
+    "unlockedShopItems": "assasino,cappuccino,assassino",
+    "unlockedAchievements": "",
+    "playerCoins": 38,
+    "crocodiloUses": 0,
+    "soundValue": 0,
+    "score": 0.0
+}

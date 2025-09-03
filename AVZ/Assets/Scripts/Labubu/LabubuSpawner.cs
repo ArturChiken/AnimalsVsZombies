@@ -16,7 +16,7 @@ public class LabubuSpawner : MonoBehaviour
     public int labubuSpawned;
     public int labubuDead;
     private bool willWin = true;
-    private bool isGameStarted = true;
+    private bool isGameStarted;
 
     private void Start()
     {
@@ -46,9 +46,9 @@ public class LabubuSpawner : MonoBehaviour
         progressBar.maxValue = labubuMax;
         progressBar.value = labubuDead;
 
-        if (isGameStarted && gameManager.isGameStarted)
+        if (!isGameStarted && gameManager.isGameStarted)
         {
-            isGameStarted = false;
+            isGameStarted = true;
             StartCoroutine(SpawnLabubuDelay());
         }
 
