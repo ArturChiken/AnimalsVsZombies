@@ -5763,7 +5763,7 @@ MonoBehaviour:
   _nameholderAnimator: {fileID: 6879282560751077340}
   _sceneToLoadAfterPlayAdvPressed: 1
   _sceneToLoadAfterShopPressed: 3
-  _sceneToLoadAfterPlayInfPressed: 2
+  _sceneToLoadAfterPlayInfPressed: 5
   _sceneToLoadAfterLeaderboardPressed: 4
   _fadeDuration: 1
 --- !u!4 &1761810916

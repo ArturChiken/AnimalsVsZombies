@@ -20,7 +20,7 @@ public class LevelSelectorManager : MonoBehaviour
     public Sprite goldenStarSprite;
 
     [SerializeField] CanvasGroup _fadeCanvasGroup, _ActContainerButtons;
-    [SerializeField] GameObject _ActContainer, _LevelsContainer, _DiffContainer;
+    [SerializeField] GameObject _ActContainer, _LevelsContainer, _DiffContainer, _Act1Levels, _Act2Levels;
     [SerializeField] Animator _Act1Animation, _Act2Animation, _Act3Animation;
     [SerializeField] int _sceneToLoadAfterPressedBack, _sceneToLoadAfterPressedLvl;
     [SerializeField] float _fadeDuration = 1f;
@@ -67,8 +67,14 @@ public class LevelSelectorManager : MonoBehaviour
             case ActContainerButtons.fstAct:
                 _ActContainer.SetActive(false);
                 _LevelsContainer.SetActive(true);
+                _Act1Levels.SetActive(true);
+                _Act2Levels.SetActive(false);
                 break;
             case ActContainerButtons.sndAct:
+                _ActContainer.SetActive(false);
+                _LevelsContainer.SetActive(true);
+                _Act2Levels.SetActive(true);
+                _Act1Levels.SetActive(false);
                 break;
             case ActContainerButtons.trdAct:
                 break;
