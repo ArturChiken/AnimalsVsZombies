@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0aeccbde8b35ca64fa8b889e8720b7a0
+guid: 7c099b7ea0db77f4db04f4cb0e3c14ae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5715477236492955163
-    second: background with front_0
+      213: 8753759015572432028
+    second: Speechbubble_0006_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background with front_0
+      name: Speechbubble_0006_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 14
+        y: 32
+        width: 228
+        height: 186
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b1e6ef2c344715f40800000000000000
-      internalID: 5715477236492955163
+      spriteID: c94619cf1799b7970800000000000000
+      internalID: 8753759015572432028
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      background with front_0: 5715477236492955163
+      Speechbubble_0006_0: 8753759015572432028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
