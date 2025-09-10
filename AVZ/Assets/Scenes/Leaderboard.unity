@@ -520,26 +520,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 802015833}
-  - component: {fileID: 802015832}
+  - component: {fileID: 802015834}
   m_Layer: 0
-  m_Name: UpdateLB
+  m_Name: Adv
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &802015832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 802015831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad86cc07db7f9a241957e12b12e9b771, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &802015833
 Transform:
   m_ObjectHideFlags: 0
@@ -555,6 +543,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &802015834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802015831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1153c8b543114418e62b7e3cbb6084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1197556956
 GameObject:
   m_ObjectHideFlags: 0

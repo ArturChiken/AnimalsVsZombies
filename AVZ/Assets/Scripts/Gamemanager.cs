@@ -26,6 +26,7 @@ public class Gamemanager : MonoBehaviour
     public int cardAmount;
     public bool isGameStarted;
     public bool isGamePaused;
+    private bool _canRevive = true;
 
     [SerializeField] CanvasGroup _fadeCanvasGroup;
     [SerializeField] GameObject _pauseScreen, _winScreen, _loseScreen, _blurFrameInGameGO;
@@ -210,6 +211,11 @@ public class Gamemanager : MonoBehaviour
             case LoseScreenContainer.restart:
                 StartCoroutine(TransitionScene(1));
                 break;
+                /*
+            case LoseScreenContainer.resume;
+                StartCoroutine(TransitionScene(2));
+                break;
+                */
         }
     }
 
@@ -225,7 +231,18 @@ public class Gamemanager : MonoBehaviour
             case 1:
                 SceneManager.LoadScene(_sceneToLoadAfterPressedRestartAndNextLvl);
                 break;
-
+                /*
+            case 2:
+                YG2.RewardedAdvShow("extraLife", () =>
+                {
+                    if (_canRevive)
+                    {
+                        _canRevive = false;
+                        //revive
+                    }
+                });
+                break;
+                */
         }
     }
 
@@ -239,7 +256,7 @@ public class Gamemanager : MonoBehaviour
             _fadeCanvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / _fadeDuration);
             yield return null;
         }
-
+        
         _fadeCanvasGroup.alpha = targetAlpha;
     }
 
@@ -248,6 +265,7 @@ public class Gamemanager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         _blurFrameInGameGO.SetActive(true);
         _winScreen.SetActive(true);
+        YG2.InterstitialAdvShow();
     }
 
 }
