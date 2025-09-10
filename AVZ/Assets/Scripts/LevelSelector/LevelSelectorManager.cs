@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using JetBrains.Annotations;
 using System.Drawing;
+using YG;
 
 public class LevelSelectorManager : MonoBehaviour
 {
@@ -39,13 +40,17 @@ public class LevelSelectorManager : MonoBehaviour
         _ActContainer.SetActive(true);
         _LevelsContainer.SetActive(false);
         _DiffContainer.SetActive(false);
-        UnlockedLevels = PlayerPrefs.GetInt("UnlockedLevels", 1);
+        UnlockedLevels = YG2.saves.unlockedLevels;
         for (int i = 1; i < levelObjects.Length + 1; i++)
         {
             if (UnlockedLevels >= i)
             {
                 levelObjects[i].levelButton.interactable = true;
-                int stars = PlayerPrefs.GetInt("stars" + i.ToString(), 0);
+                foreach(var starwalker in YG2.saves.stars)
+                {
+                    Debug.Log(starwalker);
+                }
+                int stars = YG2.saves.stars[i];
                 for (int j = 0; j < stars; j++)
                 {
                     levelObjects[i].stars[j].sprite = goldenStarSprite;
