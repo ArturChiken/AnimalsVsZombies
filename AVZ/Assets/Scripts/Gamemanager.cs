@@ -11,7 +11,7 @@ public class Gamemanager : MonoBehaviour
 
     public enum PauseScreenContainer { pause, mainmenu, restart};
     public enum WinScreenContainer { mainmenu, nextlvl };
-    public enum LoseScreenContainer { mainmenu, restart };
+    public enum LoseScreenContainer { mainmenu, restart, revive };
 
     public GameObject currentAnimal;
     public Sprite currentAnimalSprite;
@@ -206,17 +206,40 @@ public class Gamemanager : MonoBehaviour
         switch (buttonClicked)
         {
             case LoseScreenContainer.mainmenu:
+                Time.timeScale = 1;
                 StartCoroutine(TransitionScene(0));
                 break;
             case LoseScreenContainer.restart:
+                Time.timeScale = 1;
                 StartCoroutine(TransitionScene(1));
                 break;
-                /*
-            case LoseScreenContainer.resume;
-                StartCoroutine(TransitionScene(2));
-                break;
-                */
+            case LoseScreenContainer.revive:
+                if (_canRevive)
+                {
+                    _canRevive = false;
+                    YG2.RewardedAdvShow("extraLife");
+                    isGameStarted = false;
+                    YG2.SaveProgress();
+                    _pauseButton.SetActive(true);
+                    _blurFrameInGameGO.SetActive(false);
+                    _loseScreen.SetActive(false);
+                    Time.timeScale = 1;
+                    Invoke("RestartAdv", 100f);
+                }
+                else
+                {
+                    CancelInvoke("RestartAdv");
+                    _canRevive = false;
+                    Debug.Log("You can't be revived");
+                }
+                    break;
         }
+    }
+
+    public void RestartAdv()
+    {
+        Debug.Log("now You can be revived");
+        _canRevive = true;
     }
 
     private IEnumerator TransitionScene(int numberOfButton)
@@ -231,18 +254,6 @@ public class Gamemanager : MonoBehaviour
             case 1:
                 SceneManager.LoadScene(_sceneToLoadAfterPressedRestartAndNextLvl);
                 break;
-                /*
-            case 2:
-                YG2.RewardedAdvShow("extraLife", () =>
-                {
-                    if (_canRevive)
-                    {
-                        _canRevive = false;
-                        //revive
-                    }
-                });
-                break;
-                */
         }
     }
 

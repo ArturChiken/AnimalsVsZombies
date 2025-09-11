@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class Lose : MonoBehaviour
 {
-    public Animator deathScreen;
     private Gamemanager gameManager;
     public bool isGameFinish;
 
@@ -16,14 +15,8 @@ public class Lose : MonoBehaviour
     {
         if (collision.gameObject.layer == 7)
         {
-            Time.timeScale = 0;
-            GameLose();
+            isGameFinish = true;
+            gameManager.Lose();
         }
-    }
-
-    void GameLose()
-    {
-        isGameFinish = true;
-        gameManager.Lose();
     }
 }
