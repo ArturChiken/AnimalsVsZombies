@@ -67,6 +67,7 @@ public class LevelSelectorManager : MonoBehaviour
         switch (buttonClicked)
         {
             case ActContainerButtons.back:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 StartCoroutine(TransitionScene(0));
                 break;
             case ActContainerButtons.fstAct:
@@ -84,6 +85,7 @@ public class LevelSelectorManager : MonoBehaviour
             case ActContainerButtons.trdAct:
                 break;
             case ActContainerButtons.right:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 switch (whatActRN)
                 {
                     case 1:
@@ -107,6 +109,7 @@ public class LevelSelectorManager : MonoBehaviour
                 }
                 break;
             case ActContainerButtons.left:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 switch (whatActRN)
                 {
                     case 1:
@@ -138,6 +141,7 @@ public class LevelSelectorManager : MonoBehaviour
         switch (buttonClicked)
         {
             case LevelContainerButtons.back:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 _LevelsContainer.SetActive(false);
                 _ActContainer.SetActive(true);
                 break;
@@ -163,6 +167,7 @@ public class LevelSelectorManager : MonoBehaviour
                 StartCoroutine(TransitionScene(1));
                 break;
             case DiffContainerButtons.back:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 _DiffContainer.SetActive(false);
                 _LevelsContainer.SetActive(true);
                 break;
