@@ -4,7 +4,7 @@ using UnityEngine;
 public class KillBoxInLevel : MonoBehaviour
 {
     private Gamemanager gameManager;
-    public GameObject bomb;
+    public GameObject kill;
     private bool isNeedRevive = false;
 
     private void Start()
@@ -32,6 +32,6 @@ public class KillBoxInLevel : MonoBehaviour
 
     private void DropBomb(Collider2D collision)
     {
-        GameObject myBomb = Instantiate(bomb, collision.GetComponent<Labubu>().transform.position, Quaternion.identity);
+        GameObject myKill = Instantiate(kill, collision.GetComponent<Labubu>().transform.position, Quaternion.identity);
     }
 }
