@@ -1,6 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
+using YG;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -42,12 +43,15 @@ public class MainMenuManager : MonoBehaviour
         switch (buttonClicked)
         {
             case MenuButtons.playAdv:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 PlayAdvClicked();
                 break;
             case MenuButtons.playInf:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 PlayInfClicked();
                 break;
             case MenuButtons.shop:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 ShopClicked();
                 break;
             default:
@@ -63,6 +67,7 @@ public class MainMenuManager : MonoBehaviour
         switch (buttonClicked)
         {
             case OtherButtons.options:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 _MainMenuCanvasGroup.interactable = false;
                 _MainMenuCanvasGroup.blocksRaycasts = false;
                 _OptionsContainer.SetActive(true);
@@ -80,6 +85,7 @@ public class MainMenuManager : MonoBehaviour
                 break;
             case OtherButtons.leaderboard:
                 {
+                    if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                     LeaderboardClicked();
                 }
                 break;

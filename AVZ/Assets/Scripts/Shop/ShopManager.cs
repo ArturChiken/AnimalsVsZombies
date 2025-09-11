@@ -60,6 +60,7 @@ public class ShopManager : MonoBehaviour
                 _PreviewContainer.SetActive(true);
                 break;
             case ShopContainerButtons.back:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 StartCoroutine(TransitionScene());
                 break;
             case ShopContainerButtons.tg:
@@ -101,6 +102,7 @@ public class ShopManager : MonoBehaviour
         if (YG2.saves.playerCoins < item.cost || SaveSystem.IsItemUnlocked(item.itemId))
         {
             Debug.LogWarning("Not enough coins or already bought");
+            if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
             return false;
         }
 
@@ -110,6 +112,7 @@ public class ShopManager : MonoBehaviour
 
         Debug.Log($"Item {item.name} purchased successfully!");
         YG2.SaveProgress();
+        if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
         return true;
 
     }
@@ -119,6 +122,7 @@ public class ShopManager : MonoBehaviour
         if (YG2.saves.playerCoins < crocodilo.cost)
         {
             Debug.LogWarning("Not enough coins or already bought");
+            if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
             return false;
         }
         YG2.saves.playerCoins -= crocodilo.cost;
@@ -128,6 +132,7 @@ public class ShopManager : MonoBehaviour
 
         Debug.Log($"Item {crocodilo.name} purchased successfully!");
         YG2.SaveProgress();
+        if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
         return true;
     }
 
