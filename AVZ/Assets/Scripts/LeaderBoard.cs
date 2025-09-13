@@ -19,7 +19,7 @@ public class LeaderBoard : MonoBehaviour
 
     private void Update()
     {
-        timer.text = time.ToString("F3");
+        timer.text = time.ToString("F2");
 
         if (isGameStarted && !gameManager.isGameStarted && lose.isGameFinish) isGameStarted = false;
 
