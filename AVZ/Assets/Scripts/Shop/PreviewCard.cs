@@ -19,8 +19,21 @@ public class PreviewCard : MonoBehaviour
             Debug.LogError("There are more than 1 PreviewCard in the scene");
     }
 
+    private bool IsValid()
+    {
+        if (this == null) return false;
+        if (_itemIcon == null) return false;
+        if (_itemLabel == null) return false;
+        if (_itemCost == null) return false;
+        if (_itemDescription == null) return false;
+
+        return true;
+    }
+
     public void UpdateUI()
     {
+        if (!IsValid()) return;
+
         _itemIcon.sprite = ShopManager._._activePreviewSO.icon;
         _itemLabel.text = ShopManager._._activePreviewSO.displayName;
         _itemCost.text = $"{ShopManager._._activePreviewSO.cost}";

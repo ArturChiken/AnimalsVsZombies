@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using JetBrains.Annotations;
 using System.Drawing;
+using YG;
 
 public class LevelSelectorManager : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class LevelSelectorManager : MonoBehaviour
     public enum OtherButtons { tg };
 
     public static int UnlockedLevels;
+    public static int UnlockedActs;
     public LevelObject[] levelObjects;
+    public ActObject[] actObjects;
     public Sprite goldenStarSprite;
 
     [SerializeField] CanvasGroup _fadeCanvasGroup, _ActContainerButtons;
@@ -39,13 +42,21 @@ public class LevelSelectorManager : MonoBehaviour
         _ActContainer.SetActive(true);
         _LevelsContainer.SetActive(false);
         _DiffContainer.SetActive(false);
-        UnlockedLevels = PlayerPrefs.GetInt("UnlockedLevels", 1);
+        UnlockedLevels = YG2.saves.unlockedLevels;
+        UnlockedActs = YG2.saves.unlockedActs;
+        for (int k = 1; k < actObjects.Length + 1; k++)
+        {
+            if (UnlockedActs >= k)
+            {
+                actObjects[k].actButton.interactable = true;
+            }
+        }
         for (int i = 1; i < levelObjects.Length + 1; i++)
         {
             if (UnlockedLevels >= i)
             {
                 levelObjects[i].levelButton.interactable = true;
-                int stars = PlayerPrefs.GetInt("stars" + i.ToString(), 0);
+                int stars = YG2.saves.stars[i];
                 for (int j = 0; j < stars; j++)
                 {
                     levelObjects[i].stars[j].sprite = goldenStarSprite;
@@ -62,6 +73,7 @@ public class LevelSelectorManager : MonoBehaviour
         switch (buttonClicked)
         {
             case ActContainerButtons.back:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 StartCoroutine(TransitionScene(0));
                 break;
             case ActContainerButtons.fstAct:
@@ -79,6 +91,7 @@ public class LevelSelectorManager : MonoBehaviour
             case ActContainerButtons.trdAct:
                 break;
             case ActContainerButtons.right:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 switch (whatActRN)
                 {
                     case 1:
@@ -102,6 +115,7 @@ public class LevelSelectorManager : MonoBehaviour
                 }
                 break;
             case ActContainerButtons.left:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 switch (whatActRN)
                 {
                     case 1:
@@ -133,6 +147,7 @@ public class LevelSelectorManager : MonoBehaviour
         switch (buttonClicked)
         {
             case LevelContainerButtons.back:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 _LevelsContainer.SetActive(false);
                 _ActContainer.SetActive(true);
                 break;
@@ -158,6 +173,7 @@ public class LevelSelectorManager : MonoBehaviour
                 StartCoroutine(TransitionScene(1));
                 break;
             case DiffContainerButtons.back:
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 _DiffContainer.SetActive(false);
                 _LevelsContainer.SetActive(true);
                 break;

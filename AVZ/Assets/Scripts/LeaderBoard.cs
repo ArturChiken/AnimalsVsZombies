@@ -39,6 +39,6 @@ public class LeaderBoard : MonoBehaviour
     private void LeaderBoardScoreSave()
     {
         scoreWrited = true;
-        if (score > YG2.saves.score) YG2.SetLBTimeConvert("InfinityModeLB", score);
+        if (score > YG2.saves.score) YG2.SetLBTimeConvert("EndlessMode", score);
     }
 }

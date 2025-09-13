@@ -7,11 +7,20 @@
         false,
         false
     ],
-    "idSave": 3,
-    "unlockedShopItems": "assasino,cappuccino,assassino",
+    "idSave": 224,
+    "unlockedShopItems": "cappuccino,assassino,larila",
     "unlockedAchievements": "",
-    "playerCoins": 38,
+    "unlockedLevels": 3,
+    "unlockedActs": 1,
+    "playerCoins": 33,
     "crocodiloUses": 0,
     "soundValue": 0,
-    "score": 0.0
+    "playerStars": 5,
+    "score": 0.0,
+    "stars": [
+        0,
+        3,
+        2,
+        0
+    ]
 }

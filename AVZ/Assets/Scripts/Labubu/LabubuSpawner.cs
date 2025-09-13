@@ -54,7 +54,7 @@ public class LabubuSpawner : MonoBehaviour
 
         if (labubuDead >= labubuMax)
         {
-            if(willWin)
+            if (willWin)
             {
                 willWin = false;
                 GameObject.Find("Gamemanager").GetComponent<Gamemanager>().Win(DiffMenuButtonsManager.currDiff);
