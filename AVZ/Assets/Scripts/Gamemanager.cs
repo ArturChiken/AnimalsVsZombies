@@ -34,6 +34,8 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] float _fadeDuration = 1f;
     public GameObject _speechBubbleCS, _pauseButton, blurFrameInAnimalCardSelectorGO;
 
+    private Lose lose;
+
     public void Awake()
     {
         if (_ == null)
@@ -49,6 +51,8 @@ public class Gamemanager : MonoBehaviour
         _pauseButton.SetActive(false);
         _blurFrameInGameGO.SetActive(false);
         blurFrameInAnimalCardSelectorGO.SetActive(true);
+
+        lose = GameObject.Find("LoseTrigger").GetComponent<Lose>();
     }
     public void Win(int starsAquired)
     {
@@ -71,7 +75,6 @@ public class Gamemanager : MonoBehaviour
         }
         _pauseButton.SetActive(false);
         YG2.SaveProgress();
-
     }
 
     public void Lose()
@@ -221,7 +224,8 @@ public class Gamemanager : MonoBehaviour
                 {
                     _canRevive = false;
                     YG2.RewardedAdvShow("extraLife");
-                    isGameStarted = false;
+                    isGameStarted = true;
+                    lose.isGameFinish = false;
                     YG2.SaveProgress();
                     _pauseButton.SetActive(true);
                     _blurFrameInGameGO.SetActive(false);
@@ -279,8 +283,7 @@ public class Gamemanager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         _blurFrameInGameGO.SetActive(true);
         _winScreen.SetActive(true);
-        YG2.InterstitialAdvShow();
+        if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
         Time.timeScale = 0;
     }
-
 }

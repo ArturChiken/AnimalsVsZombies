@@ -4,34 +4,41 @@ using UnityEngine;
 public class KillBoxInLevel : MonoBehaviour
 {
     private Gamemanager gameManager;
-    public GameObject kill;
+    private Lose lose;
+    public GameObject effect;
     private bool isNeedRevive = false;
 
     private void Start()
     {
         gameManager = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
+        lose = GameObject.Find("LoseTrigger").GetComponent<Lose>();
     }
 
     private void Update()
     {
-        if (!gameManager.isGameStarted)
+        if (!gameManager.isGameStarted && lose.isGameFinish)
         {
             isNeedRevive = true;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (isNeedRevive)
+        if (isNeedRevive && collision.gameObject.layer == 7)
         {
-            isNeedRevive = false;
-            DropBomb(collision);
+            Invoke("KillTimer", 1f);
             collision.GetComponent<Labubu>().LabubuGetHit(999);
+            BlowLabubu(collision);
         }
     }
 
-    private void DropBomb(Collider2D collision)
+    private void BlowLabubu(Collider2D collision)
     {
-        GameObject myKill = Instantiate(kill, collision.GetComponent<Labubu>().transform.position, Quaternion.identity);
+        _ = Instantiate(effect, collision.GetComponent<Labubu>().transform.position, Quaternion.identity);
+    }
+
+    public void KillTimer()
+    {
+        isNeedRevive = false;
     }
 }

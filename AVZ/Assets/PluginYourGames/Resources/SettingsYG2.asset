@@ -25,7 +25,7 @@ MonoBehaviour:
     color: {r: 0, g: 1, b: 0, a: 0.5}
   InterstitialAdv:
     showFirstAdv: 0
-    interAdvInterval: 0
+    interAdvInterval: 30
     postponeCallByFail: 1
     postponeCallTimer: 10
     labelAdvSimLabel: 0
