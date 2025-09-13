@@ -18936,7 +18936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f415f7cb710d3640b37750890567d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blow: {fileID: 882373431499595884, guid: 20a3acc6dee606c48ace7815192e0ea9, type: 3}
+  effect: {fileID: 882373431499595884, guid: 20a3acc6dee606c48ace7815192e0ea9, type: 3}
 --- !u!212 &737625567
 SpriteRenderer:
   m_ObjectHideFlags: 0

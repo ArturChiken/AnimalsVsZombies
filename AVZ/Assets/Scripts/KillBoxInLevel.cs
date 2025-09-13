@@ -5,7 +5,7 @@ public class KillBoxInLevel : MonoBehaviour
 {
     private Gamemanager gameManager;
     private Lose lose;
-    public GameObject blow;
+    public GameObject effect;
     private bool isNeedRevive = false;
 
     private void Start()
@@ -34,7 +34,7 @@ public class KillBoxInLevel : MonoBehaviour
 
     private void BlowLabubu(Collider2D collision)
     {
-        GameObject myBlow = Instantiate(blow, collision.GetComponent<Labubu>().transform.position, Quaternion.identity);
+        _ = Instantiate(effect, collision.GetComponent<Labubu>().transform.position, Quaternion.identity);
     }
 
     public void KillTimer()
