@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using YG;
 
@@ -5,6 +6,7 @@ public class LeaderBoard : MonoBehaviour
 {
     private Gamemanager gameManager;
     private Lose lose;
+    public TextMeshProUGUI timer;
     private bool isGameStarted;
     private float score;
     private float time = 0f;
@@ -17,7 +19,9 @@ public class LeaderBoard : MonoBehaviour
 
     private void Update()
     {
-        if(isGameStarted && !gameManager.isGameStarted && lose.isGameFinish) isGameStarted = false;
+        timer.text = time.ToString("F3");
+
+        if (isGameStarted && !gameManager.isGameStarted && lose.isGameFinish) isGameStarted = false;
 
         if (!isGameStarted && gameManager.isGameStarted) isGameStarted = true;
 
