@@ -10,8 +10,6 @@ public class WinScreen : MonoBehaviour
 
     private int _existActs = 2;
 
-    public int unlockedActs = YG2.saves.unlockedActs;
-
     private void Awake()
     {
 
@@ -22,10 +20,10 @@ public class WinScreen : MonoBehaviour
                 _nextLvlButton.interactable = false;
                 _woodFrame.SetActive(true);
             }
-            if (ActMenuButtonsManager.currAct == unlockedActs)
+            if (ActMenuButtonsManager.currAct == LevelSelectorManager.UnlockedActs)
             {
-                unlockedActs++;
-                YG2.saves.unlockedActs = unlockedActs;
+                LevelSelectorManager.UnlockedActs++;
+                YG2.saves.unlockedActs = LevelSelectorManager.UnlockedActs;
                 YG2.SaveProgress();
             }
         }

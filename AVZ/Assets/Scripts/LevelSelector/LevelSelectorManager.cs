@@ -17,7 +17,9 @@ public class LevelSelectorManager : MonoBehaviour
     public enum OtherButtons { tg };
 
     public static int UnlockedLevels;
+    public static int UnlockedActs;
     public LevelObject[] levelObjects;
+    public ActObject[] actObjects;
     public Sprite goldenStarSprite;
 
     [SerializeField] CanvasGroup _fadeCanvasGroup, _ActContainerButtons;
@@ -41,6 +43,14 @@ public class LevelSelectorManager : MonoBehaviour
         _LevelsContainer.SetActive(false);
         _DiffContainer.SetActive(false);
         UnlockedLevels = YG2.saves.unlockedLevels;
+        UnlockedActs = YG2.saves.unlockedActs;
+        for (int k = 1; k < actObjects.Length + 1; k++)
+        {
+            if (UnlockedActs >= k)
+            {
+                actObjects[k].actButton.interactable = true;
+            }
+        }
         for (int i = 1; i < levelObjects.Length + 1; i++)
         {
             if (UnlockedLevels >= i)

@@ -71,7 +71,7 @@ public class Gamemanager : MonoBehaviour
         }
         _pauseButton.SetActive(false);
         YG2.SaveProgress();
-        Time.timeScale = 0;
+
     }
 
     public void Lose()
@@ -280,6 +280,7 @@ public class Gamemanager : MonoBehaviour
         _blurFrameInGameGO.SetActive(true);
         _winScreen.SetActive(true);
         YG2.InterstitialAdvShow();
+        Time.timeScale = 0;
     }
 
 }
