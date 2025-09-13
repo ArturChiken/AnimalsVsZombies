@@ -1,19 +1,33 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class WinScreen : MonoBehaviour
 {
     [SerializeField] Button _nextLvlButton;
     [SerializeField] GameObject _woodFrame;
 
-    private LevelSwitcher _levelSwitcherInstance;
+    private int _existActs = 2;
+
+    public int unlockedActs = YG2.saves.unlockedActs;
 
     private void Awake()
     {
+
         if (LevelMenuButtonManager.currLevel % 10 == 0)
         {
-            _nextLvlButton.interactable = false;
-            _woodFrame.SetActive(true);
+            if (ActMenuButtonsManager.currAct < _existActs)
+            {
+                _nextLvlButton.interactable = false;
+                _woodFrame.SetActive(true);
+            }
+            if (ActMenuButtonsManager.currAct == unlockedActs)
+            {
+                unlockedActs++;
+                YG2.saves.unlockedActs = unlockedActs;
+                YG2.SaveProgress();
+            }
         }
         else
         {

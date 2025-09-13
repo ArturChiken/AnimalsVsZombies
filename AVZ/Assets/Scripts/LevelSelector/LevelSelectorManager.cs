@@ -46,10 +46,6 @@ public class LevelSelectorManager : MonoBehaviour
             if (UnlockedLevels >= i)
             {
                 levelObjects[i].levelButton.interactable = true;
-                foreach(var starwalker in YG2.saves.stars)
-                {
-                    Debug.Log(starwalker);
-                }
                 int stars = YG2.saves.stars[i];
                 for (int j = 0; j < stars; j++)
                 {

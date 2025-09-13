@@ -71,6 +71,7 @@ public class Gamemanager : MonoBehaviour
         }
         _pauseButton.SetActive(false);
         YG2.SaveProgress();
+        Time.timeScale = 0;
     }
 
     public void Lose()
@@ -192,9 +193,11 @@ public class Gamemanager : MonoBehaviour
         switch (buttonClicked)
         {
             case WinScreenContainer.mainmenu:
+                Time.timeScale = 1;
                 StartCoroutine(TransitionScene(0));
                 break;
             case WinScreenContainer.nextlvl:
+                Time.timeScale = 1;
                 LevelMenuButtonManager.currLevel += 1;
                 StartCoroutine(TransitionScene(1));
                 break;

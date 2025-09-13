@@ -10,7 +10,8 @@ namespace YG
         public string unlockedShopItems = "";
         public string unlockedAchievements = "";
         public int unlockedLevels = 1;
-        public int playerCoins = 50;
+        public int unlockedActs = 1;
+        public int playerCoins = 5;
         public int crocodiloUses = 0;
         public int soundValue = 0;
         public int playerStars = 0;

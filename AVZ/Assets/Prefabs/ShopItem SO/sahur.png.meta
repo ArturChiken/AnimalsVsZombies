@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 761a40b89799de147a4feb32156544b2
+guid: cf206b6b02454964ca3688e326dd86c6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7857572105703031903
-    second: back_coloseo_0
+      213: 1271414341304111292
+    second: sahur_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 2
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,7 +101,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: back_coloseo_0
+      name: sahur_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 23
         y: 0
-        width: 1920
-        height: 1080
+        width: 58
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f54827de234bb0d60800000000000000
-      internalID: 7857572105703031903
+      spriteID: cb0d4cf6b98f4a110800000000000000
+      internalID: 1271414341304111292
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      back_coloseo_0: 7857572105703031903
+      sahur_0: 1271414341304111292
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

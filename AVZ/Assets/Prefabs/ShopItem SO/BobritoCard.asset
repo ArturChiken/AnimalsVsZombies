@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d5c7fca3c512be4fb298877b46cdaa5, type: 3}
-  m_Name: CapuccinoCard
+  m_Name: BobritoCard
   m_EditorClassIdentifier: 
-  itemId: cappuccino
-  displayName: "\u0411\u0430\u043B\u0435\u0440\u0438\u043D\u043E \u041A\u0430\u043F\u0443\u0447\u0438\u043D\u043E"
-  cost: 10
+  itemId: bobritto
+  displayName: "\u0411\u043E\u0431\u0440\u0438\u0442\u0442\u043E \u0411\u0430\u043D\u0434\u0438\u0442\u043E"
+  cost: 250
   useCount: -1
-  icon: {fileID: 5793619030968854215, guid: 80beb2383b561f24c9ca5d5dfddc92e1, type: 3}
+  icon: {fileID: -754661633734266863, guid: f9dc077db0072b34c840b5ee4a49ad8e, type: 3}
   prefab: {fileID: 5830543898693129935, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
