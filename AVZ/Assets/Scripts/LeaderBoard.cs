@@ -40,5 +40,6 @@ public class LeaderBoard : MonoBehaviour
             YG2.saves.score = score;
             YG2.SetLBTimeConvert("EndlessMode", score);
         }
+        YG2.SaveProgress();
     }
 }
