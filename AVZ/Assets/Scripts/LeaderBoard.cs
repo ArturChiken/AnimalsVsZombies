@@ -4,41 +4,41 @@ using YG;
 public class LeaderBoard : MonoBehaviour
 {
     private Gamemanager gameManager;
-    private Lose loseTrigger;
+    private Lose lose;
     private bool isGameStarted;
     private float score;
     private float time = 0f;
-    private bool scoreWrited;
 
     private void Start()
     {
         gameManager = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
-        loseTrigger = GameObject.Find("LoseTrigger").GetComponent<Lose>();
+        lose = GameObject.Find("LoseTrigger").GetComponent<Lose>();
     }
 
     private void Update()
     {
-        if (isGameStarted && gameManager.isGameStarted)
+        if(isGameStarted && !gameManager.isGameStarted && lose.isGameFinish) isGameStarted = false;
+
+        if (!isGameStarted && gameManager.isGameStarted) isGameStarted = true;
+
+        if (isGameStarted && gameManager.isGameStarted && !lose.isGameFinish)
         {
             time += Time.deltaTime;
         }
-        if (!isGameStarted && gameManager.isGameStarted)
-        {
-            isGameStarted = true;
-        }
-        if (!gameManager.isGameStarted && loseTrigger.isGameFinish)
+
+        if (!gameManager.isGameStarted && lose.isGameFinish)
         {
             score = time;
-        }
-        if (!scoreWrited && !gameManager.isGameStarted && loseTrigger.isGameFinish)
-        {
             LeaderBoardScoreSave();
         }
     }
 
     private void LeaderBoardScoreSave()
     {
-        scoreWrited = true;
-        if (score > YG2.saves.score) YG2.SetLBTimeConvert("EndlessMode", score);
+        if (score > YG2.saves.score)
+        {
+            YG2.saves.score = score;
+            YG2.SetLBTimeConvert("EndlessMode", score);
+        }
     }
 }

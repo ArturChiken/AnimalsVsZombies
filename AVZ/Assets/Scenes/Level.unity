@@ -30471,7 +30471,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextLvlButton: {fileID: 20175035}
   _woodFrame: {fileID: 1716462518}
-  unlockedActs: 1
 --- !u!1 &1256893050
 GameObject:
   m_ObjectHideFlags: 0
@@ -51675,7 +51674,7 @@ GameObject:
   - component: {fileID: 2058232475}
   - component: {fileID: 2058232474}
   m_Layer: 5
-  m_Name: ActWarning
+  m_Name: ReviveLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51720,7 +51719,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: hui
+  m_text: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C \u0437\u0430
+    \u0440\u0435\u043A\u043B\u0430\u043C\u0443!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8ea5d2813114e2b4086bb82115b73d68, type: 2}
   m_sharedMaterial: {fileID: 6670205317066139277, guid: 8ea5d2813114e2b4086bb82115b73d68, type: 2}
