@@ -39,11 +39,15 @@ public class LeaderBoard : MonoBehaviour
 
     private void LeaderBoardScoreSave()
     {
-        if (score > YG2.saves.score)
+        if (YG2.player.auth)
         {
-            YG2.saves.score = score;
-            YG2.SetLBTimeConvert("EndlessMode", score);
+            if (score > YG2.saves.score)
+            {
+                YG2.saves.score = score;
+                YG2.SetLBTimeConvert("EndlessMode", score);
+            }
+
+            YG2.SaveProgress();
         }
-        YG2.SaveProgress();
     }
 }
