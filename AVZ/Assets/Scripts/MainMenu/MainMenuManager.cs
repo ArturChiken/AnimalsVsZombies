@@ -1,21 +1,26 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using YG;
+using static MainMenuManager;
 
 public class MainMenuManager : MonoBehaviour
 {
     //синглтон паттерн постройки файла, иниц. инстанса этого класса
     public static MainMenuManager _;
 
+    AudioManager audioManager;
+
     bool nameholderIsActive = false;
     public enum MenuButtons { playAdv, playInf, shop };
     public enum OtherButtons { tg, nameholder, leaderboard, options };
     public enum CreditsButtons { back, artur, renat, dmitriy };
-    public enum OptionsButtons { back, credits };
+    public enum OptionsButtons { back, credits, ru, en };
 
     [SerializeField] CanvasGroup _MainMenuCanvasGroup, _fadeCanvasGroup;
     [SerializeField] GameObject _BlurFrame, _MainMenuContainer, _OptionsContainer, _CreditsContainer, _LeaderboardFrame;
+    [SerializeField] TMP_Text _NameholderText;
     [SerializeField] Animator _nameholderAnimator;
     [SerializeField] int _sceneToLoadAfterPlayAdvPressed, _sceneToLoadAfterShopPressed, _sceneToLoadAfterPlayInfPressed, _sceneToLoadAfterLeaderboardPressed;
     [SerializeField] float _fadeDuration = 1f;
@@ -26,6 +31,7 @@ public class MainMenuManager : MonoBehaviour
             _ = this;
         else
             Debug.LogError("There are more than 1 MainMenuManager's in the scene");
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Start()
@@ -36,6 +42,7 @@ public class MainMenuManager : MonoBehaviour
         _OptionsContainer.SetActive(false);
         _CreditsContainer.SetActive(false);
         _BlurFrame.SetActive(false);
+        _NameholderText.SetText(YG2.player.name);
     }
     //кнопки на меню
     public void MenuButtonClicked(MenuButtons buttonClicked)
@@ -43,6 +50,7 @@ public class MainMenuManager : MonoBehaviour
         switch (buttonClicked)
         {
             case MenuButtons.playAdv:
+                audioManager.PlaySFX(audioManager.menuButtons);
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 PlayAdvClicked();
                 break;
@@ -125,6 +133,12 @@ public class MainMenuManager : MonoBehaviour
             case OptionsButtons.credits:
                 _CreditsContainer.SetActive(true);
                 StartCoroutine(DelayedCreditsAction());
+                break;
+            case OptionsButtons.ru:
+                YG2.SwitchLanguage("ru");
+                break;
+            case OptionsButtons.en:
+                YG2.SwitchLanguage("en");
                 break;
             case OptionsButtons.back:
                 StartCoroutine(DelayedOptionsBackAction());

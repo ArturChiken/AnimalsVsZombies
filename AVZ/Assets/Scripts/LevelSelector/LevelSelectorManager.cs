@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using JetBrains.Annotations;
-using System.Drawing;
 using YG;
 
 public class LevelSelectorManager : MonoBehaviour
