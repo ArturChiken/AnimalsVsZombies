@@ -1041,15 +1041,35 @@ PrefabInstance:
       objectReference: {fileID: 1072245818015344007, guid: 2516396ce8d472f46becdc565de39811, type: 3}
     - target: {fileID: 8641676097431393180, guid: 2a451791bf38394458b19014283e7dca, type: 3}
       propertyPath: m_Spacing.x
-      value: 130
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8641676097431393180, guid: 2a451791bf38394458b19014283e7dca, type: 3}
       propertyPath: m_Spacing.y
-      value: 100
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641676097431393180, guid: 2a451791bf38394458b19014283e7dca, type: 3}
+      propertyPath: m_CellSize.x
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641676097431393183, guid: 2a451791bf38394458b19014283e7dca, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641676097431393183, guid: 2a451791bf38394458b19014283e7dca, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641676097431393183, guid: 2a451791bf38394458b19014283e7dca, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -4.137001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641676097431393183, guid: 2a451791bf38394458b19014283e7dca, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8641676097431393183, guid: 2a451791bf38394458b19014283e7dca, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.88586426
+      value: -2.0679932
       objectReference: {fileID: 0}
     - target: {fileID: 8641676098531048172, guid: 2a451791bf38394458b19014283e7dca, type: 3}
       propertyPath: m_Color.a
@@ -1085,11 +1105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8641676098531048175, guid: 2a451791bf38394458b19014283e7dca, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 213.8306
+      value: 701.2441
       objectReference: {fileID: 0}
     - target: {fileID: 8641676098531048175, guid: 2a451791bf38394458b19014283e7dca, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 568.3234
+      value: 458.2198
       objectReference: {fileID: 0}
     - target: {fileID: 8641676098531048175, guid: 2a451791bf38394458b19014283e7dca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1121,11 +1141,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8641676098531048175, guid: 2a451791bf38394458b19014283e7dca, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.259
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8641676098531048175, guid: 2a451791bf38394458b19014283e7dca, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.5036
+      value: 27.235996
       objectReference: {fileID: 0}
     - target: {fileID: 8641676098531048175, guid: 2a451791bf38394458b19014283e7dca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2442,50 +2462,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00048828125, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1263351950
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1263351952}
-  - component: {fileID: 1263351951}
-  m_Layer: 0
-  m_Name: DonutManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1263351951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263351950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc211b84a5572894299fab44923a87ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1263351952
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263351950}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1086.5443, y: 479.64264, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1270665303
 GameObject:
   m_ObjectHideFlags: 0
@@ -3445,6 +3421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1612685256}
   - component: {fileID: 1612685257}
+  - component: {fileID: 1612685258}
   m_Layer: 0
   m_Name: MANAGERS
   m_TagString: Untagged
@@ -3488,6 +3465,18 @@ MonoBehaviour:
   _activePreviewSO: {fileID: 0}
   _activeShopItemSOInPreview: {fileID: 11400000, guid: e83df9ab7faab594996a7496e1348e2d, type: 2}
   coinDisplay: {fileID: 200057325}
+--- !u!114 &1612685258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612685255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc211b84a5572894299fab44923a87ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1652650484
 GameObject:
   m_ObjectHideFlags: 0
@@ -3749,6 +3738,7 @@ GameObject:
   - component: {fileID: 1678661131}
   - component: {fileID: 1678661133}
   - component: {fileID: 1678661132}
+  - component: {fileID: 1678661134}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -3795,7 +3785,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
+  m_text: "\u0414\u043E\u043D\u0430\u0442\u044B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8ea5d2813114e2b4086bb82115b73d68, type: 2}
   m_sharedMaterial: {fileID: 6670205317066139277, guid: 8ea5d2813114e2b4086bb82115b73d68, type: 2}
@@ -3874,6 +3864,173 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678661130}
   m_CullTransparentMesh: 1
+--- !u!114 &1678661134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678661130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 1678661132}
+  uniqueFontTMP: {fileID: 0}
+  textLComponent: {fileID: 0}
+  info:
+    domainAutoLocalization: com
+    languages:
+      ru: 1
+      en: 1
+      tr: 0
+      az: 0
+      be: 0
+      he: 0
+      hy: 0
+      ka: 0
+      et: 0
+      fr: 0
+      kk: 0
+      ky: 0
+      lt: 0
+      lv: 0
+      ro: 0
+      tg: 0
+      tk: 0
+      uk: 0
+      uz: 0
+      es: 0
+      pt: 0
+      ar: 0
+      id: 0
+      ja: 0
+      it: 0
+      de: 0
+      hi: 0
+    fonts:
+      defaultFont: []
+      ru: []
+      en: []
+      tr: []
+      az: []
+      be: []
+      he: []
+      hy: []
+      ka: []
+      et: []
+      fr: []
+      kk: []
+      ky: []
+      lt: []
+      lv: []
+      ro: []
+      tg: []
+      tk: []
+      uk: []
+      uz: []
+      es: []
+      pt: []
+      ar: []
+      id: []
+      ja: []
+      it: []
+      de: []
+      hi: []
+    fontsTMP:
+      defaultFont: []
+      ru: []
+      en: []
+      tr: []
+      az: []
+      be: []
+      he: []
+      hy: []
+      ka: []
+      et: []
+      fr: []
+      kk: []
+      ky: []
+      lt: []
+      lv: []
+      ro: []
+      tg: []
+      tk: []
+      uk: []
+      uz: []
+      es: []
+      pt: []
+      ar: []
+      id: []
+      ja: []
+      it: []
+      de: []
+      hi: []
+    fontsSizeCorrect:
+      ru: 
+      en: 
+      tr: 
+      az: 
+      be: 
+      he: 
+      hy: 
+      ka: 
+      et: 
+      fr: 
+      kk: 
+      ky: 
+      lt: 
+      lv: 
+      ro: 
+      tg: 
+      tk: 
+      uk: 
+      uz: 
+      es: 
+      pt: 
+      ar: 
+      id: 
+      ja: 
+      it: 
+      de: 
+      hi: 
+  text: 
+  ru: "\u0414\u043E\u043D\u0430\u0442\u044B"
+  en: Donations
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 1
+  countLang: 0
 --- !u!1001 &1682433812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5438,4 +5595,3 @@ SceneRoots:
   - {fileID: 945504252}
   - {fileID: 1799275189}
   - {fileID: 1612685256}
-  - {fileID: 1263351952}
