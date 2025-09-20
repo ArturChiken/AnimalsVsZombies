@@ -589,24 +589,24 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Android: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Payments_yg
+    Android: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Localization_yg;AutoTranslateLangs_yg
     EmbeddedLinux: UNITY_POST_PROCESSING_STACK_V2
     GameCoreScarlett: UNITY_POST_PROCESSING_STACK_V2
     GameCoreXboxOne: UNITY_POST_PROCESSING_STACK_V2
     Kepler: UNITY_POST_PROCESSING_STACK_V2
-    LinuxHeadlessSimulation: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Payments_yg
-    Nintendo Switch: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Payments_yg
-    PS4: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Payments_yg
-    PS5: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Payments_yg
+    LinuxHeadlessSimulation: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Localization_yg;AutoTranslateLangs_yg
+    Nintendo Switch: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Localization_yg;AutoTranslateLangs_yg
+    PS4: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Localization_yg;AutoTranslateLangs_yg
+    PS5: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Localization_yg;AutoTranslateLangs_yg
     QNX: UNITY_POST_PROCESSING_STACK_V2
     ReservedCFE: UNITY_POST_PROCESSING_STACK_V2
-    Standalone: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;TMP_YG2;YandexGamesPlatform_yg;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Payments_yg
+    Standalone: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;TMP_YG2;YandexGamesPlatform_yg;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Localization_yg;AutoTranslateLangs_yg
     VisionOS: UNITY_POST_PROCESSING_STACK_V2
-    WebGL: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;TMP_YG2;YandexGamesPlatform_yg;RU_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Payments_yg
-    Windows Store Apps: PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Payments_yg
-    XboxOne: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Payments_yg
-    iPhone: PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Payments_yg
-    tvOS: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Payments_yg
+    WebGL: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;TMP_YG2;YandexGamesPlatform_yg;RU_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Localization_yg;AutoTranslateLangs_yg
+    Windows Store Apps: PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Localization_yg;AutoTranslateLangs_yg
+    XboxOne: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Localization_yg;AutoTranslateLangs_yg
+    iPhone: PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Localization_yg;AutoTranslateLangs_yg
+    tvOS: UNITY_POST_PROCESSING_STACK_V2;PLUGIN_YG_2;YandexGamesPlatform_yg;TMP_YG2;NJSON_YG2;Leaderboards_yg;Authorization_yg;Storage_yg;InterstitialAdv_yg;BannerAdv_yg;RewardedAdv_yg;Localization_yg;AutoTranslateLangs_yg
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

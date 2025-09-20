@@ -7,20 +7,19 @@
         false,
         false
     ],
-    "idSave": 1453,
-    "unlockedShopItems": "cappuccino,assassino,larila",
+    "idSave": 375,
+    "unlockedShopItems": "sahur",
     "unlockedAchievements": "",
-    "unlockedLevels": 3,
+    "unlockedLevels": 1,
     "unlockedActs": 1,
-    "playerCoins": 33,
+    "playerCoins": 5,
     "crocodiloUses": 0,
-    "soundValue": 0,
-    "playerStars": 5,
-    "score": 62.9129753112793,
+    "playerStars": 0,
+    "score": 0.0,
+    "musicVolume": 0.00009999999747378752,
+    "SFXVolume": 0.7832779884338379,
     "stars": [
         0,
-        3,
-        2,
         0
     ]
 }

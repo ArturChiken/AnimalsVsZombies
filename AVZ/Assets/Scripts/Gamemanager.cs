@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using YG;
-using System.Linq;
+using UnityEngine.UI;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -27,12 +27,16 @@ public class Gamemanager : MonoBehaviour
     public bool isGameStarted;
     public bool isGamePaused;
     private bool _canRevive = true;
+    public Sprite resumeButtonSprite;
+    public Sprite pauseButtonSprite;
 
     [SerializeField] CanvasGroup _fadeCanvasGroup;
     [SerializeField] GameObject _pauseScreen, _winScreen, _loseScreen, _blurFrameInGameGO;
     [SerializeField] int _sceneToLoadAfterPressedBack, _sceneToLoadAfterPressedRestartAndNextLvl;
     [SerializeField] float _fadeDuration = 1f;
     public GameObject _speechBubbleCS, _pauseButton, blurFrameInAnimalCardSelectorGO;
+
+    public Button pauseButton;
 
     private Lose lose;
 
@@ -120,26 +124,6 @@ public class Gamemanager : MonoBehaviour
                 Animal(hit.collider.gameObject);
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (!isGamePaused)
-            {
-                _blurFrameInGameGO.SetActive(true);
-                _pauseScreen.SetActive(true);
-                Time.timeScale = 0;
-                isGamePaused = true;
-                YG2.SaveProgress();
-            }
-            else
-            {
-                _blurFrameInGameGO.SetActive(false);
-                _pauseScreen.SetActive(false);
-                Time.timeScale = 1;
-                isGamePaused = false;
-                YG2.SaveProgress();
-            }
-        }
     }
 
     void Animal(GameObject hit)
@@ -158,6 +142,7 @@ public class Gamemanager : MonoBehaviour
 
     public void PauseButtonClicked(PauseScreenContainer buttonClicked)
     {
+        Image pauseButtonImage = pauseButton.GetComponent<Image>();
         switch (buttonClicked)
         {
             case PauseScreenContainer.mainmenu:
@@ -170,6 +155,7 @@ public class Gamemanager : MonoBehaviour
                 {
                     _blurFrameInGameGO.SetActive(true);
                     _pauseScreen.SetActive(true);
+                    pauseButtonImage.sprite = resumeButtonSprite;
                     Time.timeScale = 0;
                     isGamePaused = true;
                     YG2.SaveProgress();
@@ -178,6 +164,7 @@ public class Gamemanager : MonoBehaviour
                 {
                     _blurFrameInGameGO.SetActive(false);
                     _pauseScreen.SetActive(false);
+                    pauseButtonImage.sprite = pauseButtonSprite;
                     Time.timeScale = 1;
                     isGamePaused = false;
                     YG2.SaveProgress();
