@@ -184,6 +184,28 @@ MonoBehaviour:
         rank: 5
         score: 127000
         extraData: 
+  Payments:
+    durationPayPanel: 1
+    testBuyFail: 0
+    purshases:
+    - id: grenade
+      title: Grenade
+      description: Product - Grenade
+      imageURI: demo image
+      price: 30 YAN
+      priceValue: 30
+      priceCurrencyCode: YAN
+      currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
+      consumed: 1
+    - id: test
+      title: Coins 100
+      description: Product - Grenade
+      imageURI: demo image
+      price: 50 YAN
+      priceValue: 50
+      priceCurrencyCode: YAN
+      currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
+      consumed: 1
   RewardedAdv:
     skipInterAdvAfterReward: 0
     labelAdvSimLabel: 0
