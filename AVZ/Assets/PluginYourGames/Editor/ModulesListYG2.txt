@@ -3,7 +3,7 @@ AutoTranslateLangs v1.002
 BannerAdv v1.0
 InterstitialAdv v1.01
 Leaderboards v1.01
-Payments v1.01
 Localization v1.0011
+Payments v1.01
 RewardedAdv v1.01
 Storage v1.021

@@ -1,0 +1,3 @@
+Build path: D:/games/hgfuhgvy
+Build number: 1
+PluginYG version: 2.005
