@@ -558,7 +558,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8316451672082894416, guid: fa0dd60d5a9ad5c4d9b84a5c7e516f1f, type: 3}
       propertyPath: nameLB
-      value: EndlessMode
+      value: test
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316451672082894416, guid: fa0dd60d5a9ad5c4d9b84a5c7e516f1f, type: 3}
+      propertyPath: maxQuantityPlayers
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8316451672082894765, guid: fa0dd60d5a9ad5c4d9b84a5c7e516f1f, type: 3}
       propertyPath: m_Name
@@ -642,7 +646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8316451672082894766, guid: fa0dd60d5a9ad5c4d9b84a5c7e516f1f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -34
       objectReference: {fileID: 0}
     - target: {fileID: 8316451672082894766, guid: fa0dd60d5a9ad5c4d9b84a5c7e516f1f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -663,6 +667,10 @@ PrefabInstance:
     - target: {fileID: 8316451672082894767, guid: fa0dd60d5a9ad5c4d9b84a5c7e516f1f, type: 3}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316451673223344861, guid: fa0dd60d5a9ad5c4d9b84a5c7e516f1f, type: 3}
+      propertyPath: m_Spacing.y
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
