@@ -206,6 +206,15 @@ MonoBehaviour:
       priceCurrencyCode: YAN
       currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
       consumed: 1
+    - id: 50
+      title: Coins 100
+      description: Product - Grenade
+      imageURI: demo image
+      price: 50 YAN
+      priceValue: 50
+      priceCurrencyCode: YAN
+      currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
+      consumed: 1
   RewardedAdv:
     skipInterAdvAfterReward: 0
     labelAdvSimLabel: 0
