@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using TMPro;
 using YG;
+using UnityEngine.UI;
+using System.Data.SqlTypes;
 
 public class ShopManager : MonoBehaviour
 {
@@ -12,15 +14,20 @@ public class ShopManager : MonoBehaviour
     //префы
 
     //только back и tg
-    public enum ShopContainerButtons { back, tg, shopitem };
+    public enum ShopContainerButtons { back, tg, shopitem, donate };
     public enum PreviewContainerButtons { back };
+
+    public enum DonateContainerButtons { back };
 
     public int preCurrentAmount = -1;
 
     [SerializeField] CanvasGroup _fadeCanvasGroup;
-    [SerializeField] GameObject _ShopContainer, _PreviewContainer;
+    [SerializeField] GameObject _ShopContainer, _PreviewContainer, DonateSpeechbubble, NoLCSpeechBubble, AlreadyBoughtSpeechBubble, _DonateContainer;
     [SerializeField] int _sceneToLoadAfterPressedBack;
     [SerializeField] float _fadeDuration = 1f;
+
+    [SerializeField] Button DonateButton1;
+    [SerializeField] Button DonateButton2;
 
     public PreviewScriptableObject _activePreviewSO;
 
@@ -70,6 +77,13 @@ public class ShopManager : MonoBehaviour
                     Application.OpenURL(websiteLink);
                 }
                 break;
+            case ShopContainerButtons.donate:
+                _PreviewContainer.SetActive(false);
+                _ShopContainer.SetActive(false);
+                _DonateContainer.SetActive(true);
+                DonateButton1.interactable = false;
+                DonateButton2.interactable = false;
+                break;
         }
     }
 
@@ -80,10 +94,24 @@ public class ShopManager : MonoBehaviour
             case PreviewContainerButtons.back:
                 _PreviewContainer.SetActive(false);
                 _ShopContainer.SetActive(true);
+                DonateSpeechbubble.SetActive(false);
+                NoLCSpeechBubble.SetActive(false);
+                AlreadyBoughtSpeechBubble.SetActive(false);
                 break;
         }
     }
 
+    public void DonateContainerButtonsClicked(DonateContainerButtons buttonClicked)
+    {
+        switch (buttonClicked)
+        {
+            case DonateContainerButtons.back:
+                _DonateContainer.SetActive(false);
+                DonateButton1.interactable = true;
+                DonateButton2.interactable = true;
+                break;
+        }
+    }
 
     //смена SO в превью
     public void ChangePreviewSO(PreviewScriptableObject _newPreviewSO)
@@ -99,10 +127,16 @@ public class ShopManager : MonoBehaviour
 
     public static bool BuyInfiniteItem(ShopItemScriptableObject item)
     {
-        if (YG2.saves.playerCoins < item.cost || SaveSystem.IsItemUnlocked(item.itemId))
+        if (YG2.saves.playerCoins < item.cost)
         {
-            Debug.LogWarning("Not enough coins or already bought");
-            if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+            _.NoLCSpeechBubble.SetActive(true);
+            _.DonateSpeechbubble.SetActive(true);
+            return false;
+        }
+
+        if (SaveSystem.IsItemUnlocked(item.itemId))
+        {
+            _.AlreadyBoughtSpeechBubble.SetActive(true);
             return false;
         }
 
@@ -110,7 +144,6 @@ public class ShopManager : MonoBehaviour
         SaveSystem.UnlockItem(item.itemId);
 
 
-        Debug.Log($"Item {item.name} purchased successfully!");
         YG2.SaveProgress();
         if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
         return true;

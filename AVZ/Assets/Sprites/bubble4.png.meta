@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Speechbubble_0007_0
+      name: orushiy speechbubble
       rect:
         serializedVersion: 2
         x: 4
@@ -121,7 +121,7 @@ TextureImporter:
         width: 248
         height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7386be1e2e98f5f4981a5fd166aa56e9
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Speechbubble_0007_0: -6029021381756628190
+      orushiy speechbubble: -6029021381756628190
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

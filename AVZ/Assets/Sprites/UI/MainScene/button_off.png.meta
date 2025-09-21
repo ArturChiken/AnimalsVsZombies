@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 1e318f9afca2c1f4daf5bd85c9998fe7
+guid: 9d2ac93a6758fdb4abe2806dd22ff629
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5392069899127268889
-    second: Speechbubble_0005_0
-  - first:
-      213: 7812154717299294284
-    second: Speechbubble_0005_1
-  - first:
-      213: -9172200508799969752
-    second: Speechbubble_0005_2
+      213: -945426676055470849
+    second: button_off_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 2
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -57,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1000
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: zadumchiviy speechbuble
+      name: button_off_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 256
+        width: 388
+        height: 98
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e95172cef48b25b0800000000000000
-      internalID: -5392069899127268889
+      spriteID: ffc098c727b21e2f0800000000000000
+      internalID: -945426676055470849
       vertices: []
       indices: 
       edges: []
@@ -144,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e38340ffa3006c249b29318f6d49413f
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -153,10 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Speechbubble_0005_1: 7812154717299294284
-      Speechbubble_0005_2: -9172200508799969752
-      zadumchiviy speechbuble: -5392069899127268889
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
