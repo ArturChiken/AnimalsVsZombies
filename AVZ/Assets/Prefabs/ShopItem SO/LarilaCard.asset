@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: larila
   displayName: "\u041B\u0438\u0440\u0438\u043B\u0438 \u041B\u0430\u0440\u0438\u043B\u0430"
+  displayNameEn: Lirili larila
   cost: 25
   useCount: -1
   icon: {fileID: -2438544904464899257, guid: 4d579a3b5c150c9449317afee5f0f17b, type: 3}

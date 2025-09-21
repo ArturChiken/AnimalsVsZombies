@@ -401,6 +401,7 @@ GameObject:
   - component: {fileID: 63086571}
   - component: {fileID: 63086573}
   - component: {fileID: 63086572}
+  - component: {fileID: 63086574}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -526,6 +527,173 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63086570}
   m_CullTransparentMesh: 1
+--- !u!114 &63086574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63086570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 63086572}
+  uniqueFontTMP: {fileID: 0}
+  textLComponent: {fileID: 0}
+  info:
+    domainAutoLocalization: com
+    languages:
+      ru: 1
+      en: 1
+      tr: 0
+      az: 0
+      be: 0
+      he: 0
+      hy: 0
+      ka: 0
+      et: 0
+      fr: 0
+      kk: 0
+      ky: 0
+      lt: 0
+      lv: 0
+      ro: 0
+      tg: 0
+      tk: 0
+      uk: 0
+      uz: 0
+      es: 0
+      pt: 0
+      ar: 0
+      id: 0
+      ja: 0
+      it: 0
+      de: 0
+      hi: 0
+    fonts:
+      defaultFont: []
+      ru: []
+      en: []
+      tr: []
+      az: []
+      be: []
+      he: []
+      hy: []
+      ka: []
+      et: []
+      fr: []
+      kk: []
+      ky: []
+      lt: []
+      lv: []
+      ro: []
+      tg: []
+      tk: []
+      uk: []
+      uz: []
+      es: []
+      pt: []
+      ar: []
+      id: []
+      ja: []
+      it: []
+      de: []
+      hi: []
+    fontsTMP:
+      defaultFont: []
+      ru: []
+      en: []
+      tr: []
+      az: []
+      be: []
+      he: []
+      hy: []
+      ka: []
+      et: []
+      fr: []
+      kk: []
+      ky: []
+      lt: []
+      lv: []
+      ro: []
+      tg: []
+      tk: []
+      uk: []
+      uz: []
+      es: []
+      pt: []
+      ar: []
+      id: []
+      ja: []
+      it: []
+      de: []
+      hi: []
+    fontsSizeCorrect:
+      ru: 
+      en: 
+      tr: 
+      az: 
+      be: 
+      he: 
+      hy: 
+      ka: 
+      et: 
+      fr: 
+      kk: 
+      ky: 
+      lt: 
+      lv: 
+      ro: 
+      tg: 
+      tk: 
+      uk: 
+      uz: 
+      es: 
+      pt: 
+      ar: 
+      id: 
+      ja: 
+      it: 
+      de: 
+      hi: 
+  text: 
+  ru: "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
+  en: The shop
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 1
+  countLang: 0
 --- !u!1 &148019779
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,11 +1163,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 198.13123
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -615
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1567,7 +1735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &646582882
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2115,7 +2283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1098063964
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2568,7 +2736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 198.13123
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2718,11 +2886,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 548.1312
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -615
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3601,6 +3769,7 @@ GameObject:
   - component: {fileID: 1666145948}
   - component: {fileID: 1666145950}
   - component: {fileID: 1666145949}
+  - component: {fileID: 1666145951}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3727,6 +3896,174 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666145947}
   m_CullTransparentMesh: 1
+--- !u!114 &1666145951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666145947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 1666145949}
+  uniqueFontTMP: {fileID: 0}
+  textLComponent: {fileID: 0}
+  info:
+    domainAutoLocalization: com
+    languages:
+      ru: 1
+      en: 1
+      tr: 0
+      az: 0
+      be: 0
+      he: 0
+      hy: 0
+      ka: 0
+      et: 0
+      fr: 0
+      kk: 0
+      ky: 0
+      lt: 0
+      lv: 0
+      ro: 0
+      tg: 0
+      tk: 0
+      uk: 0
+      uz: 0
+      es: 0
+      pt: 0
+      ar: 0
+      id: 0
+      ja: 0
+      it: 0
+      de: 0
+      hi: 0
+    fonts:
+      defaultFont: []
+      ru: []
+      en: []
+      tr: []
+      az: []
+      be: []
+      he: []
+      hy: []
+      ka: []
+      et: []
+      fr: []
+      kk: []
+      ky: []
+      lt: []
+      lv: []
+      ro: []
+      tg: []
+      tk: []
+      uk: []
+      uz: []
+      es: []
+      pt: []
+      ar: []
+      id: []
+      ja: []
+      it: []
+      de: []
+      hi: []
+    fontsTMP:
+      defaultFont: []
+      ru: []
+      en: []
+      tr: []
+      az: []
+      be: []
+      he: []
+      hy: []
+      ka: []
+      et: []
+      fr: []
+      kk: []
+      ky: []
+      lt: []
+      lv: []
+      ro: []
+      tg: []
+      tk: []
+      uk: []
+      uz: []
+      es: []
+      pt: []
+      ar: []
+      id: []
+      ja: []
+      it: []
+      de: []
+      hi: []
+    fontsSizeCorrect:
+      ru: 
+      en: 
+      tr: 
+      az: 
+      be: 
+      he: 
+      hy: 
+      ka: 
+      et: 
+      fr: 
+      kk: 
+      ky: 
+      lt: 
+      lv: 
+      ro: 
+      tg: 
+      tk: 
+      uk: 
+      uz: 
+      es: 
+      pt: 
+      ar: 
+      id: 
+      ja: 
+      it: 
+      de: 
+      hi: 
+  text: 
+  ru: "\u0421\u043B\u0435\u0434\u0438\u0442\u0435 \u0437\u0430 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u044F\u043C\u0438
+    \u0432 \u043D\u0430\u0448\u0435\u043C \u0422\u0413!"
+  en: Stay tuned for updates in our TG!
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 1
+  countLang: 0
 --- !u!1 &1678661130
 GameObject:
   m_ObjectHideFlags: 0
@@ -4113,11 +4450,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 198.13123
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1035
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4134,6 +4471,14 @@ PrefabInstance:
     - target: {fileID: 5830543898693129935, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_Name
       value: SharkCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640198503582656604, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
+      propertyPath: m_fontSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640198503582656604, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4302,7 +4647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 548.1312
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4695,11 +5040,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 548.1312
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1035
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4716,6 +5061,14 @@ PrefabInstance:
     - target: {fileID: 5830543898693129935, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_Name
       value: DoveCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640198503582656604, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
+      propertyPath: m_fontSize
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640198503582656604, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5433,11 +5786,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 198.13123
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1455
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272274184193189429, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
