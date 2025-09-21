@@ -4138,13 +4138,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 124852665}
+  - component: {fileID: 124852666}
   m_Layer: 5
   m_Name: LoseScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &124852665
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4168,6 +4169,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &124852666
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124852664}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &129224200
 GameObject:
   m_ObjectHideFlags: 0
@@ -15496,6 +15519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 567729540}
+  - component: {fileID: 567729541}
   m_Layer: 5
   m_Name: AnimalCardSelector
   m_TagString: Untagged
@@ -15524,6 +15548,28 @@ RectTransform:
   m_AnchoredPosition: {x: -6.2385254, y: -0.6767578}
   m_SizeDelta: {x: -10.634888, y: -6.7766724}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &567729541
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567729539}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &573657872
 GameObject:
   m_ObjectHideFlags: 0
@@ -23120,6 +23166,7 @@ GameObject:
   - component: {fileID: 852546493}
   - component: {fileID: 852546492}
   - component: {fileID: 852546495}
+  - component: {fileID: 852546496}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -23244,6 +23291,28 @@ MonoBehaviour:
   cardSelector: {fileID: 567729540}
   animator: {fileID: 519420033}
   ButtonStart: {fileID: 852546492}
+--- !u!95 &852546496
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852546490}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &861720175
 GameObject:
   m_ObjectHideFlags: 0
@@ -30746,6 +30815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1255775573}
   - component: {fileID: 1255775574}
+  - component: {fileID: 1255775575}
   m_Layer: 5
   m_Name: WinScreen
   m_TagString: Untagged
@@ -30790,6 +30860,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextLvlButton: {fileID: 20175035}
   _woodFrame: {fileID: 1716462518}
+--- !u!95 &1255775575
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255775572}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1256893050
 GameObject:
   m_ObjectHideFlags: 0
@@ -49345,6 +49437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1955574655}
+  - component: {fileID: 1955574656}
   m_Layer: 5
   m_Name: PauseScreen
   m_TagString: Untagged
@@ -49375,6 +49468,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.00030517578}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1955574656
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955574654}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1956935967
 GameObject:
   m_ObjectHideFlags: 0
@@ -50328,6 +50443,7 @@ GameObject:
   - component: {fileID: 2003709652}
   - component: {fileID: 2003709651}
   - component: {fileID: 2003709650}
+  - component: {fileID: 2003709654}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -50430,6 +50546,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &2003709654
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003709649}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2005030215
 GameObject:
   m_ObjectHideFlags: 0

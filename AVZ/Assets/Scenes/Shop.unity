@@ -1346,7 +1346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.70900005, y: 0.24466667}
   m_AnchorMax: {x: 0.83300006, y: 0.43785188}
-  m_AnchoredPosition: {x: 0.0793457, y: 3.2032776}
+  m_AnchoredPosition: {x: 0.0793457, y: 3.203308}
   m_SizeDelta: {x: 3, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &426472880
@@ -1606,7 +1606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09200001, y: 0.09900001}
   m_AnchorMax: {x: 0.9068278, y: 0.8615339}
-  m_AnchoredPosition: {x: 0.10368347, y: -0.085884094}
+  m_AnchoredPosition: {x: 0.10368347, y: -0.085876465}
   m_SizeDelta: {x: -1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &498242352
@@ -1880,10 +1880,10 @@ RectTransform:
   - {fileID: 1682798202}
   m_Father: {fileID: 452584070}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.25325003, y: 0.025}
+  m_AnchorMin: {x: 0.25012508, y: 0.025}
   m_AnchorMax: {x: 0.29727077, y: 0.10837037}
-  m_AnchoredPosition: {x: 0.33172607, y: 4.5}
-  m_SizeDelta: {x: 2, y: -3}
+  m_AnchoredPosition: {x: 0.5, y: 0}
+  m_SizeDelta: {x: -1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &638046656
 MonoBehaviour:
@@ -3616,16 +3616,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preCurrentAmount: -1
   _fadeCanvasGroup: {fileID: 52683252}
+  _ShopContainerButtons: {fileID: 1098063965}
+  _PreviewContainerButtons: {fileID: 2088438620}
+  _DonateContainerButtons: {fileID: 0}
   _ShopContainer: {fileID: 1098063963}
   _PreviewContainer: {fileID: 2088438618}
   DonateSpeechbubble: {fileID: 1456290538}
   NoLCSpeechBubble: {fileID: 77352371}
   AlreadyBoughtSpeechBubble: {fileID: 426472878}
   _DonateContainer: {fileID: 0}
+  _ShopAnimator: {fileID: 329336120}
+  _PreviewAnimator: {fileID: 345320938}
+  _DonateAnimator: {fileID: 0}
   _sceneToLoadAfterPressedBack: 0
   _fadeDuration: 1
-  DonateButton1: {fileID: 0}
-  DonateButton2: {fileID: 0}
+  DonateButton1: {fileID: 1603362516}
+  DonateButton2: {fileID: 638046656}
   _activePreviewSO: {fileID: 0}
   _activeShopItemSOInPreview: {fileID: 11400000, guid: e83df9ab7faab594996a7496e1348e2d, type: 2}
   coinDisplay: {fileID: 200057325}
@@ -4184,7 +4190,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17249426, y: 0.14949426}
   m_AnchorMax: {x: 0.83900005, y: 1}
-  m_AnchoredPosition: {x: -0.5000038, y: 0.5}
+  m_AnchoredPosition: {x: -0.5, y: 0.5}
   m_SizeDelta: {x: 1, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1682798203
@@ -4234,7 +4240,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.55
+  m_fontSize: 67.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5167,7 +5173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.18626799, y: 0.3815088}
   m_AnchorMax: {x: 0.8855361, y: 0.8774913}
-  m_AnchoredPosition: {x: 0.13272858, y: 0.44909668}
+  m_AnchoredPosition: {x: 0.13272095, y: 0.44909668}
   m_SizeDelta: {x: -1, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1848481941

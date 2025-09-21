@@ -1,28 +1,30 @@
-using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
-using TMPro;
-using YG;
-using UnityEngine.UI;
 using System.Data.SqlTypes;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using YG;
+using static LevelSelectorManager;
 
 public class ShopManager : MonoBehaviour
 {
     //синглтон паттерн постройки файла, иниц. инстанса этого класса
     public static ShopManager _;
 
-    //префы
+    bool shopIsActive = true;
+    bool previewIsActive = false;
+    bool donateIsActive = false;
 
-    //только back и tg
     public enum ShopContainerButtons { back, tg, shopitem, donate };
     public enum PreviewContainerButtons { back };
-
     public enum DonateContainerButtons { back };
 
     public int preCurrentAmount = -1;
 
-    [SerializeField] CanvasGroup _fadeCanvasGroup;
+    [SerializeField] CanvasGroup _fadeCanvasGroup, _ShopContainerButtons, _PreviewContainerButtons, _DonateContainerButtons;
     [SerializeField] GameObject _ShopContainer, _PreviewContainer, DonateSpeechbubble, NoLCSpeechBubble, AlreadyBoughtSpeechBubble, _DonateContainer;
+    [SerializeField] Animator _ShopAnimator, _PreviewAnimator, _DonateAnimator;
     [SerializeField] int _sceneToLoadAfterPressedBack;
     [SerializeField] float _fadeDuration = 1f;
 
@@ -63,8 +65,8 @@ public class ShopManager : MonoBehaviour
         switch (buttonClicked)
         {
             case ShopContainerButtons.shopitem:
-                _ShopContainer.SetActive(false);
-                _PreviewContainer.SetActive(true);
+                StartCoroutine(PlaySwitchPreviewShopAnimation(previewIsActive));
+                shopIsActive = false;
                 break;
             case ShopContainerButtons.back:
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
@@ -78,9 +80,14 @@ public class ShopManager : MonoBehaviour
                 }
                 break;
             case ShopContainerButtons.donate:
-                _PreviewContainer.SetActive(false);
-                _ShopContainer.SetActive(false);
-                _DonateContainer.SetActive(true);
+                if (shopIsActive)
+                {
+                    StartCoroutine(PlaySwitchDonateShopAnimation(donateIsActive));
+                }
+                else
+                {
+                    StartCoroutine(PlaySwitchDonatePreviewAnimation(donateIsActive));
+                }
                 DonateButton1.interactable = false;
                 DonateButton2.interactable = false;
                 break;
@@ -92,11 +99,8 @@ public class ShopManager : MonoBehaviour
         switch (buttonClicked)
         {
             case PreviewContainerButtons.back:
-                _PreviewContainer.SetActive(false);
-                _ShopContainer.SetActive(true);
-                DonateSpeechbubble.SetActive(false);
-                NoLCSpeechBubble.SetActive(false);
-                AlreadyBoughtSpeechBubble.SetActive(false);
+                StartCoroutine(PlaySwitchPreviewShopAnimation(previewIsActive));
+                shopIsActive = true;
                 break;
         }
     }
@@ -168,6 +172,131 @@ public class ShopManager : MonoBehaviour
         if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
         return true;
     }
+
+    private IEnumerator PlaySwitchPreviewShopAnimation(bool show)
+    {
+        if (show)
+        {
+            DonateButton1.interactable = false;
+            DonateButton2.interactable = false;
+            _PreviewContainerButtons.interactable = false;
+            _PreviewContainerButtons.blocksRaycasts = false;
+            _PreviewAnimator.Play("PreviewUp");
+            yield return new WaitForSeconds(_PreviewAnimator.GetCurrentAnimatorStateInfo(0).length);
+            _PreviewContainer.SetActive(false);
+            NoLCSpeechBubble.SetActive(false);
+            AlreadyBoughtSpeechBubble.SetActive(false);
+            DonateSpeechbubble.SetActive(false);
+            _ShopContainer.SetActive(true);
+            _ShopAnimator.Play("ShopDown");
+            yield return new WaitForSeconds(_ShopAnimator.GetCurrentAnimatorStateInfo(0).length);
+            _ShopContainerButtons.interactable = true;
+            _ShopContainerButtons.blocksRaycasts = true;
+            DonateButton1.interactable = true;
+            DonateButton2.interactable = true;
+        }
+        else
+        {
+            DonateButton1.interactable = false;
+            DonateButton2.interactable = false;
+            _ShopContainerButtons.interactable = false;
+            _ShopContainerButtons.blocksRaycasts = false;
+            _ShopAnimator.Play("ShopUp");
+            yield return new WaitForSeconds(_ShopAnimator.GetCurrentAnimatorStateInfo(0).length);
+            _ShopContainer.SetActive(false);
+            _PreviewContainer.SetActive(true);
+            _PreviewAnimator.Play("PreviewDown");
+            yield return new WaitForSeconds(_PreviewAnimator.GetCurrentAnimatorStateInfo(0).length);
+            _PreviewContainerButtons.interactable = true;
+            _PreviewContainerButtons.blocksRaycasts = true;
+            DonateButton1.interactable = true;
+            DonateButton2.interactable = true;
+        }
+        previewIsActive = !previewIsActive;
+    }
+
+    private IEnumerator PlaySwitchDonatePreviewAnimation(bool show)
+    {
+        if (show)
+        {
+            DonateButton1.interactable = false;
+            DonateButton2.interactable = false;
+            _DonateContainerButtons.interactable = false;
+            _DonateContainerButtons.blocksRaycasts = false;
+            _ShopAnimator.Play("DonateUp");
+            yield return new WaitForSeconds(_DonateAnimator.GetCurrentAnimatorStateInfo(0).length);
+            _DonateContainer.SetActive(false);
+            _PreviewContainer.SetActive(true);
+            _PreviewAnimator.Play("PreviewDown");
+            yield return new WaitForSeconds(_PreviewAnimator.GetCurrentAnimatorStateInfo(0).length);
+            _PreviewContainerButtons.interactable = true;
+            _PreviewContainerButtons.blocksRaycasts = true;
+            DonateButton1.interactable = true;
+            DonateButton2.interactable = true;
+        }
+        else
+        {
+            DonateButton1.interactable = false;
+            DonateButton2.interactable = false;
+            _PreviewContainerButtons.interactable = false;
+            _PreviewContainerButtons.blocksRaycasts = false;
+            _PreviewAnimator.Play("PreviewUp");
+            yield return new WaitForSeconds(_PreviewAnimator.GetCurrentAnimatorStateInfo(0).length);
+            _PreviewContainer.SetActive(false);
+            NoLCSpeechBubble.SetActive(false);
+            AlreadyBoughtSpeechBubble.SetActive(false);
+            DonateSpeechbubble.SetActive(false);
+            _DonateContainer.SetActive(true);
+            _DonateAnimator.Play("DonateDown");
+            yield return new WaitForSeconds(_DonateAnimator.GetCurrentAnimatorStateInfo(0).length);
+            _DonateContainerButtons.interactable = true;
+            _DonateContainerButtons.blocksRaycasts = true;
+            DonateButton1.interactable = true;
+            DonateButton2.interactable = true;
+        }
+        donateIsActive = !donateIsActive;
+    }
+
+    private IEnumerator PlaySwitchDonateShopAnimation(bool show)
+    {
+        if (show)
+        {
+            DonateButton1.interactable = false;
+            DonateButton2.interactable = false;
+            _DonateContainerButtons.interactable = false;
+            _DonateContainerButtons.blocksRaycasts = false;
+            _ShopAnimator.Play("DonateUp");
+            yield return new WaitForSeconds(_DonateAnimator.GetCurrentAnimatorStateInfo(0).length);
+            _DonateContainer.SetActive(false);
+            _ShopContainer.SetActive(true);
+            _ShopAnimator.Play("ShopDown");
+            yield return new WaitForSeconds(_ShopAnimator.GetCurrentAnimatorStateInfo(0).length);
+            _ShopContainerButtons.interactable = true;
+            _ShopContainerButtons.blocksRaycasts = true;
+            DonateButton1.interactable = true;
+            DonateButton2.interactable = true;
+        }
+        else
+        {
+            DonateButton1.interactable = false;
+            DonateButton2.interactable = false;
+            _ShopContainerButtons.interactable = false;
+            _ShopContainerButtons.blocksRaycasts = false;
+            _ShopAnimator.Play("ShopUp");
+            yield return new WaitForSeconds(_ShopAnimator.GetCurrentAnimatorStateInfo(0).length);
+            _ShopContainer.SetActive(false);
+            _DonateContainer.SetActive(true);
+            _DonateAnimator.Play("DonateDown");
+            yield return new WaitForSeconds(_DonateAnimator.GetCurrentAnimatorStateInfo(0).length);
+            _DonateContainerButtons.interactable = true;
+            _DonateContainerButtons.blocksRaycasts = true;
+            DonateButton1.interactable = true;
+            DonateButton2.interactable = true;
+        }
+        donateIsActive = !donateIsActive;
+    }
+
+
 
     //переход
     private IEnumerator TransitionScene()
