@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class PreviewCard : MonoBehaviour
 {
@@ -35,9 +36,18 @@ public class PreviewCard : MonoBehaviour
         if (!IsValid()) return;
 
         _itemIcon.sprite = ShopManager._._activePreviewSO.icon;
-        _itemLabel.text = ShopManager._._activePreviewSO.displayName;
+        switch(YG2.lang)
+        {
+            case "ru":
+                _itemLabel.text = ShopManager._._activePreviewSO.displayName;
+                _itemDescription.text = ShopManager._._activePreviewSO.description;
+                break;
+            case "en":
+                _itemLabel.text = ShopManager._._activePreviewSO.displayNameEn;
+                _itemDescription.text = ShopManager._._activePreviewSO.descriptionEn;
+                break;
+        }
         _itemCost.text = $"{ShopManager._._activePreviewSO.cost}";
-        _itemDescription.text = ShopManager._._activePreviewSO.description;
     }
     public void BuyI()
     {
