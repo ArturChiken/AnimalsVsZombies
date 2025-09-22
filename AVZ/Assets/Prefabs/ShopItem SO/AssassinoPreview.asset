@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AssassinoPreview
   m_EditorClassIdentifier: 
   displayName: "\u041A\u0430\u043F\u0443\u0447\u0438\u043D\u043E \u0410\u0441\u0441\u0430\u0441\u0438\u043D\u043E"
+  displayNameEn: Cappuccino Assassino
   description: "\u0421\u0435\u043C\u044F\u0445\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C
     \u041A\u0430\u043F\u0443\u0447\u0438\u043D\u0438 \u0411\u0430\u043B\u0435\u0440\u0438\u043D\u0438,
     \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0435\u0435 \u043B\u0438\u0447\u043D\u043E\u0439
@@ -22,5 +23,8 @@ MonoBehaviour:
     \u0447\u0442\u043E \u0434\u0432\u0438\u0436\u0435\u0442\u0441\u044F, \u043D\u0435
     \u043E\u0441\u0442\u0430\u0432\u043B\u044F\u044F \u043D\u0438\u0447\u0435\u0433\u043E
     \u0436\u0438\u0432\u043E\u0433\u043E!"
+  descriptionEn: Cappuccini Ballerini's Seed Keeper is her personal shadow guard.
+    He appears on the field and cuts down everything that moves, leaving nothing
+    alive!
   icon: {fileID: 518365762053865977, guid: 612dcb86bb9fb0b42b65fe1bf9e1da15, type: 3}
   cost: 1000

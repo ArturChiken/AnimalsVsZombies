@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CapucinnoPreview
   m_EditorClassIdentifier: 
   displayName: "\u0411\u0430\u043B\u0435\u0440\u0438\u043D\u043E \u041A\u0430\u043F\u0443\u0447\u0438\u043D\u043E"
+  displayNameEn: Ballerina Cappuccina
   description: "\u0418\u0437\u0432\u0435\u0441\u0442\u043D\u0430\u044F \u0442\u0430\u043D\u0446\u043E\u0432\u0449\u0438\u0446\u0430
     \u0432 \u043C\u0438\u0440\u0435 \u0411\u0440\u0435\u0439\u043D\u0440\u043E\u0442\u0430,
     \u0435\u0451 \u0432\u0441\u0435 \u0437\u043D\u0430\u044E\u0442. \u041E\u043D\u0430
@@ -20,5 +21,7 @@ MonoBehaviour:
     \u0442\u0430\u043D\u0435\u0446, \u0441\u043E\u0437\u0434\u0430\u0432\u0430\u044F
     \u043A\u043E\u0444\u0435\u0439\u043D\u044B\u0435 \u0441\u0435\u043C\u0435\u043D\u0430
     \u0432\u043E\u043A\u0440\u0443\u0433 \u0441\u0435\u0431\u044F!"
+  descriptionEn: A famous dancer in the world of Brainrot, everyone knows her. She
+    performs her dance by creating coffee seeds around her!
   icon: {fileID: 5322005325143110406, guid: c917058638a56b74ea727c50a100998b, type: 3}
   cost: 10
