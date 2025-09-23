@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,8 +6,10 @@ public class StartButton : MonoBehaviour
 {
     private Gamemanager gameManager;
     public Transform cardSelector;
-    public Animator animator;
+    public Animator animator, _StartButtonAnim, _SpeechbubbleAnim, _CardSelectorAnim;
     public Button ButtonStart;
+
+    [SerializeField] CanvasGroup Canvas;
 
     //public Transform pauseButton;
 
@@ -35,12 +38,24 @@ public class StartButton : MonoBehaviour
         if (gameManager.cardAmount > 0)
         {
             gameManager.isGameStarted = true;
-            gameManager._speechBubbleCS.SetActive(false);
-            cardSelector.gameObject.SetActive(false);
-            gameObject.SetActive(false);
-            gameManager._pauseButton.SetActive(true);
-            gameManager.blurFrameInAnimalCardSelectorGO.SetActive(false);
-            animator.Play("LabubuPreAni");
+            StartCoroutine(GameStartAnimation());
         }
+    }
+
+    public IEnumerator GameStartAnimation()
+    {
+        Canvas.interactable = false;
+        Canvas.blocksRaycasts = false;
+        gameManager._speechBubbleCS.SetActive(false);
+        gameManager.blurFrameInAnimalCardSelectorGO.SetActive(false);
+        _StartButtonAnim.Play("StartButtonRight");
+        _CardSelectorAnim.Play("AnimalSLeft");
+        animator.Play("LabubuPreAni");
+        yield return new WaitForSeconds(_CardSelectorAnim.GetCurrentAnimatorStateInfo(0).length);
+        cardSelector.gameObject.SetActive(false);
+        gameObject.SetActive(false);
+        gameManager._pauseButton.SetActive(true);
+        Canvas.interactable = true;
+        Canvas.blocksRaycasts = false;
     }
 }

@@ -4347,7 +4347,7 @@ Animator:
   m_GameObject: {fileID: 124852664}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f6ced9ae3a688a46950f6dc909e20ec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -16554,7 +16554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0083125, y: 0.013851852}
   m_AnchorMax: {x: 0.5565625, y: 0.82033336}
-  m_AnchoredPosition: {x: -6.2385254, y: -0.6767578}
+  m_AnchoredPosition: {x: 5.317383, y: -3.3883667}
   m_SizeDelta: {x: -10.634888, y: -6.7766724}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &567729541
@@ -16567,7 +16567,7 @@ Animator:
   m_GameObject: {fileID: 567729539}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 30f89caba40d62e4fa9b94f41118e05c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -24368,7 +24368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -419.23218, y: 161.78326}
+  m_AnchoredPosition: {x: -419.2322, y: 162}
   m_SizeDelta: {x: 270.1824, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &852546492
@@ -24467,7 +24467,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSelector: {fileID: 567729540}
   animator: {fileID: 519420033}
+  _StartButtonAnim: {fileID: 852546496}
+  _SpeechbubbleAnim: {fileID: 1069407449}
+  _CardSelectorAnim: {fileID: 567729541}
   ButtonStart: {fileID: 852546492}
+  Canvas: {fileID: 2003709654}
 --- !u!95 &852546496
 Animator:
   serializedVersion: 7
@@ -24478,7 +24482,7 @@ Animator:
   m_GameObject: {fileID: 852546490}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc6ef157bf722df46a021afd47a35988, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -28242,6 +28246,7 @@ GameObject:
   - component: {fileID: 1069407446}
   - component: {fileID: 1069407448}
   - component: {fileID: 1069407447}
+  - component: {fileID: 1069407449}
   m_Layer: 5
   m_Name: Speechbubble
   m_TagString: Untagged
@@ -28266,7 +28271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5482292, y: 0.30637038}
   m_AnchorMax: {x: 0.71500003, y: 0.52500004}
-  m_AnchoredPosition: {x: 1.8099976, y: 0.782959}
+  m_AnchoredPosition: {x: 987.74866, y: 0.061553955}
   m_SizeDelta: {x: -4.47171, y: 0.12309265}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1069407447
@@ -28307,6 +28312,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069407445}
   m_CullTransparentMesh: 1
+--- !u!95 &1069407449
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069407445}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef1733c2cc97fbb45b1ef38f57f16b5c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1074681080
 GameObject:
   m_ObjectHideFlags: 0
@@ -32383,7 +32410,7 @@ Animator:
   m_GameObject: {fileID: 1255775572}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e52e957e6f1c6ca4ebbd78495b0f17d8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -44383,7 +44410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1716462519
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51483,7 +51510,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00030517578}
+  m_AnchoredPosition: {x: 0, y: 1080}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1955574656
@@ -51496,7 +51523,7 @@ Animator:
   m_GameObject: {fileID: 1955574654}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2084335908172b54ca0624cf5df95111, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
