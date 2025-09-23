@@ -1,15 +1,16 @@
-using UnityEngine;
-using TMPro;
-using UnityEngine.SceneManagement;
 using System.Collections;
-using YG;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using YG;
+using static MainMenuManager;
 
 public class Gamemanager : MonoBehaviour
 {
     public static Gamemanager _;
 
-    public enum PauseScreenContainer { pause, mainmenu, restart};
+    public enum PauseScreenContainer { pause, mainmenu, restart, ru, en };
     public enum WinScreenContainer { mainmenu, nextlvl };
     public enum LoseScreenContainer { mainmenu, restart, revive };
 
@@ -155,6 +156,12 @@ public class Gamemanager : MonoBehaviour
                 isGamePaused = false;
                 StartCoroutine(TransitionScene(1));
                 break;
+            case PauseScreenContainer.ru:
+                YG2.SwitchLanguage("ru");
+                break;
+            case PauseScreenContainer.en:
+                YG2.SwitchLanguage("en");
+                break;
         }
     }
 
@@ -220,6 +227,7 @@ public class Gamemanager : MonoBehaviour
             _pauseScreen.SetActive(true);
             _PauseScreenA.Play("PauseScreenDown");
             yield return new WaitForSeconds(_PauseScreenA.GetCurrentAnimatorStateInfo(0).length);
+            pauseButton.image.sprite = resumeButtonSprite;
             Time.timeScale = 0;
             Canvas.interactable = true;
             Canvas.blocksRaycasts = true;
@@ -233,6 +241,7 @@ public class Gamemanager : MonoBehaviour
             _PauseScreenA.Play("PauseScreenUp");
             _blurFrameInGameGO.SetActive(false);
             yield return new WaitForSeconds(_PauseScreenA.GetCurrentAnimatorStateInfo(0).length);
+            pauseButton.image.sprite = pauseButtonSprite;
             _pauseScreen.SetActive(false);
             Canvas.interactable = true;
             Canvas.blocksRaycasts = true;
