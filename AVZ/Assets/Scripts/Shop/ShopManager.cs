@@ -12,7 +12,6 @@ public class ShopManager : MonoBehaviour
     //синглтон паттерн постройки файла, иниц. инстанса этого класса
     public static ShopManager _;
 
-    bool shopIsActive = true;
     bool previewIsActive = false;
     bool donateIsActive = false;
 
@@ -66,7 +65,6 @@ public class ShopManager : MonoBehaviour
         {
             case ShopContainerButtons.shopitem:
                 StartCoroutine(PlaySwitchPreviewShopAnimation(previewIsActive));
-                shopIsActive = false;
                 break;
             case ShopContainerButtons.back:
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
@@ -80,13 +78,13 @@ public class ShopManager : MonoBehaviour
                 }
                 break;
             case ShopContainerButtons.donate:
-                if (shopIsActive)
+                if (previewIsActive)
                 {
-                    StartCoroutine(PlaySwitchDonateShopAnimation(donateIsActive));
+                    StartCoroutine(PlaySwitchDonatePreviewAnimation(donateIsActive));
                 }
                 else
                 {
-                    StartCoroutine(PlaySwitchDonatePreviewAnimation(donateIsActive));
+                    StartCoroutine(PlaySwitchDonateShopAnimation(donateIsActive));
                 }
                 DonateButton1.interactable = false;
                 DonateButton2.interactable = false;
@@ -100,7 +98,6 @@ public class ShopManager : MonoBehaviour
         {
             case PreviewContainerButtons.back:
                 StartCoroutine(PlaySwitchPreviewShopAnimation(previewIsActive));
-                shopIsActive = true;
                 break;
         }
     }
@@ -110,9 +107,16 @@ public class ShopManager : MonoBehaviour
         switch (buttonClicked)
         {
             case DonateContainerButtons.back:
-                _DonateContainer.SetActive(false);
-                DonateButton1.interactable = true;
-                DonateButton2.interactable = true;
+                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                if (previewIsActive)
+                {
+                    StartCoroutine(PlaySwitchDonatePreviewAnimation(donateIsActive));
+                }
+                else
+                {
+                    StartCoroutine(PlaySwitchDonateShopAnimation(donateIsActive));
+                }
+                
                 break;
         }
     }
@@ -219,11 +223,9 @@ public class ShopManager : MonoBehaviour
     {
         if (show)
         {
-            DonateButton1.interactable = false;
-            DonateButton2.interactable = false;
             _DonateContainerButtons.interactable = false;
             _DonateContainerButtons.blocksRaycasts = false;
-            _ShopAnimator.Play("DonateUp");
+            _DonateAnimator.Play("DonateUp");
             yield return new WaitForSeconds(_DonateAnimator.GetCurrentAnimatorStateInfo(0).length);
             _DonateContainer.SetActive(false);
             _PreviewContainer.SetActive(true);
@@ -236,8 +238,6 @@ public class ShopManager : MonoBehaviour
         }
         else
         {
-            DonateButton1.interactable = false;
-            DonateButton2.interactable = false;
             _PreviewContainerButtons.interactable = false;
             _PreviewContainerButtons.blocksRaycasts = false;
             _PreviewAnimator.Play("PreviewUp");
@@ -251,8 +251,6 @@ public class ShopManager : MonoBehaviour
             yield return new WaitForSeconds(_DonateAnimator.GetCurrentAnimatorStateInfo(0).length);
             _DonateContainerButtons.interactable = true;
             _DonateContainerButtons.blocksRaycasts = true;
-            DonateButton1.interactable = true;
-            DonateButton2.interactable = true;
         }
         donateIsActive = !donateIsActive;
     }
@@ -261,11 +259,9 @@ public class ShopManager : MonoBehaviour
     {
         if (show)
         {
-            DonateButton1.interactable = false;
-            DonateButton2.interactable = false;
             _DonateContainerButtons.interactable = false;
             _DonateContainerButtons.blocksRaycasts = false;
-            _ShopAnimator.Play("DonateUp");
+            _DonateAnimator.Play("DonateUp");
             yield return new WaitForSeconds(_DonateAnimator.GetCurrentAnimatorStateInfo(0).length);
             _DonateContainer.SetActive(false);
             _ShopContainer.SetActive(true);
@@ -278,8 +274,6 @@ public class ShopManager : MonoBehaviour
         }
         else
         {
-            DonateButton1.interactable = false;
-            DonateButton2.interactable = false;
             _ShopContainerButtons.interactable = false;
             _ShopContainerButtons.blocksRaycasts = false;
             _ShopAnimator.Play("ShopUp");
@@ -290,8 +284,6 @@ public class ShopManager : MonoBehaviour
             yield return new WaitForSeconds(_DonateAnimator.GetCurrentAnimatorStateInfo(0).length);
             _DonateContainerButtons.interactable = true;
             _DonateContainerButtons.blocksRaycasts = true;
-            DonateButton1.interactable = true;
-            DonateButton2.interactable = true;
         }
         donateIsActive = !donateIsActive;
     }
