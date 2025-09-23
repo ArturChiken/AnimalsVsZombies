@@ -56,6 +56,6 @@ public class StartButton : MonoBehaviour
         gameObject.SetActive(false);
         gameManager._pauseButton.SetActive(true);
         Canvas.interactable = true;
-        Canvas.blocksRaycasts = false;
+        Canvas.blocksRaycasts = true;
     }
 }

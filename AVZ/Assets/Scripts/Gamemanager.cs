@@ -227,13 +227,13 @@ public class Gamemanager : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 1;
             Canvas.interactable = false;
             Canvas.blocksRaycasts = false;
             _PauseScreenA.Play("PauseScreenUp");
             _blurFrameInGameGO.SetActive(false);
             yield return new WaitForSeconds(_PauseScreenA.GetCurrentAnimatorStateInfo(0).length);
             _pauseScreen.SetActive(false);
-            Time.timeScale = 1;
             Canvas.interactable = true;
             Canvas.blocksRaycasts = true;
         }
@@ -249,7 +249,7 @@ public class Gamemanager : MonoBehaviour
         _pauseButton.SetActive(false);
         _blurFrameInGameGO.SetActive(true);
         _loseScreen.SetActive(true);
-        _LoseScreenA.Play("LoseScreenDown");
+        //_LoseScreenA.Play("LoseScreenDown");
         yield return new WaitForSeconds(_LoseScreenA.GetCurrentAnimatorStateInfo(0).length);
         Canvas.interactable = true;
         Canvas.blocksRaycasts = true;
@@ -263,7 +263,7 @@ public class Gamemanager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         _blurFrameInGameGO.SetActive(true);
         _winScreen.SetActive(true);
-        _WinScreenA.Play("WinScreenDown");
+        //_WinScreenA.Play("WinScreenDown");
         yield return new WaitForSeconds(_WinScreenA.GetCurrentAnimatorStateInfo(0).length);
         if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
         Canvas.interactable = true;
