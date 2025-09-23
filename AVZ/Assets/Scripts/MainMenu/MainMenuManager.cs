@@ -1,9 +1,11 @@
 using System.Collections;
+using System.IO.IsolatedStorage;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using YG;
-using static MainMenuManager;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -19,11 +21,13 @@ public class MainMenuManager : MonoBehaviour
     public enum OptionsButtons { back, credits, ru, en };
 
     [SerializeField] CanvasGroup _MainMenuCanvasGroup, _fadeCanvasGroup;
-    [SerializeField] GameObject _BlurFrame, _MainMenuContainer, _OptionsContainer, _CreditsContainer, _LeaderboardFrame;
+    [SerializeField] GameObject _BlurFrame, _MainMenuContainer, _OptionsContainer, _CreditsContainer, _LeaderboardFrame, _Speechbubbles, _ClickOnMeSB, _YouCanOpenInfLevelSB, _AuthorizeToOpenLeaderboardSB;
     [SerializeField] TMP_Text _NameholderText;
     [SerializeField] Animator _nameholderAnimator;
     [SerializeField] int _sceneToLoadAfterPlayAdvPressed, _sceneToLoadAfterShopPressed, _sceneToLoadAfterPlayInfPressed, _sceneToLoadAfterLeaderboardPressed;
     [SerializeField] float _fadeDuration = 1f;
+    [SerializeField] Button _infLevelB;
+    [SerializeField] TMP_Text _leaderboardText;
 
     public void Awake()
     {
@@ -43,6 +47,27 @@ public class MainMenuManager : MonoBehaviour
         _CreditsContainer.SetActive(false);
         _BlurFrame.SetActive(false);
         _NameholderText.SetText(YG2.player.name);
+
+        if (YG2.saves.isFirstEntry)
+        {
+            _ClickOnMeSB.SetActive(true);
+        }
+        else
+        {
+            _ClickOnMeSB.SetActive(false);
+            _AuthorizeToOpenLeaderboardSB.SetActive(false);
+        }
+
+        if (YG2.saves.unlockedShopItems.Count(c => c == ',') < 2)
+        {
+            _infLevelB.interactable = false;
+            _YouCanOpenInfLevelSB.SetActive(true);
+        }
+        else
+        {
+            _infLevelB.interactable = true;
+            _YouCanOpenInfLevelSB.SetActive(false);
+        }
     }
     //кнопки на меню
     public void MenuButtonClicked(MenuButtons buttonClicked)
@@ -82,19 +107,41 @@ public class MainMenuManager : MonoBehaviour
                 _BlurFrame.SetActive(true);
                 break;
             case OtherButtons.nameholder:
-                if (nameholderIsActive)
-                {
-                    StartCoroutine(PlayNameholderAnimation(false));
-                }
-                else
-                {
-                    StartCoroutine(PlayNameholderAnimation(true));
-                }
-                break;
+                    if (nameholderIsActive)
+                    {
+                        StartCoroutine(PlayNameholderAnimation(!nameholderIsActive));
+                    }
+                    else
+                    {
+                        StartCoroutine(PlayNameholderAnimation(!nameholderIsActive));
+                        if (YG2.saves.isFirstEntry == true)
+                        {
+                            _ClickOnMeSB.SetActive(false);
+                            if (!YG2.player.auth)
+                            {
+                                _AuthorizeToOpenLeaderboardSB.SetActive(true);
+                            }
+                            else
+                            {
+                                _AuthorizeToOpenLeaderboardSB.SetActive(false);
+                            }
+                            YG2.saves.isFirstEntry = false;
+                        }
+                    }
+                    break;
             case OtherButtons.leaderboard:
                 {
-                    if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
-                    LeaderboardClicked();
+                    if (YG2.player.auth)
+                    {
+                        if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                        LeaderboardClicked();
+                    }
+                    else
+                    {
+                        _leaderboardText.SetText("Авторизоваться");
+                        YG2.OpenAuthDialog();
+                        YG2.SaveProgress();
+                    }
                 }
                 break;
             case OtherButtons.tg:

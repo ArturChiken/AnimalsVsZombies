@@ -21,5 +21,7 @@ namespace YG
         public float SFXVolume = 0.700f;
 
         public List<int> stars = new List<int>() { 0, 0 };
+
+        public bool isFirstEntry = true;
     }
 }
