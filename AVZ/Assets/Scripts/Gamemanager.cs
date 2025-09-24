@@ -49,12 +49,12 @@ public class Gamemanager : MonoBehaviour
             _ = this;
         else
             Debug.LogError("There are more than 1 Gamanager in the scene");
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        //audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Start()
     {
-        audioManager.musicSource.clip
+        //audioManager.musicSource.clip
         StartCoroutine(Fade(1f, 0f));
         coinDisplay.SetText(YG2.saves.playerCoins + "");
         _pauseButton.SetActive(false);
