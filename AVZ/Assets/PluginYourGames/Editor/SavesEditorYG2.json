@@ -7,7 +7,7 @@
         false,
         false
     ],
-    "idSave": 1846,
+    "idSave": 2027,
     "unlockedShopItems": "sahur",
     "unlockedAchievements": "",
     "unlockedLevels": 2,
@@ -23,5 +23,5 @@
         1,
         0
     ],
-    "isFirstEntry": true
+    "isFirstEntry": false
 }
