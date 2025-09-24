@@ -87,7 +87,7 @@ public class Labubu : MonoBehaviour
             }
             Destroy(gameObject);
 
-            if (50 <= type.coinDropPercent)
+            if (Random.Range(0, 100) < 50)
             {
                 GameObject coinObj = Instantiate(coinPrefab, transform.position, Quaternion.identity);
 
