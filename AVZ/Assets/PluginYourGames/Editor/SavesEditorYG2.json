@@ -7,12 +7,12 @@
         false,
         false
     ],
-    "idSave": 1846,
-    "unlockedShopItems": "sahur",
+    "idSave": 1881,
+    "unlockedShopItems": "sahur,cappuccino,larila",
     "unlockedAchievements": "",
     "unlockedLevels": 2,
     "unlockedActs": 1,
-    "playerCoins": 5,
+    "playerCoins": 70,
     "crocodiloUses": 0,
     "playerStars": 1,
     "score": 24.30284309387207,
@@ -23,5 +23,5 @@
         1,
         0
     ],
-    "isFirstEntry": true
+    "isFirstEntry": false
 }

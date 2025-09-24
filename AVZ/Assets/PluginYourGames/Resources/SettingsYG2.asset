@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Authorization:
     playerPhotoSize: 1
-    authorized: 1
+    authorized: 0
     playerName: Player current
     uniqueID: 000
     playerPhoto: demo image
@@ -324,7 +324,7 @@ MonoBehaviour:
       priceCurrencyCode: YAN
       currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
       consumed: 1
-    - id: grenade
+    - id: 100
       title: "\u041B\u0430\u0431\u0443\u0431\u0443 \u043C\u043E\u043D\u0435\u0442\u044B
         100"
       description: "\u042D\u0442\u0430 \u043F\u043E\u043A\u0443\u043F\u043A\u0430
@@ -336,7 +336,7 @@ MonoBehaviour:
       priceCurrencyCode: YAN
       currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
       consumed: 1
-    - id: grenade
+    - id: 100
       title: Grenade
       description: Product - Grenade
       imageURI: demo image
