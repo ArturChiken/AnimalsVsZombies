@@ -4751,8 +4751,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 2042983899}
   SFXSource: {fileID: 427384059}
-  mainMenuMusic: {fileID: 8300000, guid: 775bb78871f75c949b727b6f0c50ac7b, type: 3}
-  inGameMusic: {fileID: 0}
+  mainMenuMusic: {fileID: 8300000, guid: 777693fd044c6354787ae7466399ad33, type: 3}
+  inGameMusic: {fileID: 8300000, guid: c4c0ffbaf56e20445a847f1911ce56be, type: 3}
   menuButtons: {fileID: 0}
   startSound: {fileID: 0}
   win: {fileID: 0}

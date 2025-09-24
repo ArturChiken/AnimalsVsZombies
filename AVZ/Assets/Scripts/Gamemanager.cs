@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using YG;
-using static MainMenuManager;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -13,6 +12,8 @@ public class Gamemanager : MonoBehaviour
     public enum PauseScreenContainer { pause, mainmenu, restart, ru, en };
     public enum WinScreenContainer { mainmenu, nextlvl };
     public enum LoseScreenContainer { mainmenu, restart, revive };
+
+    AudioManager audioManager;
 
     public GameObject currentAnimal;
     public Sprite currentAnimalSprite;
@@ -48,10 +49,12 @@ public class Gamemanager : MonoBehaviour
             _ = this;
         else
             Debug.LogError("There are more than 1 Gamanager in the scene");
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Start()
     {
+        audioManager.musicSource.clip
         StartCoroutine(Fade(1f, 0f));
         coinDisplay.SetText(YG2.saves.playerCoins + "");
         _pauseButton.SetActive(false);

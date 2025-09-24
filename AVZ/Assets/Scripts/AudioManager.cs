@@ -1,7 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+    //instance
+    private static AudioManager _;
+
     [Header("AudioSource")]
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
@@ -21,13 +25,22 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip purchase;
 
-    private void Awake()
+    void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (_ == null)
+        {
+            _ = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
     public void Start()
-    {
+    { 
         musicSource.clip = mainMenuMusic;
         musicSource.Play();
     }
