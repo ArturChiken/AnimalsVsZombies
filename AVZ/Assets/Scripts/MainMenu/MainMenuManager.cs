@@ -21,13 +21,13 @@ public class MainMenuManager : MonoBehaviour
     public enum OptionsButtons { back, credits, ru, en };
 
     [SerializeField] CanvasGroup _MainMenuCanvasGroup, _fadeCanvasGroup;
-    [SerializeField] GameObject _BlurFrame, _MainMenuContainer, _OptionsContainer, _CreditsContainer, _LeaderboardFrame, _Speechbubbles, _ClickOnMeSB, _YouCanOpenInfLevelSB, _AuthorizeToOpenLeaderboardSB;
+    [SerializeField] GameObject _BlurFrame, _MainMenuContainer, _OptionsContainer, _CreditsContainer, _LeaderboardFrame, _Speechbubbles, _ClickOnMeSB, _YouCanOpenInfLevelSB, _AuthorizeToOpenLeaderboardSB, _SBs;
     [SerializeField] TMP_Text _NameholderText;
     [SerializeField] Animator _nameholderAnimator;
     [SerializeField] int _sceneToLoadAfterPlayAdvPressed, _sceneToLoadAfterShopPressed, _sceneToLoadAfterPlayInfPressed, _sceneToLoadAfterLeaderboardPressed;
     [SerializeField] float _fadeDuration = 1f;
-    [SerializeField] Button _infLevelB;
-    [SerializeField] TMP_Text _leaderboardText;
+    [SerializeField] Button _infLevelB, _lbButton;
+    [SerializeField] TMP_Text _leaderboardText, _clickOnMeText;
 
     public void Awake()
     {
@@ -47,6 +47,7 @@ public class MainMenuManager : MonoBehaviour
         _CreditsContainer.SetActive(false);
         _BlurFrame.SetActive(false);
         _NameholderText.SetText(YG2.player.name);
+        _SBs.SetActive(true);
 
         if (YG2.saves.isFirstEntry)
         {
@@ -67,6 +68,15 @@ public class MainMenuManager : MonoBehaviour
         {
             _infLevelB.interactable = true;
             _YouCanOpenInfLevelSB.SetActive(false);
+            if (YG2.player.auth)
+            {
+                if (Random.Range(0f, 1f) <= .35f)
+                {
+                    _clickOnMeText.text = "Узнай свое место в таблице лидеров!";
+                    _clickOnMeText.fontSize = 20f;
+                    _ClickOnMeSB.SetActive(true);
+                }
+            }
         }
     }
     //кнопки на меню
@@ -110,25 +120,29 @@ public class MainMenuManager : MonoBehaviour
                     if (nameholderIsActive)
                     {
                         StartCoroutine(PlayNameholderAnimation(!nameholderIsActive));
+                        _AuthorizeToOpenLeaderboardSB.SetActive(false);
                     }
                     else
                     {
                         StartCoroutine(PlayNameholderAnimation(!nameholderIsActive));
-                        if (YG2.saves.isFirstEntry == true)
+                        _ClickOnMeSB.SetActive(false);
+                        if (!YG2.player.auth)
                         {
-                            _ClickOnMeSB.SetActive(false);
-                            if (!YG2.player.auth)
-                            {
-                                _AuthorizeToOpenLeaderboardSB.SetActive(true);
-                            }
-                            else
-                            {
-                                _AuthorizeToOpenLeaderboardSB.SetActive(false);
-                            }
+                             _leaderboardText.SetText("Авторизоваться");
+                             _AuthorizeToOpenLeaderboardSB.SetActive(true);
+                        }
+                        else
+                        {
+                             _AuthorizeToOpenLeaderboardSB.SetActive(false);
+                        }
+
+                        if (YG2.saves.isFirstEntry)
+                        {
                             YG2.saves.isFirstEntry = false;
+                            YG2.SaveProgress();
                         }
                     }
-                    break;
+                break;  
             case OtherButtons.leaderboard:
                 {
                     if (YG2.player.auth)
@@ -138,8 +152,9 @@ public class MainMenuManager : MonoBehaviour
                     }
                     else
                     {
-                        _leaderboardText.SetText("Авторизоваться");
                         YG2.OpenAuthDialog();
+                        _AuthorizeToOpenLeaderboardSB.SetActive(false);
+                        StartCoroutine(PlayNameholderAnimation(!nameholderIsActive));
                         YG2.SaveProgress();
                     }
                 }
