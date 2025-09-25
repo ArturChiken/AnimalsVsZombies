@@ -1,15 +1,16 @@
-using UnityEngine;
-using TMPro;
-using UnityEngine.SceneManagement;
 using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using YG;
-using System.Linq;
+using static MainMenuManager;
 
 public class Gamemanager : MonoBehaviour
 {
     public static Gamemanager _;
 
-    public enum PauseScreenContainer { pause, mainmenu, restart};
+    public enum PauseScreenContainer { pause, mainmenu, restart, ru, en };
     public enum WinScreenContainer { mainmenu, nextlvl };
     public enum LoseScreenContainer { mainmenu, restart, revive };
 
@@ -27,12 +28,17 @@ public class Gamemanager : MonoBehaviour
     public bool isGameStarted;
     public bool isGamePaused;
     private bool _canRevive = true;
+    public Sprite resumeButtonSprite;
+    public Sprite pauseButtonSprite;
 
-    [SerializeField] CanvasGroup _fadeCanvasGroup;
+    [SerializeField] CanvasGroup _fadeCanvasGroup, Canvas;
     [SerializeField] GameObject _pauseScreen, _winScreen, _loseScreen, _blurFrameInGameGO;
     [SerializeField] int _sceneToLoadAfterPressedBack, _sceneToLoadAfterPressedRestartAndNextLvl;
     [SerializeField] float _fadeDuration = 1f;
+    [SerializeField] Animator _PauseScreenA, _LoseScreenA, _WinScreenA;
     public GameObject _speechBubbleCS, _pauseButton, blurFrameInAnimalCardSelectorGO;
+
+    public Button pauseButton;
 
     private Lose lose;
 
@@ -56,7 +62,7 @@ public class Gamemanager : MonoBehaviour
     }
     public void Win(int starsAquired)
     {
-        StartCoroutine(DelayBeforeWinOrLose());
+        StartCoroutine(DelayBeforeWin());
         isGameStarted = false;
         if (LevelMenuButtonManager.currLevel == LevelSelectorManager.UnlockedLevels)
         {
@@ -80,11 +86,7 @@ public class Gamemanager : MonoBehaviour
     public void Lose()
     {
         isGameStarted = false;
-        YG2.SaveProgress();
-        _pauseButton.SetActive(false);
-        _blurFrameInGameGO.SetActive(true);
-        _loseScreen.SetActive(true);
-        Time.timeScale = 0;
+        StartCoroutine(PlayLoseAnimation());
     }
 
     public void BuyAnimal(GameObject animal, Sprite sprite)
@@ -120,26 +122,6 @@ public class Gamemanager : MonoBehaviour
                 Animal(hit.collider.gameObject);
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (!isGamePaused)
-            {
-                _blurFrameInGameGO.SetActive(true);
-                _pauseScreen.SetActive(true);
-                Time.timeScale = 0;
-                isGamePaused = true;
-                YG2.SaveProgress();
-            }
-            else
-            {
-                _blurFrameInGameGO.SetActive(false);
-                _pauseScreen.SetActive(false);
-                Time.timeScale = 1;
-                isGamePaused = false;
-                YG2.SaveProgress();
-            }
-        }
     }
 
     void Animal(GameObject hit)
@@ -158,6 +140,7 @@ public class Gamemanager : MonoBehaviour
 
     public void PauseButtonClicked(PauseScreenContainer buttonClicked)
     {
+        Image pauseButtonImage = pauseButton.GetComponent<Image>();
         switch (buttonClicked)
         {
             case PauseScreenContainer.mainmenu:
@@ -166,27 +149,18 @@ public class Gamemanager : MonoBehaviour
                 StartCoroutine(TransitionScene(0));
                 break;
             case PauseScreenContainer.pause:
-                if (!isGamePaused)
-                {
-                    _blurFrameInGameGO.SetActive(true);
-                    _pauseScreen.SetActive(true);
-                    Time.timeScale = 0;
-                    isGamePaused = true;
-                    YG2.SaveProgress();
-                }
-                else
-                {
-                    _blurFrameInGameGO.SetActive(false);
-                    _pauseScreen.SetActive(false);
-                    Time.timeScale = 1;
-                    isGamePaused = false;
-                    YG2.SaveProgress();
-                }
+                StartCoroutine(PlayPauseAnimation(isGamePaused));
                 break;
             case PauseScreenContainer.restart:
                 Time.timeScale = 1;
                 isGamePaused = false;
                 StartCoroutine(TransitionScene(1));
+                break;
+            case PauseScreenContainer.ru:
+                YG2.SwitchLanguage("ru");
+                break;
+            case PauseScreenContainer.en:
+                YG2.SwitchLanguage("en");
                 break;
         }
     }
@@ -243,6 +217,69 @@ public class Gamemanager : MonoBehaviour
         }
     }
 
+    public IEnumerator PlayPauseAnimation(bool isPaused)
+    {
+        if (!isPaused)
+        {
+            Canvas.interactable = false;
+            Canvas.blocksRaycasts = false;
+            _blurFrameInGameGO.SetActive(true);
+            _pauseScreen.SetActive(true);
+            _PauseScreenA.Play("PauseScreenDown");
+            yield return new WaitForSeconds(_PauseScreenA.GetCurrentAnimatorStateInfo(0).length);
+            pauseButton.image.sprite = resumeButtonSprite;
+            Time.timeScale = 0;
+            Canvas.interactable = true;
+            Canvas.blocksRaycasts = true;
+            
+        }
+        else
+        {
+            Time.timeScale = 1;
+            Canvas.interactable = false;
+            Canvas.blocksRaycasts = false;
+            _PauseScreenA.Play("PauseScreenUp");
+            _blurFrameInGameGO.SetActive(false);
+            yield return new WaitForSeconds(_PauseScreenA.GetCurrentAnimatorStateInfo(0).length);
+            pauseButton.image.sprite = pauseButtonSprite;
+            _pauseScreen.SetActive(false);
+            Canvas.interactable = true;
+            Canvas.blocksRaycasts = true;
+        }
+        YG2.SaveProgress();
+        isGamePaused = !isGamePaused;
+    }
+
+    public IEnumerator PlayLoseAnimation()
+    {
+        Canvas.interactable = false;
+        Canvas.blocksRaycasts = false;
+        YG2.SaveProgress();
+        _pauseButton.SetActive(false);
+        _blurFrameInGameGO.SetActive(true);
+        _loseScreen.SetActive(true);
+        //_LoseScreenA.Play("LoseScreenDown");
+        yield return new WaitForSeconds(_LoseScreenA.GetCurrentAnimatorStateInfo(0).length);
+        Canvas.interactable = true;
+        Canvas.blocksRaycasts = true;
+        Time.timeScale = 0;
+    }
+
+    IEnumerator DelayBeforeWin()
+    {
+        Canvas.interactable = false;
+        Canvas.blocksRaycasts = false;
+        yield return new WaitForSeconds(5f);
+        _blurFrameInGameGO.SetActive(true);
+        _winScreen.SetActive(true);
+        //_WinScreenA.Play("WinScreenDown");
+        yield return new WaitForSeconds(_WinScreenA.GetCurrentAnimatorStateInfo(0).length);
+        if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+        Canvas.interactable = true;
+        Canvas.blocksRaycasts = true;
+        Time.timeScale = 0;
+    }
+
     public void RestartAdv()
     {
         Debug.Log("now You can be revived");
@@ -278,12 +315,5 @@ public class Gamemanager : MonoBehaviour
         _fadeCanvasGroup.alpha = targetAlpha;
     }
 
-    IEnumerator DelayBeforeWinOrLose()
-    {
-        yield return new WaitForSeconds(5f);
-        _blurFrameInGameGO.SetActive(true);
-        _winScreen.SetActive(true);
-        if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
-        Time.timeScale = 0;
-    }
+
 }

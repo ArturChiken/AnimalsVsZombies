@@ -1,6 +1,10 @@
 using System.Collections;
+using System.IO.IsolatedStorage;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using YG;
 
 public class MainMenuManager : MonoBehaviour
@@ -8,17 +12,22 @@ public class MainMenuManager : MonoBehaviour
     //синглтон паттерн постройки файла, иниц. инстанса этого класса
     public static MainMenuManager _;
 
+    AudioManager audioManager;
+
     bool nameholderIsActive = false;
     public enum MenuButtons { playAdv, playInf, shop };
     public enum OtherButtons { tg, nameholder, leaderboard, options };
     public enum CreditsButtons { back, artur, renat, dmitriy };
-    public enum OptionsButtons { back, credits };
+    public enum OptionsButtons { back, credits, ru, en };
 
     [SerializeField] CanvasGroup _MainMenuCanvasGroup, _fadeCanvasGroup;
-    [SerializeField] GameObject _BlurFrame, _MainMenuContainer, _OptionsContainer, _CreditsContainer, _LeaderboardFrame;
+    [SerializeField] GameObject _BlurFrame, _MainMenuContainer, _OptionsContainer, _CreditsContainer, _LeaderboardFrame, _Speechbubbles, _ClickOnMeSB, _YouCanOpenInfLevelSB, _AuthorizeToOpenLeaderboardSB, _SBs;
+    [SerializeField] TMP_Text _NameholderText;
     [SerializeField] Animator _nameholderAnimator;
     [SerializeField] int _sceneToLoadAfterPlayAdvPressed, _sceneToLoadAfterShopPressed, _sceneToLoadAfterPlayInfPressed, _sceneToLoadAfterLeaderboardPressed;
     [SerializeField] float _fadeDuration = 1f;
+    [SerializeField] Button _infLevelB, _lbButton;
+    [SerializeField] TMP_Text _leaderboardText, _clickOnMeText;
 
     public void Awake()
     {
@@ -26,6 +35,7 @@ public class MainMenuManager : MonoBehaviour
             _ = this;
         else
             Debug.LogError("There are more than 1 MainMenuManager's in the scene");
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Start()
@@ -36,6 +46,38 @@ public class MainMenuManager : MonoBehaviour
         _OptionsContainer.SetActive(false);
         _CreditsContainer.SetActive(false);
         _BlurFrame.SetActive(false);
+        _NameholderText.SetText(YG2.player.name);
+        _SBs.SetActive(true);
+
+        if (YG2.saves.isFirstEntry)
+        {
+            _ClickOnMeSB.SetActive(true);
+        }
+        else
+        {
+            _ClickOnMeSB.SetActive(false);
+            _AuthorizeToOpenLeaderboardSB.SetActive(false);
+        }
+
+        if (YG2.saves.unlockedShopItems.Count(c => c == ',') < 2)
+        {
+            _infLevelB.interactable = false;
+            _YouCanOpenInfLevelSB.SetActive(true);
+        }
+        else
+        {
+            _infLevelB.interactable = true;
+            _YouCanOpenInfLevelSB.SetActive(false);
+            if (YG2.player.auth)
+            {
+                if (Random.Range(0f, 1f) <= .35f)
+                {
+                    _clickOnMeText.text = "Узнай свое место в таблице лидеров!";
+                    _clickOnMeText.fontSize = 20f;
+                    _ClickOnMeSB.SetActive(true);
+                }
+            }
+        }
     }
     //кнопки на меню
     public void MenuButtonClicked(MenuButtons buttonClicked)
@@ -43,6 +85,7 @@ public class MainMenuManager : MonoBehaviour
         switch (buttonClicked)
         {
             case MenuButtons.playAdv:
+                audioManager.PlaySFX(audioManager.menuButtons);
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 PlayAdvClicked();
                 break;
@@ -74,19 +117,46 @@ public class MainMenuManager : MonoBehaviour
                 _BlurFrame.SetActive(true);
                 break;
             case OtherButtons.nameholder:
-                if (nameholderIsActive)
-                {
-                    StartCoroutine(PlayNameholderAnimation(false));
-                }
-                else
-                {
-                    StartCoroutine(PlayNameholderAnimation(true));
-                }
-                break;
+                    if (nameholderIsActive)
+                    {
+                        StartCoroutine(PlayNameholderAnimation(!nameholderIsActive));
+                        _AuthorizeToOpenLeaderboardSB.SetActive(false);
+                    }
+                    else
+                    {
+                        StartCoroutine(PlayNameholderAnimation(!nameholderIsActive));
+                        _ClickOnMeSB.SetActive(false);
+                        if (!YG2.player.auth)
+                        {
+                             _leaderboardText.SetText("Авторизоваться");
+                             _AuthorizeToOpenLeaderboardSB.SetActive(true);
+                        }
+                        else
+                        {
+                             _AuthorizeToOpenLeaderboardSB.SetActive(false);
+                        }
+
+                        if (YG2.saves.isFirstEntry)
+                        {
+                            YG2.saves.isFirstEntry = false;
+                            YG2.SaveProgress();
+                        }
+                    }
+                break;  
             case OtherButtons.leaderboard:
                 {
-                    if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
-                    LeaderboardClicked();
+                    if (YG2.player.auth)
+                    {
+                        if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                        LeaderboardClicked();
+                    }
+                    else
+                    {
+                        YG2.OpenAuthDialog();
+                        _AuthorizeToOpenLeaderboardSB.SetActive(false);
+                        StartCoroutine(PlayNameholderAnimation(!nameholderIsActive));
+                        YG2.SaveProgress();
+                    }
                 }
                 break;
             case OtherButtons.tg:
@@ -125,6 +195,12 @@ public class MainMenuManager : MonoBehaviour
             case OptionsButtons.credits:
                 _CreditsContainer.SetActive(true);
                 StartCoroutine(DelayedCreditsAction());
+                break;
+            case OptionsButtons.ru:
+                YG2.SwitchLanguage("ru");
+                break;
+            case OptionsButtons.en:
+                YG2.SwitchLanguage("en");
                 break;
             case OptionsButtons.back:
                 StartCoroutine(DelayedOptionsBackAction());

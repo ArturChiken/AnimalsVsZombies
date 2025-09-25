@@ -86,9 +86,8 @@ public class Labubu : MonoBehaviour
                 GameObject.Find("LabubuSpawner").GetComponent<LabubuSpawner>().labubuDead++;
             }
             Destroy(gameObject);
-            int randomInt = Random.Range(0, 1);
 
-            if (randomInt <= type.coinDropPercent)
+            if (Random.Range(0, 100) < 50)
             {
                 GameObject coinObj = Instantiate(coinPrefab, transform.position, Quaternion.identity);
 

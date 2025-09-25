@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: assassino
   displayName: "\u041A\u0430\u043F\u0443\u0447\u0438\u043D\u043E \u0410\u0441\u0441\u0430\u0441\u0441\u0438\u043D\u043E"
+  displayNameEn: Cappuccino Assassino
   cost: 1000
   useCount: -1
   icon: {fileID: -293961232951849327, guid: bdb494a4460688d44bce1282a0491581, type: 3}

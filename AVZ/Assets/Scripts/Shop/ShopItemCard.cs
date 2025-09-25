@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class ShopItemCard : MonoBehaviour
 {
@@ -13,7 +14,15 @@ public class ShopItemCard : MonoBehaviour
     private void Awake()
     {
         _itemIcon.sprite = thisItem.icon;
-        _itemName.text = thisItem.displayName;
+        switch(YG2.lang)
+        {
+            case "ru":
+                _itemName.text = thisItem.displayName;
+                break;
+            case "en":
+                _itemName.text = thisItem.displayNameEn;
+                break;
+        }
         _itemCost.text = $"{thisItem.cost}";
     }
 }

@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Speechbubble_0006_0
+      name: defolt speechbubble 2
       rect:
         serializedVersion: 2
         x: 14
@@ -121,7 +121,7 @@ TextureImporter:
         width: 228
         height: 186
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9b60b8e3035eca54db79f3f86616d011
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Speechbubble_0006_0: 8753759015572432028
+      defolt speechbubble 2: 8753759015572432028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

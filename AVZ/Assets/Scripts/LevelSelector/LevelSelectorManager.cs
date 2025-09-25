@@ -1,14 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using JetBrains.Annotations;
-using System.Drawing;
 using YG;
 
 public class LevelSelectorManager : MonoBehaviour
 {
     //синглтон паттерн постройки файла, иниц. инстанса этого класса
     public static LevelSelectorManager _;
+
+    bool LevelIsActive = false;
+    bool DiffIsActive = false;
 
     int whatActRN = 1;
     public enum ActContainerButtons { back, fstAct, sndAct, trdAct, right, left };
@@ -22,9 +23,9 @@ public class LevelSelectorManager : MonoBehaviour
     public ActObject[] actObjects;
     public Sprite goldenStarSprite;
 
-    [SerializeField] CanvasGroup _fadeCanvasGroup, _ActContainerButtons;
+    [SerializeField] CanvasGroup _fadeCanvasGroup, _ActContainerButtons, _LevelContainerButtons, _DiffContainerButtons;
     [SerializeField] GameObject _ActContainer, _LevelsContainer, _DiffContainer, _Act1Levels, _Act2Levels;
-    [SerializeField] Animator _Act1Animation, _Act2Animation, _Act3Animation;
+    [SerializeField] Animator _Act1Animation, _Act2Animation, _Act3Animation, _ActAnimation, _LevelAnimation, _DiffAnimation, _RightArrowAnimation, _LeftArrowAnimation;
     [SerializeField] int _sceneToLoadAfterPressedBack, _sceneToLoadAfterPressedLvl;
     [SerializeField] float _fadeDuration = 1f;
 
@@ -69,7 +70,6 @@ public class LevelSelectorManager : MonoBehaviour
     //актовые кнопки
     public void ActMenuButtonClicked(ActContainerButtons buttonClicked)
     {
-
         switch (buttonClicked)
         {
             case ActContainerButtons.back:
@@ -77,14 +77,12 @@ public class LevelSelectorManager : MonoBehaviour
                 StartCoroutine(TransitionScene(0));
                 break;
             case ActContainerButtons.fstAct:
-                _ActContainer.SetActive(false);
-                _LevelsContainer.SetActive(true);
+                StartCoroutine(PlaySwitchLevelActAnimation(LevelIsActive));
                 _Act1Levels.SetActive(true);
                 _Act2Levels.SetActive(false);
                 break;
             case ActContainerButtons.sndAct:
-                _ActContainer.SetActive(false);
-                _LevelsContainer.SetActive(true);
+                StartCoroutine(PlaySwitchLevelActAnimation(LevelIsActive));
                 _Act2Levels.SetActive(true);
                 _Act1Levels.SetActive(false);
                 break;
@@ -148,12 +146,10 @@ public class LevelSelectorManager : MonoBehaviour
         {
             case LevelContainerButtons.back:
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
-                _LevelsContainer.SetActive(false);
-                _ActContainer.SetActive(true);
+                StartCoroutine(PlaySwitchLevelActAnimation(LevelIsActive));
                 break;
             case LevelContainerButtons.level:
-                _LevelsContainer.SetActive(false);
-                _DiffContainer.SetActive(true);
+                StartCoroutine(PlaySwitchLevelDiffAnimation(DiffIsActive));
                 break;
         }
     }
@@ -174,8 +170,7 @@ public class LevelSelectorManager : MonoBehaviour
                 break;
             case DiffContainerButtons.back:
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
-                _DiffContainer.SetActive(false);
-                _LevelsContainer.SetActive(true);
+                StartCoroutine(PlaySwitchLevelDiffAnimation(DiffIsActive));
                 break;
         }
     }
@@ -206,6 +201,73 @@ public class LevelSelectorManager : MonoBehaviour
         _ActContainerButtons.blocksRaycasts = true;
     }
 
+    private IEnumerator PlaySwitchLevelActAnimation(bool show)
+    {
+        if (show)
+        {
+            _LevelContainerButtons.interactable = false;
+            _LevelContainerButtons.blocksRaycasts = false;
+            _LevelAnimation.Play("LevelUp");
+            yield return new WaitForSeconds(_LevelAnimation.GetCurrentAnimatorStateInfo(0).length);
+            _LevelsContainer.SetActive(false);
+            _ActContainer.SetActive(true);
+            _ActAnimation.Play("ActDown");
+            _RightArrowAnimation.Play("RightToLeft");
+            _LeftArrowAnimation.Play("LeftToRight");
+            yield return new WaitForSeconds(_ActAnimation.GetCurrentAnimatorStateInfo(0).length);
+            _ActContainerButtons.interactable = true;
+            _ActContainerButtons.blocksRaycasts = true;
+        }
+        else
+        {
+            _ActContainerButtons.interactable = false;
+            _ActContainerButtons.blocksRaycasts = false;
+            _ActAnimation.Play("ActUp");
+            _RightArrowAnimation.Play("RightToRight");
+            _LeftArrowAnimation.Play("LeftToLeft");
+            yield return new WaitForSeconds(_ActAnimation.GetCurrentAnimatorStateInfo(0).length);
+            _ActContainer.SetActive(false);
+            _LevelsContainer.SetActive(true);
+            _LevelAnimation.Play("LevelDown");
+            yield return new WaitForSeconds(_LevelAnimation.GetCurrentAnimatorStateInfo(0).length);
+            _LevelContainerButtons.interactable = true;
+            _LevelContainerButtons.blocksRaycasts = true;
+;
+        }
+        LevelIsActive = !LevelIsActive;
+    }
+
+    public IEnumerator PlaySwitchLevelDiffAnimation(bool show)
+    {
+        if (show)
+        {
+            _DiffContainerButtons.interactable = false;
+            _DiffContainerButtons.blocksRaycasts = false;
+            _DiffAnimation.Play("DiffUp");
+            yield return new WaitForSeconds(_DiffAnimation.GetCurrentAnimatorStateInfo(0).length);
+            _DiffContainer.SetActive(false);
+            _LevelsContainer.SetActive(true);
+            _LevelAnimation.Play("LevelDown");
+            yield return new WaitForSeconds(_ActAnimation.GetCurrentAnimatorStateInfo(0).length);
+            _LevelContainerButtons.interactable = true;
+            _LevelContainerButtons.blocksRaycasts = true;
+        }
+        else
+        {
+            _LevelContainerButtons.interactable = false;
+            _LevelContainerButtons.blocksRaycasts = false;
+            _LevelAnimation.Play("LevelUp");
+            yield return new WaitForSeconds(_LevelAnimation.GetCurrentAnimatorStateInfo(0).length);
+            _LevelsContainer.SetActive(false);
+            _DiffContainer.SetActive(true);
+            _DiffAnimation.Play("DiffDown");
+            yield return new WaitForSeconds(_LevelAnimation.GetCurrentAnimatorStateInfo(0).length);
+            _DiffContainerButtons.interactable = true;
+            _DiffContainerButtons.blocksRaycasts = true;
+        }
+        DiffIsActive = !DiffIsActive;
+    }
+
     // затемнение+переход на сцену
     private IEnumerator TransitionScene(int numberOfButton)
     {
@@ -221,6 +283,7 @@ public class LevelSelectorManager : MonoBehaviour
                 break;
         }
     }
+
 
     // функция затемнения
     private IEnumerator Fade(float startAlpha, float targetAlpha)
