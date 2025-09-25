@@ -4,6 +4,8 @@ using System.Collections;
 
 public class MenuHolderButtonsInteraction : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    AudioManager audioManager;
+
     [Header("Tooltip Settings")]
     public CanvasGroup[] tooltipCanvasGroup;
     public float fadeDuration = 0.3f;
@@ -25,10 +27,16 @@ public class MenuHolderButtonsInteraction : MonoBehaviour, IPointerEnterHandler,
         }
     }
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         isShowing = true;
         FadeTo(targetAlpha);
+        audioManager.PlaySFX(audioManager.writing);
     }
 
     public void OnPointerExit(PointerEventData eventData)

@@ -8,6 +8,8 @@ public class LevelSelectorManager : MonoBehaviour
     //синглтон паттерн постройки файла, иниц. инстанса этого класса
     public static LevelSelectorManager _;
 
+    AudioManager audioManager;
+
     bool LevelIsActive = false;
     bool DiffIsActive = false;
 
@@ -35,10 +37,12 @@ public class LevelSelectorManager : MonoBehaviour
             _ = this;
         else
             Debug.LogError("There are more than 1 LevelSelectorManager in the scene");
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Start()
     {
+        audioManager.PlaySFX(audioManager.buttonClicked2);
         StartCoroutine(Fade(1f, 0f));
         _ActContainer.SetActive(true);
         _LevelsContainer.SetActive(false);
@@ -73,15 +77,18 @@ public class LevelSelectorManager : MonoBehaviour
         switch (buttonClicked)
         {
             case ActContainerButtons.back:
+                audioManager.PlaySFX(audioManager.buttonClicked2);
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 StartCoroutine(TransitionScene(0));
                 break;
             case ActContainerButtons.fstAct:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(PlaySwitchLevelActAnimation(LevelIsActive));
                 _Act1Levels.SetActive(true);
                 _Act2Levels.SetActive(false);
                 break;
             case ActContainerButtons.sndAct:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(PlaySwitchLevelActAnimation(LevelIsActive));
                 _Act2Levels.SetActive(true);
                 _Act1Levels.SetActive(false);
@@ -93,18 +100,21 @@ public class LevelSelectorManager : MonoBehaviour
                 switch (whatActRN)
                 {
                     case 1:
+                        audioManager.PlaySFX(audioManager.buttonClicked2);
                         _Act1Animation.Play("Act1LeftSlide");
                         _Act2Animation.Play("Act2LeftSlide2");
                         StartCoroutine(PlayActAnimation(_Act2Animation));
                         whatActRN = 2;
                         break;
                     case 2:
+                        audioManager.PlaySFX(audioManager.buttonClicked2);
                         _Act2Animation.Play("Act2LeftSlide");
                         _Act3Animation.Play("Act3LeftSlide2");
                         StartCoroutine(PlayActAnimation(_Act3Animation));
                         whatActRN = 3;
                         break;
                     case 3:
+                        audioManager.PlaySFX(audioManager.buttonClicked2);
                         _Act3Animation.Play("Act3LeftSlide");
                         _Act1Animation.Play("Act1LeftSlide2");
                         StartCoroutine(PlayActAnimation(_Act1Animation));
@@ -117,18 +127,21 @@ public class LevelSelectorManager : MonoBehaviour
                 switch (whatActRN)
                 {
                     case 1:
+                        audioManager.PlaySFX(audioManager.buttonClicked2);
                         _Act1Animation.Play("Act1RightSlide");
                         _Act3Animation.Play("Act3RightSlide2");
                         StartCoroutine(PlayActAnimation(_Act3Animation));
                         whatActRN = 3;
                         break;
                     case 2:
+                        audioManager.PlaySFX(audioManager.buttonClicked2);
                         _Act2Animation.Play("Act2RightSlide");
                         _Act1Animation.Play("Act1RightSlide2");
                         StartCoroutine(PlayActAnimation(_Act1Animation));
                         whatActRN = 1;
                         break;
                     case 3:
+                        audioManager.PlaySFX(audioManager.buttonClicked2);
                         _Act3Animation.Play("Act3RightSlide");
                         _Act2Animation.Play("Act2RightSlide2");
                         StartCoroutine(PlayActAnimation(_Act2Animation));
@@ -145,10 +158,12 @@ public class LevelSelectorManager : MonoBehaviour
         switch (buttonClicked)
         {
             case LevelContainerButtons.back:
+                audioManager.PlaySFX(audioManager.buttonClicked2);
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 StartCoroutine(PlaySwitchLevelActAnimation(LevelIsActive));
                 break;
             case LevelContainerButtons.level:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(PlaySwitchLevelDiffAnimation(DiffIsActive));
                 break;
         }
@@ -160,15 +175,19 @@ public class LevelSelectorManager : MonoBehaviour
         switch (buttonClicked)
         {
             case DiffContainerButtons.easy:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(TransitionScene(1));
                 break;
             case DiffContainerButtons.normal:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(TransitionScene(1));
                 break;
             case DiffContainerButtons.hard:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(TransitionScene(1));
                 break;
             case DiffContainerButtons.back:
+                audioManager.PlaySFX(audioManager.buttonClicked2);
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 StartCoroutine(PlaySwitchLevelDiffAnimation(DiffIsActive));
                 break;

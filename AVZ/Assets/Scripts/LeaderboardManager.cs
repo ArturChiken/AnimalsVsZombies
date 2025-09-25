@@ -7,6 +7,8 @@ public class LeaderboardManager : MonoBehaviour
 {
     public static LeaderboardManager _;
 
+    AudioManager audioManager;
+
     [SerializeField] int _sceneToLoadAfterPressedBack;
     [SerializeField] float _fadeDuration = 1f;
     [SerializeField] CanvasGroup _fadeCanvasGroup;
@@ -19,6 +21,7 @@ public class LeaderboardManager : MonoBehaviour
             _ = this;
         else
             Debug.LogError("There are more than 1 ShopManager in the scene");
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     public void LeaderboardContainerButtonsClicked(LeaderboardContainerButtons buttonType)
@@ -29,6 +32,7 @@ public class LeaderboardManager : MonoBehaviour
             case LeaderboardContainerButtons.back:
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 StartCoroutine(TransitionScene());
+                audioManager.PlaySFX(audioManager.buttonClicked2);
                 break;
             case LeaderboardContainerButtons.tg:
                 websiteLink = "https://t.me/afterpartygames";

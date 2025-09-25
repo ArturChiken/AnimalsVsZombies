@@ -2447,7 +2447,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4753,14 +4753,35 @@ MonoBehaviour:
   SFXSource: {fileID: 427384059}
   mainMenuMusic: {fileID: 8300000, guid: 777693fd044c6354787ae7466399ad33, type: 3}
   inGameMusic: {fileID: 8300000, guid: c4c0ffbaf56e20445a847f1911ce56be, type: 3}
-  menuButtons: {fileID: 0}
-  startSound: {fileID: 0}
-  win: {fileID: 0}
-  lose: {fileID: 0}
-  coinCollect: {fileID: 0}
-  labubu1: {fileID: 0}
-  animal1: {fileID: 0}
-  purchase: {fileID: 0}
+  buttonClicked: {fileID: 8300000, guid: 502ac6d6960a9d54481a4e6fb39e2c91, type: 3}
+  buttonClicked2: {fileID: 8300000, guid: 6633e4b7e7b99084da7a1517d4f33d5d, type: 3}
+  buttonClicked3: {fileID: 8300000, guid: 705c8eafc9e91ad479edcb525fa0a00a, type: 3}
+  woodtable: {fileID: 8300000, guid: cd9a3666864a18d4ab2f900ec7decc18, type: 3}
+  writing: {fileID: 8300000, guid: bb2f4746c729823418b480055e8f7ea8, type: 3}
+  purchase: {fileID: 8300000, guid: 12d81746d0cb6aa4faadd82ee6c2a31c, type: 3}
+  win: {fileID: 8300000, guid: af7b8a68935cd88448510d78b49cac09, type: 3}
+  lose: {fileID: 8300000, guid: 435426e83a7110c49bd250e0d40d8665, type: 3}
+  coinCollect: {fileID: 8300000, guid: b8e9b8c24962c6c42bdc930f472858c7, type: 3}
+  coinDropped: {fileID: 8300000, guid: 1aece940e098d4e4a99412c4d0da9f65, type: 3}
+  labubu1: {fileID: 8300000, guid: 616f600a5803a9f4ca3f776ead469599, type: 3}
+  labubu2: {fileID: 8300000, guid: 12f8f733bb22ac94c86b7a8af157bafe, type: 3}
+  labubu3: {fileID: 8300000, guid: 9d2be4539f7fe4848854b662855be2d2, type: 3}
+  labubu4: {fileID: 8300000, guid: 98be9357452c14640a2ed5262664cf37, type: 3}
+  balerina: {fileID: 8300000, guid: 2fd88477ebf020449ab4c4a7ecbef3a6, type: 3}
+  bobrito: {fileID: 8300000, guid: 95e30106d203125438217db979bd02e0, type: 3}
+  bobrito_attack: {fileID: 8300000, guid: bbd2499b84c7f354aa16a72cb8af4a36, type: 3}
+  bombordiro: {fileID: 8300000, guid: e60f321e86384b448b579931639730eb, type: 3}
+  cappuccinoA: {fileID: 8300000, guid: b82268f64b1ac224db0e016ba46cda0c, type: 3}
+  cappuccinoA_attack: {fileID: 8300000, guid: f48ff5e4cc70d1644b7bc2d57a11cd9a, type: 3}
+  sahur: {fileID: 8300000, guid: 1f6e6e2f4f61d2344829df0499603f88, type: 3}
+  sahur_attack: {fileID: 8300000, guid: 3e699885bf0ad9e48b24fa9373d470bf, type: 3}
+  shark: {fileID: 8300000, guid: f5f492a86aad3474b9618229a5d47224, type: 3}
+  shark_attack: {fileID: 8300000, guid: f6889b3f6e605804c80ec89245547a56, type: 3}
+  spioniro: {fileID: 8300000, guid: 8c12e101b51b89442b3d7b4acced2463, type: 3}
+  spioniro_attack: {fileID: 8300000, guid: 5dce044cf3981654184408014f3a6ba2, type: 3}
+  camelo: {fileID: 8300000, guid: cdb7eb59f8893c04ea8ea26b68bfecad, type: 3}
+  camelo_attack: {fileID: 8300000, guid: fc8f6146fec985c4696a52ceb753025e, type: 3}
+  larila: {fileID: 8300000, guid: ee82471a935b7ec44af25bba9f507164, type: 3}
 --- !u!224 &800422749 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1974283957069961372, guid: 7fd55d0a433d136478bc5c3f11023263, type: 3}
@@ -11735,9 +11756,9 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.15
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

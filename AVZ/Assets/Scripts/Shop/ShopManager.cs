@@ -12,6 +12,8 @@ public class ShopManager : MonoBehaviour
     //синглтон паттерн постройки файла, иниц. инстанса этого класса
     public static ShopManager _;
 
+    AudioManager audioManager;
+
     bool previewIsActive = false;
     bool donateIsActive = false;
 
@@ -42,10 +44,12 @@ public class ShopManager : MonoBehaviour
             _ = this;
         else
             Debug.LogError("There are more than 1 ShopManager in the scene");
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     public void Start()
     {
+        audioManager.PlaySFX(audioManager.buttonClicked2);
         StartCoroutine(Fade(1f, 0f));
         coinDisplay.SetText(YG2.saves.playerCoins + "");
     }
@@ -64,9 +68,11 @@ public class ShopManager : MonoBehaviour
         switch (buttonClicked)
         {
             case ShopContainerButtons.shopitem:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(PlaySwitchPreviewShopAnimation(previewIsActive));
                 break;
             case ShopContainerButtons.back:
+                audioManager.PlaySFX(audioManager.buttonClicked2);
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 StartCoroutine(TransitionScene());
                 break;
@@ -80,10 +86,12 @@ public class ShopManager : MonoBehaviour
             case ShopContainerButtons.donate:
                 if (previewIsActive)
                 {
+                    audioManager.PlaySFX(audioManager.buttonClicked2);
                     StartCoroutine(PlaySwitchDonatePreviewAnimation(donateIsActive));
                 }
                 else
                 {
+                    audioManager.PlaySFX(audioManager.buttonClicked2);
                     StartCoroutine(PlaySwitchDonateShopAnimation(donateIsActive));
                 }
                 DonateButton1.interactable = false;
@@ -97,6 +105,7 @@ public class ShopManager : MonoBehaviour
         switch (buttonClicked)
         {
             case PreviewContainerButtons.back:
+                audioManager.PlaySFX(audioManager.buttonClicked2);
                 StartCoroutine(PlaySwitchPreviewShopAnimation(previewIsActive));
                 break;
         }
@@ -110,10 +119,12 @@ public class ShopManager : MonoBehaviour
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 if (previewIsActive)
                 {
+                    audioManager.PlaySFX(audioManager.buttonClicked2);
                     StartCoroutine(PlaySwitchDonatePreviewAnimation(donateIsActive));
                 }
                 else
                 {
+                    audioManager.PlaySFX(audioManager.buttonClicked2);
                     StartCoroutine(PlaySwitchDonateShopAnimation(donateIsActive));
                 }
                 
@@ -147,6 +158,7 @@ public class ShopManager : MonoBehaviour
             _.AlreadyBoughtSpeechBubble.SetActive(true);
             return false;
         }
+
 
         YG2.saves.playerCoins -= item.cost;
         SaveSystem.UnlockItem(item.itemId);

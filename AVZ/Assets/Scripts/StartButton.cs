@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class StartButton : MonoBehaviour
 {
+    AudioManager audioManager;
     private Gamemanager gameManager;
     public Transform cardSelector;
     public Animator animator, _StartButtonAnim, _SpeechbubbleAnim, _CardSelectorAnim;
@@ -17,6 +18,11 @@ public class StartButton : MonoBehaviour
     {
         GetComponent<Button>().onClick.AddListener(StartGame);
         gameManager = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
+    }
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -39,6 +45,7 @@ public class StartButton : MonoBehaviour
         {
             gameManager.isGameStarted = true;
             StartCoroutine(GameStartAnimation());
+            audioManager.SwitchMusic(audioManager.inGameMusic);
         }
     }
 

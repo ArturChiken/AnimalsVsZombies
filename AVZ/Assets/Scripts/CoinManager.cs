@@ -7,7 +7,6 @@ public class CoinManager : MonoBehaviour
     public void OnMouseDown()
     {
         Gamemanager.IncrementCoins(value);
-
         Destroy(this.gameObject);
     }
 }

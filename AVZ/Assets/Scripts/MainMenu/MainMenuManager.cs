@@ -85,7 +85,6 @@ public class MainMenuManager : MonoBehaviour
         switch (buttonClicked)
         {
             case MenuButtons.playAdv:
-                audioManager.PlaySFX(audioManager.menuButtons);
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 PlayAdvClicked();
                 break;
@@ -111,12 +110,14 @@ public class MainMenuManager : MonoBehaviour
         {
             case OtherButtons.options:
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                audioManager.PlaySFX(audioManager.buttonClicked2);
                 _MainMenuCanvasGroup.interactable = false;
                 _MainMenuCanvasGroup.blocksRaycasts = false;
                 _OptionsContainer.SetActive(true);
                 _BlurFrame.SetActive(true);
                 break;
             case OtherButtons.nameholder:
+                    audioManager.PlaySFX(audioManager.woodtable);
                     if (nameholderIsActive)
                     {
                         StartCoroutine(PlayNameholderAnimation(!nameholderIsActive));
@@ -155,6 +156,7 @@ public class MainMenuManager : MonoBehaviour
                         YG2.OpenAuthDialog();
                         _AuthorizeToOpenLeaderboardSB.SetActive(false);
                         StartCoroutine(PlayNameholderAnimation(!nameholderIsActive));
+                        audioManager.PlaySFX(audioManager.woodtable);
                         YG2.SaveProgress();
                     }
                 }
@@ -195,14 +197,18 @@ public class MainMenuManager : MonoBehaviour
             case OptionsButtons.credits:
                 _CreditsContainer.SetActive(true);
                 StartCoroutine(DelayedCreditsAction());
+                audioManager.PlaySFX(audioManager.buttonClicked2);
                 break;
             case OptionsButtons.ru:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 YG2.SwitchLanguage("ru");
                 break;
             case OptionsButtons.en:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 YG2.SwitchLanguage("en");
                 break;
             case OptionsButtons.back:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(DelayedOptionsBackAction());
                 break;
         }
@@ -235,10 +241,12 @@ public class MainMenuManager : MonoBehaviour
         {
             case CreditsButtons.back:
                 StartCoroutine(DelayedCreditsBackAction());
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 break;
             case CreditsButtons.artur:
                 websiteLink = "https://t.me/ArturChiken";
                 {
+                    audioManager.PlaySFX(audioManager.buttonClicked);
                     Application.OpenURL(websiteLink);
                 }
                 break;
@@ -246,6 +254,7 @@ public class MainMenuManager : MonoBehaviour
                 websiteLink = "https://t.me/Jimmywest";
                 if (websiteLink != "")
                 {
+                    audioManager.PlaySFX(audioManager.buttonClicked);
                     Application.OpenURL(websiteLink);
                 }
                 break;
@@ -253,6 +262,7 @@ public class MainMenuManager : MonoBehaviour
                 websiteLink = "https://t.me/bburda1";
                 if (websiteLink != "")
                 {
+                    audioManager.PlaySFX(audioManager.buttonClicked);
                     Application.OpenURL(websiteLink);
                 }
                 break;
