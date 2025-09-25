@@ -23671,8 +23671,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasAnimal: 0
   infMode: 0
-  actNums: 
-  lvlNums: 
+  actNums: 01000000
+  lvlNums: 01000000020000000300000004000000
 --- !u!212 &824495274
 SpriteRenderer:
   m_ObjectHideFlags: 0
