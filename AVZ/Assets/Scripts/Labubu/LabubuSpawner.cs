@@ -64,7 +64,11 @@ public class LabubuSpawner : MonoBehaviour
 
     void SpawnLabubu()
     {
-        if (labubuSpawned >= labubuMax) return;
+        if (labubuSpawned >= labubuMax)
+        {
+            CancelInvoke("SpawnLabubu");
+            return;
+        }
         labubuSpawned++;
 
         int randomPoint = Random.Range(0, spawnPoints.Length);
