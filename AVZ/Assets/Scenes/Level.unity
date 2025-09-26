@@ -14647,6 +14647,7 @@ MonoBehaviour:
   cardAmount: 0
   isGameStarted: 0
   isGamePaused: 0
+  gameWon: 0
   _fadeCanvasGroup: {fileID: 2017243847}
   Canvas: {fileID: 2003709654}
   _pauseScreen: {fileID: 1174076304}
@@ -35214,7 +35215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1308241182
 RectTransform:
   m_ObjectHideFlags: 0
@@ -44430,8 +44431,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1793242435}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -14.838135, y: 30.562012}
   m_SizeDelta: {x: 204.7537, y: 152.8101}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -51451,8 +51452,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1793242435}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0.00025177002}
   m_SizeDelta: {x: 0, y: 0.00048828}
   m_Pivot: {x: 0.5, y: 0.5}
