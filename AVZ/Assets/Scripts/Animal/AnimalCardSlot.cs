@@ -46,7 +46,6 @@ public class AnimalCardSlot : MonoBehaviour
         {
             cardButton.interactable = true;
             cardButton.onClick.AddListener(AddPrefabToLayout);
-            audioManager.PlaySFX(audioManager.buttonClicked);
         }
     }
     public void AddPrefabToLayout()
@@ -58,6 +57,7 @@ public class AnimalCardSlot : MonoBehaviour
             LayoutRebuilder.ForceRebuildLayoutImmediate(canvas as RectTransform);
             gameManager.cardAmount++;
             isUsed = true;
+            audioManager.PlaySFX(audioManager.buttonClicked);
             Debug.Log("ты нажал");
         }
         else
@@ -65,6 +65,7 @@ public class AnimalCardSlot : MonoBehaviour
             Destroy(currentCardInstance);
             gameManager.cardAmount--;
             isUsed = false;
+            audioManager.PlaySFX(audioManager.buttonClicked);
         }
     }
     public void RefreshCard()

@@ -16,12 +16,12 @@ public class MainMenuManager : MonoBehaviour
 
     bool nameholderIsActive = false;
     public enum MenuButtons { playAdv, playInf, shop };
-    public enum OtherButtons { tg, nameholder, leaderboard, options };
-    public enum CreditsButtons { back, artur, renat, dmitriy };
+    public enum OtherButtons { tg, nameholder, leaderboard, options, review };
+    public enum CreditsButtons { back, dmitriy };
     public enum OptionsButtons { back, credits, ru, en };
 
     [SerializeField] CanvasGroup _MainMenuCanvasGroup, _fadeCanvasGroup;
-    [SerializeField] GameObject _BlurFrame, _MainMenuContainer, _OptionsContainer, _CreditsContainer, _LeaderboardFrame, _Speechbubbles, _ClickOnMeSB, _YouCanOpenInfLevelSB, _AuthorizeToOpenLeaderboardSB, _SBs;
+    [SerializeField] GameObject _BlurFrame, _MainMenuContainer, _OptionsContainer, _CreditsContainer, _LeaderboardFrame, _Speechbubbles, _ClickOnMeSB, _YouCanOpenInfLevelSB, _AuthorizeToOpenLeaderboardSB, _SBs, _reviewB;
     [SerializeField] TMP_Text _NameholderText;
     [SerializeField] Animator _nameholderAnimator;
     [SerializeField] int _sceneToLoadAfterPlayAdvPressed, _sceneToLoadAfterShopPressed, _sceneToLoadAfterPlayInfPressed, _sceneToLoadAfterLeaderboardPressed;
@@ -48,6 +48,8 @@ public class MainMenuManager : MonoBehaviour
         _BlurFrame.SetActive(false);
         _NameholderText.SetText(YG2.player.name);
         _SBs.SetActive(true);
+
+        if (Random.Range(0f, 1f) < .3f) _reviewB.SetActive(true);
 
         if (YG2.saves.isFirstEntry)
         {
@@ -168,6 +170,11 @@ public class MainMenuManager : MonoBehaviour
                     Application.OpenURL(websiteLink);
                 }
                 break;
+            case OtherButtons.review:
+                audioManager.PlaySFX(audioManager.buttonClicked);
+                YG2.ReviewShow();
+                _reviewB.SetActive(false);
+                break;
         }
 
     }
@@ -243,23 +250,8 @@ public class MainMenuManager : MonoBehaviour
                 StartCoroutine(DelayedCreditsBackAction());
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 break;
-            case CreditsButtons.artur:
-                websiteLink = "https://t.me/ArturChiken";
-                {
-                    audioManager.PlaySFX(audioManager.buttonClicked);
-                    Application.OpenURL(websiteLink);
-                }
-                break;
             case CreditsButtons.dmitriy:
                 websiteLink = "https://t.me/Jimmywest";
-                if (websiteLink != "")
-                {
-                    audioManager.PlaySFX(audioManager.buttonClicked);
-                    Application.OpenURL(websiteLink);
-                }
-                break;
-            case CreditsButtons.renat:
-                websiteLink = "https://t.me/bburda1";
                 if (websiteLink != "")
                 {
                     audioManager.PlaySFX(audioManager.buttonClicked);

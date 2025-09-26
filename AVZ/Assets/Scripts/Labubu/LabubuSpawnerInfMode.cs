@@ -47,7 +47,6 @@ public class LabubuSpawnerInfMode : MonoBehaviour
         if (labubuSpawned >= labubuMax)
         {
             CancelInvoke("SpawnLabubu");
-            audioManager.PlaySFX(audioManager.win);
             WavePause();
         }
         labubuSpawned++;
