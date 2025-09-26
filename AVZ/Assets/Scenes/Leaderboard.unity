@@ -558,7 +558,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8316451672082894416, guid: fa0dd60d5a9ad5c4d9b84a5c7e516f1f, type: 3}
       propertyPath: nameLB
-      value: test
+      value: EndlessMode
       objectReference: {fileID: 0}
     - target: {fileID: 8316451672082894416, guid: fa0dd60d5a9ad5c4d9b84a5c7e516f1f, type: 3}
       propertyPath: maxQuantityPlayers
