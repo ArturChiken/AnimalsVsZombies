@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class BobritoShooter : MonoBehaviour
 {
+    AudioManager audioManager;
+
     public float cooldown;
     public float cldwn;
     private bool canShoot;
@@ -13,10 +15,17 @@ public class BobritoShooter : MonoBehaviour
     private GameObject target;
     public Animator anim;
 
+    public AudioClip soundToPlay;
+
 
     private void Start()
     {
         Invoke("ResetCooldown", cooldown);
+    }
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -41,6 +50,7 @@ public class BobritoShooter : MonoBehaviour
     void Shoot()
     {
         if (!canShoot) return;
+        audioManager.PlaySFX(soundToPlay);
         canShoot = false;
         Invoke("ResetCooldown", cooldown);
         Invoke("RealShoot", cldwn);

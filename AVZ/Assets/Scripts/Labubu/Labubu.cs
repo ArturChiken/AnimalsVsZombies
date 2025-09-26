@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Labubu : MonoBehaviour
 {
+    AudioManager audioManager;
 
     private int health;
     private float speed;
@@ -32,6 +33,11 @@ public class Labubu : MonoBehaviour
         animator = gameObject.AddComponent<Animator>();
         animator.runtimeAnimatorController = type.animatorController;
         animator.Play(type.animatorController.name, 0);
+    }
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -71,6 +77,7 @@ public class Labubu : MonoBehaviour
     public void LabubuGetHit(int damage, bool freeze = false)
     {
         health -= damage;
+        audioManager.PlaySFX(audioManager.labubu1);
         if (freeze)
         {
             Freeze();
@@ -85,12 +92,13 @@ public class Labubu : MonoBehaviour
             {
                 GameObject.Find("LabubuSpawner").GetComponent<LabubuSpawner>().labubuDead++;
             }
+            if (Random.Range(0f, 1f) < .1f) audioManager.PlaySFX(audioManager.labubu2);
             Destroy(gameObject);
 
             if (Random.Range(0, 100) < 50)
             {
                 GameObject coinObj = Instantiate(coinPrefab, transform.position, Quaternion.identity);
-
+                audioManager.PlaySFX(audioManager.coinDropped);
                 coinObj.transform.SetParent(null);
             }
         }

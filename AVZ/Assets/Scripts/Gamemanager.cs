@@ -1,10 +1,10 @@
 using System.Collections;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using YG;
-using static MainMenuManager;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -13,6 +13,8 @@ public class Gamemanager : MonoBehaviour
     public enum PauseScreenContainer { pause, mainmenu, restart, ru, en };
     public enum WinScreenContainer { mainmenu, nextlvl };
     public enum LoseScreenContainer { mainmenu, restart, revive };
+
+    AudioManager audioManager;
 
     public GameObject currentAnimal;
     public Sprite currentAnimalSprite;
@@ -27,18 +29,15 @@ public class Gamemanager : MonoBehaviour
     public int cardAmount;
     public bool isGameStarted;
     public bool isGamePaused;
+    public bool gameWon;
     private bool _canRevive = true;
-    public Sprite resumeButtonSprite;
-    public Sprite pauseButtonSprite;
 
     [SerializeField] CanvasGroup _fadeCanvasGroup, Canvas;
-    [SerializeField] GameObject _pauseScreen, _winScreen, _loseScreen, _blurFrameInGameGO;
+    [SerializeField] GameObject _pauseScreen, _winScreen, _loseScreen, _blurFrameInGameGO, _pauseB, _homeB, _exitText;
     [SerializeField] int _sceneToLoadAfterPressedBack, _sceneToLoadAfterPressedRestartAndNextLvl;
     [SerializeField] float _fadeDuration = 1f;
     [SerializeField] Animator _PauseScreenA, _LoseScreenA, _WinScreenA;
     public GameObject _speechBubbleCS, _pauseButton, blurFrameInAnimalCardSelectorGO;
-
-    public Button pauseButton;
 
     private Lose lose;
 
@@ -48,20 +47,27 @@ public class Gamemanager : MonoBehaviour
             _ = this;
         else
             Debug.LogError("There are more than 1 Gamanager in the scene");
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Start()
     {
+        audioManager.PlaySFX(audioManager.buttonClicked2);
         StartCoroutine(Fade(1f, 0f));
         coinDisplay.SetText(YG2.saves.playerCoins + "");
         _pauseButton.SetActive(false);
         _blurFrameInGameGO.SetActive(false);
         blurFrameInAnimalCardSelectorGO.SetActive(true);
 
+        _homeB.SetActive(false);
+        _exitText.SetActive(false);
+
         lose = GameObject.Find("LoseTrigger").GetComponent<Lose>();
     }
     public void Win(int starsAquired)
     {
+        gameWon = true;
+        audioManager.PlaySFX(audioManager.endOfLvl);
         StartCoroutine(DelayBeforeWin());
         isGameStarted = false;
         if (LevelMenuButtonManager.currLevel == LevelSelectorManager.UnlockedLevels)
@@ -140,26 +146,30 @@ public class Gamemanager : MonoBehaviour
 
     public void PauseButtonClicked(PauseScreenContainer buttonClicked)
     {
-        Image pauseButtonImage = pauseButton.GetComponent<Image>();
         switch (buttonClicked)
         {
             case PauseScreenContainer.mainmenu:
                 Time.timeScale = 1;
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 isGamePaused = false;
                 StartCoroutine(TransitionScene(0));
                 break;
             case PauseScreenContainer.pause:
+                audioManager.PlaySFX(audioManager.buttonClicked2);
                 StartCoroutine(PlayPauseAnimation(isGamePaused));
                 break;
             case PauseScreenContainer.restart:
                 Time.timeScale = 1;
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 isGamePaused = false;
                 StartCoroutine(TransitionScene(1));
                 break;
             case PauseScreenContainer.ru:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 YG2.SwitchLanguage("ru");
                 break;
             case PauseScreenContainer.en:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 YG2.SwitchLanguage("en");
                 break;
         }
@@ -171,10 +181,12 @@ public class Gamemanager : MonoBehaviour
         {
             case WinScreenContainer.mainmenu:
                 Time.timeScale = 1;
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(TransitionScene(0));
                 break;
             case WinScreenContainer.nextlvl:
                 Time.timeScale = 1;
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 LevelMenuButtonManager.currLevel += 1;
                 StartCoroutine(TransitionScene(1));
                 break;
@@ -187,10 +199,12 @@ public class Gamemanager : MonoBehaviour
         {
             case LoseScreenContainer.mainmenu:
                 Time.timeScale = 1;
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(TransitionScene(0));
                 break;
             case LoseScreenContainer.restart:
                 Time.timeScale = 1;
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(TransitionScene(1));
                 break;
             case LoseScreenContainer.revive:
@@ -205,6 +219,7 @@ public class Gamemanager : MonoBehaviour
                     _blurFrameInGameGO.SetActive(false);
                     _loseScreen.SetActive(false);
                     Time.timeScale = 1;
+                    audioManager.SwitchMusic(audioManager.inGameMusic);
                     Invoke("RestartAdv", 100f);
                 }
                 else
@@ -226,8 +241,10 @@ public class Gamemanager : MonoBehaviour
             _blurFrameInGameGO.SetActive(true);
             _pauseScreen.SetActive(true);
             _PauseScreenA.Play("PauseScreenDown");
+            _homeB.SetActive(true);
+            _pauseB.SetActive(false);
+            _exitText.SetActive(true);
             yield return new WaitForSeconds(_PauseScreenA.GetCurrentAnimatorStateInfo(0).length);
-            pauseButton.image.sprite = resumeButtonSprite;
             Time.timeScale = 0;
             Canvas.interactable = true;
             Canvas.blocksRaycasts = true;
@@ -240,8 +257,10 @@ public class Gamemanager : MonoBehaviour
             Canvas.blocksRaycasts = false;
             _PauseScreenA.Play("PauseScreenUp");
             _blurFrameInGameGO.SetActive(false);
+            _pauseB.SetActive(true);
+            _homeB.SetActive(false);
+            _exitText.SetActive(false);
             yield return new WaitForSeconds(_PauseScreenA.GetCurrentAnimatorStateInfo(0).length);
-            pauseButton.image.sprite = pauseButtonSprite;
             _pauseScreen.SetActive(false);
             Canvas.interactable = true;
             Canvas.blocksRaycasts = true;
@@ -258,7 +277,9 @@ public class Gamemanager : MonoBehaviour
         _pauseButton.SetActive(false);
         _blurFrameInGameGO.SetActive(true);
         _loseScreen.SetActive(true);
+        audioManager.StopMusic();
         //_LoseScreenA.Play("LoseScreenDown");
+        audioManager.PlaySFX(audioManager.lose);
         yield return new WaitForSeconds(_LoseScreenA.GetCurrentAnimatorStateInfo(0).length);
         Canvas.interactable = true;
         Canvas.blocksRaycasts = true;
@@ -272,7 +293,9 @@ public class Gamemanager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         _blurFrameInGameGO.SetActive(true);
         _winScreen.SetActive(true);
+        audioManager.StopMusic();
         //_WinScreenA.Play("WinScreenDown");
+        audioManager.PlaySFX(audioManager.win);
         yield return new WaitForSeconds(_WinScreenA.GetCurrentAnimatorStateInfo(0).length);
         if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
         Canvas.interactable = true;
@@ -294,9 +317,11 @@ public class Gamemanager : MonoBehaviour
         {
             case 0:
                 SceneManager.LoadScene(_sceneToLoadAfterPressedBack);
+                audioManager.SwitchMusic(audioManager.mainMenuMusic);
                 break;
             case 1:
                 SceneManager.LoadScene(_sceneToLoadAfterPressedRestartAndNextLvl);
+                audioManager.SwitchMusic(audioManager.mainMenuMusic);
                 break;
         }
     }

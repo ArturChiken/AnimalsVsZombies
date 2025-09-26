@@ -5,6 +5,7 @@ using YG;
 
 public class PreviewCard : MonoBehaviour
 {
+    AudioManager audioManager;
     [SerializeField] public Image _itemIcon;
     [SerializeField] public TMP_Text _itemLabel;
     [SerializeField] public TMP_Text _itemCost;
@@ -18,6 +19,7 @@ public class PreviewCard : MonoBehaviour
             _ = this;
         else
             Debug.LogError("There are more than 1 PreviewCard in the scene");
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private bool IsValid()
@@ -51,7 +53,16 @@ public class PreviewCard : MonoBehaviour
     }
     public void BuyI()
     {
-        ShopManager.BuyInfiniteItem(ShopManager._._activeShopItemSOInPreview);
+        bool isItBuyed;
+        ShopManager.BuyInfiniteItem(ShopManager._._activeShopItemSOInPreview, out isItBuyed);
+        if (isItBuyed)
+        {
+            audioManager.PlaySFX(audioManager.purchase);
+        }
+        else
+        {
+            audioManager.PlaySFX(audioManager.buttonClicked);
+        }
     }
 
     public void BuyNI()

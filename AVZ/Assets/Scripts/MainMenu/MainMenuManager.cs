@@ -16,12 +16,12 @@ public class MainMenuManager : MonoBehaviour
 
     bool nameholderIsActive = false;
     public enum MenuButtons { playAdv, playInf, shop };
-    public enum OtherButtons { tg, nameholder, leaderboard, options };
-    public enum CreditsButtons { back, artur, renat, dmitriy };
+    public enum OtherButtons { tg, nameholder, leaderboard, options, review };
+    public enum CreditsButtons { back, dmitriy };
     public enum OptionsButtons { back, credits, ru, en };
 
     [SerializeField] CanvasGroup _MainMenuCanvasGroup, _fadeCanvasGroup;
-    [SerializeField] GameObject _BlurFrame, _MainMenuContainer, _OptionsContainer, _CreditsContainer, _LeaderboardFrame, _Speechbubbles, _ClickOnMeSB, _YouCanOpenInfLevelSB, _AuthorizeToOpenLeaderboardSB, _SBs;
+    [SerializeField] GameObject _BlurFrame, _MainMenuContainer, _OptionsContainer, _CreditsContainer, _LeaderboardFrame, _Speechbubbles, _ClickOnMeSB, _YouCanOpenInfLevelSB, _AuthorizeToOpenLeaderboardSB, _SBs, _reviewB;
     [SerializeField] TMP_Text _NameholderText;
     [SerializeField] Animator _nameholderAnimator;
     [SerializeField] int _sceneToLoadAfterPlayAdvPressed, _sceneToLoadAfterShopPressed, _sceneToLoadAfterPlayInfPressed, _sceneToLoadAfterLeaderboardPressed;
@@ -48,6 +48,8 @@ public class MainMenuManager : MonoBehaviour
         _BlurFrame.SetActive(false);
         _NameholderText.SetText(YG2.player.name);
         _SBs.SetActive(true);
+
+        if (Random.Range(0f, 1f) < .3f) _reviewB.SetActive(true);
 
         if (YG2.saves.isFirstEntry)
         {
@@ -85,7 +87,6 @@ public class MainMenuManager : MonoBehaviour
         switch (buttonClicked)
         {
             case MenuButtons.playAdv:
-                audioManager.PlaySFX(audioManager.menuButtons);
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
                 PlayAdvClicked();
                 break;
@@ -111,12 +112,14 @@ public class MainMenuManager : MonoBehaviour
         {
             case OtherButtons.options:
                 if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                audioManager.PlaySFX(audioManager.buttonClicked2);
                 _MainMenuCanvasGroup.interactable = false;
                 _MainMenuCanvasGroup.blocksRaycasts = false;
                 _OptionsContainer.SetActive(true);
                 _BlurFrame.SetActive(true);
                 break;
             case OtherButtons.nameholder:
+                    audioManager.PlaySFX(audioManager.woodtable);
                     if (nameholderIsActive)
                     {
                         StartCoroutine(PlayNameholderAnimation(!nameholderIsActive));
@@ -155,6 +158,7 @@ public class MainMenuManager : MonoBehaviour
                         YG2.OpenAuthDialog();
                         _AuthorizeToOpenLeaderboardSB.SetActive(false);
                         StartCoroutine(PlayNameholderAnimation(!nameholderIsActive));
+                        audioManager.PlaySFX(audioManager.woodtable);
                         YG2.SaveProgress();
                     }
                 }
@@ -165,6 +169,11 @@ public class MainMenuManager : MonoBehaviour
                 {
                     Application.OpenURL(websiteLink);
                 }
+                break;
+            case OtherButtons.review:
+                audioManager.PlaySFX(audioManager.buttonClicked);
+                YG2.ReviewShow();
+                _reviewB.SetActive(false);
                 break;
         }
 
@@ -195,14 +204,18 @@ public class MainMenuManager : MonoBehaviour
             case OptionsButtons.credits:
                 _CreditsContainer.SetActive(true);
                 StartCoroutine(DelayedCreditsAction());
+                audioManager.PlaySFX(audioManager.buttonClicked2);
                 break;
             case OptionsButtons.ru:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 YG2.SwitchLanguage("ru");
                 break;
             case OptionsButtons.en:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 YG2.SwitchLanguage("en");
                 break;
             case OptionsButtons.back:
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(DelayedOptionsBackAction());
                 break;
         }
@@ -235,24 +248,13 @@ public class MainMenuManager : MonoBehaviour
         {
             case CreditsButtons.back:
                 StartCoroutine(DelayedCreditsBackAction());
-                break;
-            case CreditsButtons.artur:
-                websiteLink = "https://t.me/ArturChiken";
-                {
-                    Application.OpenURL(websiteLink);
-                }
+                audioManager.PlaySFX(audioManager.buttonClicked);
                 break;
             case CreditsButtons.dmitriy:
                 websiteLink = "https://t.me/Jimmywest";
                 if (websiteLink != "")
                 {
-                    Application.OpenURL(websiteLink);
-                }
-                break;
-            case CreditsButtons.renat:
-                websiteLink = "https://t.me/bburda1";
-                if (websiteLink != "")
-                {
+                    audioManager.PlaySFX(audioManager.buttonClicked);
                     Application.OpenURL(websiteLink);
                 }
                 break;

@@ -127,6 +127,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   anim: {fileID: 2489901672223618249}
+  soundToPlay: {fileID: 8300000, guid: bbd2499b84c7f354aa16a72cb8af4a36, type: 3}
 --- !u!61 &63618388088299013
 BoxCollider2D:
   m_ObjectHideFlags: 0

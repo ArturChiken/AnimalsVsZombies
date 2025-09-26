@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class LabubuSpawnerInfMode : MonoBehaviour
 {
+    AudioManager audioManager;
+
     public Transform[] spawnPoints;
     public GameObject labubu;
     public LabubuType[] labubuTypes;
@@ -21,6 +23,11 @@ public class LabubuSpawnerInfMode : MonoBehaviour
     private void Start()
     {
         gameManager = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
+    }
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()

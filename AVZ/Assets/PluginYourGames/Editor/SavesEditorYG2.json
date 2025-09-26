@@ -7,21 +7,20 @@
         false,
         false
     ],
-    "idSave": 2150,
-    "unlockedShopItems": "sahur,cappuccino,larila",
+    "idSave": 5337,
+    "unlockedShopItems": "sahur",
     "unlockedAchievements": "",
-    "unlockedLevels": 2,
+    "unlockedLevels": 1,
     "unlockedActs": 1,
-    "playerCoins": 470,
+    "playerCoins": 5,
     "crocodiloUses": 0,
-    "playerStars": 1,
-    "score": 24.30284309387207,
-    "musicVolume": 0.00009999999747378752,
-    "SFXVolume": 0.7832779884338379,
+    "playerStars": 0,
+    "score": 0,
+    "musicVolume": 0.7,
+    "SFXVolume": 0.7,
     "stars": [
         0,
-        1,
         0
     ],
-    "isFirstEntry": false
+    "isFirstEntry": true
 }

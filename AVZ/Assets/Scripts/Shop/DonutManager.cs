@@ -3,6 +3,11 @@ using YG;
 
 public class DonutManager : MonoBehaviour
 {
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // В гайде так было
     private void OnEnable()
     {
@@ -22,15 +27,19 @@ public class DonutManager : MonoBehaviour
         switch(id)
         {
             case "100":
+                audioManager.PlaySFX(audioManager.coinCollect);
                 YG2.saves.playerCoins += 100;
                 break;
             case "250":
+                audioManager.PlaySFX(audioManager.coinCollect);
                 YG2.saves.playerCoins += 250;
                 break;
             case "500":
+                audioManager.PlaySFX(audioManager.coinCollect);
                 YG2.saves.playerCoins += 500;
                 break;
             case "1000":
+                audioManager.PlaySFX(audioManager.coinCollect);
                 YG2.saves.playerCoins += 1000;
                 break;
         }
