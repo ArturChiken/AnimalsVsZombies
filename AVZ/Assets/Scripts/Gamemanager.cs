@@ -27,6 +27,7 @@ public class Gamemanager : MonoBehaviour
     public int cardAmount;
     public bool isGameStarted;
     public bool isGamePaused;
+    public bool gameWon;
     private bool _canRevive = true;
     public Sprite resumeButtonSprite;
     public Sprite pauseButtonSprite;
@@ -62,6 +63,7 @@ public class Gamemanager : MonoBehaviour
     }
     public void Win(int starsAquired)
     {
+        gameWon = true;
         StartCoroutine(DelayBeforeWin());
         isGameStarted = false;
         if (LevelMenuButtonManager.currLevel == LevelSelectorManager.UnlockedLevels)

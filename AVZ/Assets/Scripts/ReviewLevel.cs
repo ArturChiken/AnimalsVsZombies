@@ -16,7 +16,7 @@ public class ReviewLevel : MonoBehaviour
 
     private void Update()
     {
-        if (!gameManager.isGameStarted && lose.isGameFinish && !isShowed && YG2.reviewCanShow)
+        if (!gameManager.gameWon && !isShowed && YG2.reviewCanShow)
         {
             isShowed = true;
             YG2.ReviewShow();
