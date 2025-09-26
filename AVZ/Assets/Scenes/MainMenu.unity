@@ -1252,7 +1252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &291280836
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4751,7 +4751,7 @@ MonoBehaviour:
       hi: 
   text: Adventure mode
   ru: "\u0420\u0435\u043D\u0430\u0442 \u0421\u0442\u0435\u043F\u0430\u043D\u043E\u0432"
-  en: Renat Stepanov
+  en: "\u0420\u0435\u043D\u0430\u0442 \u0421\u0442\u0435\u043F\u0430\u043D\u043E\u0432"
   tr: Ana mod
   az: 
   be: 
@@ -10685,8 +10685,8 @@ MonoBehaviour:
       de: 
       hi: 
   text: Adventure mode
-  ru: "\u0414\u043C\u0438\u0442\u0440\u0438\u0439 \"Jimmy\""
-  en: Dmitriy "Jimmy"
+  ru: "\u0414\u043C\u0438\u0442\u0440\u0438\u0439 \u0413\u0440\u0438\u0433\u043E\u0440\u044C\u0435\u0432"
+  en: "\u0414\u043C\u0438\u0442\u0440\u0438\u0439 \u0413\u0440\u0438\u0433\u043E\u0440\u044C\u0435\u0432"
   tr: Ana mod
   az: 
   be: 
@@ -10717,9 +10717,9 @@ MonoBehaviour:
   uniqueFont: {fileID: 0}
   additionalText: {fileID: 0}
   textHeight: 20
-  processTranslateLabel: 0/2 completed
+  processTranslateLabel: 1/2 completed
   componentTextField: 1
-  countLang: 0
+  countLang: 1
 --- !u!1 &1665492594
 GameObject:
   m_ObjectHideFlags: 0
@@ -10908,9 +10908,8 @@ MonoBehaviour:
       hi: 
   text: "\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435 \u0432 \u043D\u0430\u0448\u0435\u043C
     TG"
-  ru: "\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435 \u0432 \u043D\u0430\u0448\u0435\u043C
-    TG"
-  en: Read more in our TG
+  ru: "\u041E \u043D\u0435\u043C \u0432 \u043D\u0430\u0448\u0435\u043C TG"
+  en: About him in our TG
   tr: 
   az: 
   be: 
@@ -10941,9 +10940,9 @@ MonoBehaviour:
   uniqueFont: {fileID: 0}
   additionalText: {fileID: 0}
   textHeight: 20
-  processTranslateLabel: 
+  processTranslateLabel: 1/2 completed
   componentTextField: 1
-  countLang: 0
+  countLang: 1
 --- !u!1 &1689096339
 GameObject:
   m_ObjectHideFlags: 0
@@ -12662,7 +12661,7 @@ MonoBehaviour:
       hi: 
   text: Adventure mode
   ru: "\u0410\u0440\u0442\u0443\u0440 \u042F\u043A\u0438\u043C\u0435\u043D\u043A\u043E"
-  en: Arthur Yakimenko
+  en: "\u0410\u0440\u0442\u0443\u0440 \u042F\u043A\u0438\u043C\u0435\u043D\u043A\u043E"
   tr: Ana mod
   az: 
   be: 
