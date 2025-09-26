@@ -53,8 +53,16 @@ public class PreviewCard : MonoBehaviour
     }
     public void BuyI()
     {
-        audioManager.PlaySFX(audioManager.buttonClicked);
-        ShopManager.BuyInfiniteItem(ShopManager._._activeShopItemSOInPreview);
+        bool isItBuyed;
+        ShopManager.BuyInfiniteItem(ShopManager._._activeShopItemSOInPreview, out isItBuyed);
+        if (isItBuyed)
+        {
+            audioManager.PlaySFX(audioManager.purchase);
+        }
+        else
+        {
+            audioManager.PlaySFX(audioManager.buttonClicked);
+        }
     }
 
     public void BuyNI()

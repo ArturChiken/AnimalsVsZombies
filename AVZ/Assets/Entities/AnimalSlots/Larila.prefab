@@ -343,6 +343,7 @@ MonoBehaviour:
   animalObject: {fileID: 703357952437252330, guid: aedec4a1052b49945b8937c4c960374e, type: 3}
   icon: {fileID: 4070787773886512857}
   priceText: {fileID: 3002074654185187121}
+  soundToPlay: {fileID: 8300000, guid: ee82471a935b7ec44af25bba9f507164, type: 3}
 --- !u!114 &8812143682733478687
 MonoBehaviour:
   m_ObjectHideFlags: 0

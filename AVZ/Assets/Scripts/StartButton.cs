@@ -45,6 +45,7 @@ public class StartButton : MonoBehaviour
         {
             gameManager.isGameStarted = true;
             StartCoroutine(GameStartAnimation());
+            audioManager.PlaySFX(audioManager.buttonClicked);
             audioManager.SwitchMusic(audioManager.inGameMusic);
         }
     }

@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class AnimalCardSlot : MonoBehaviour
 {
+    AudioManager audioManager;
+
     [Header("References")]
     public string itemId; // ID предмета
     public Image icon;
@@ -24,6 +26,11 @@ public class AnimalCardSlot : MonoBehaviour
         InitializeCard();
     }
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     private void InitializeCard()
     {
         bool isUnlocked = SaveSystem.IsItemUnlocked(itemId);
@@ -39,7 +46,7 @@ public class AnimalCardSlot : MonoBehaviour
         {
             cardButton.interactable = true;
             cardButton.onClick.AddListener(AddPrefabToLayout);
-            Debug.Log("да");
+            audioManager.PlaySFX(audioManager.buttonClicked);
         }
     }
     public void AddPrefabToLayout()

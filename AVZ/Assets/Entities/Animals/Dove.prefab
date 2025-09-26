@@ -121,6 +121,7 @@ MonoBehaviour:
   damage: 25
   blow: {fileID: 882373431499595884, guid: 20a3acc6dee606c48ace7815192e0ea9, type: 3}
   blowOrigin: {fileID: 8972033744171184913}
+  soundToPlay: {fileID: 8300000, guid: 5dce044cf3981654184408014f3a6ba2, type: 3}
 --- !u!61 &7885345845550676249
 BoxCollider2D:
   m_ObjectHideFlags: 0

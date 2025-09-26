@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class BasicShooter : MonoBehaviour
 {
+    AudioManager audioManager;
+
     public float cooldown;
     public bool canShoot;
     public float range;
@@ -12,9 +14,16 @@ public class BasicShooter : MonoBehaviour
     public LayerMask shootMask;
     public Animator anim;
 
+    public AudioClip soundToPlay;
+
     private void Start()
     {
         Invoke("ResetCooldown", cooldown);
+    }
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -37,6 +46,8 @@ public class BasicShooter : MonoBehaviour
     {
         if (!canShoot) return;
 
+        audioManager.PlaySFX(soundToPlay);
+        
         canShoot = false;
         Invoke("ResetCooldown", cooldown);
 

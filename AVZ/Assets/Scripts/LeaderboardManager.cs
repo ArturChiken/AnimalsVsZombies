@@ -24,6 +24,11 @@ public class LeaderboardManager : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
+    private void Start()
+    {
+        audioManager.PlaySFX(audioManager.leaderboardEntry);    
+    }
+
     public void LeaderboardContainerButtonsClicked(LeaderboardContainerButtons buttonType)
     {
         string websiteLink = "";

@@ -144,18 +144,20 @@ public class ShopManager : MonoBehaviour
         _activeShopItemSOInPreview = _newShopItemSOInPreview;
     }
 
-    public static bool BuyInfiniteItem(ShopItemScriptableObject item)
+    public static bool BuyInfiniteItem(ShopItemScriptableObject item, out bool isBuyed)
     {
         if (YG2.saves.playerCoins < item.cost)
         {
             _.NoLCSpeechBubble.SetActive(true);
             _.DonateSpeechbubble.SetActive(true);
+            isBuyed = false;
             return false;
         }
 
         if (SaveSystem.IsItemUnlocked(item.itemId))
         {
             _.AlreadyBoughtSpeechBubble.SetActive(true);
+            isBuyed = false;
             return false;
         }
 
@@ -166,6 +168,7 @@ public class ShopManager : MonoBehaviour
 
         YG2.SaveProgress();
         if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+        isBuyed = true;
         return true;
 
     }

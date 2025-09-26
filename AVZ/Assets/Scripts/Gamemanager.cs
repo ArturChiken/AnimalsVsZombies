@@ -65,7 +65,7 @@ public class Gamemanager : MonoBehaviour
     }
     public void Win(int starsAquired)
     {
-        audioManager.PlaySFX(audioManager.buttonClicked3);
+        audioManager.PlaySFX(audioManager.endOfLvl);
         StartCoroutine(DelayBeforeWin());
         isGameStarted = false;
         if (LevelMenuButtonManager.currLevel == LevelSelectorManager.UnlockedLevels)

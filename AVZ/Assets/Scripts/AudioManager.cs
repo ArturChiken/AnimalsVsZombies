@@ -21,8 +21,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip woodtable;
     public AudioClip writing;
     public AudioClip purchase;
+    public AudioClip leaderboardEntry;
     [Header("InGame")]
     public AudioClip win;
+    public AudioClip endOfLvl;
     public AudioClip lose;
     public AudioClip coinCollect;
     public AudioClip coinDropped;

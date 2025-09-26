@@ -7,20 +7,20 @@
         false,
         false
     ],
-    "idSave": 3245,
+    "idSave": 3806,
     "unlockedShopItems": "sahur",
     "unlockedAchievements": "",
     "unlockedLevels": 2,
     "unlockedActs": 1,
     "playerCoins": 5,
     "crocodiloUses": 0,
-    "playerStars": 1,
+    "playerStars": 3,
     "score": 24.30284309387207,
-    "musicVolume": 0.03490765392780304,
-    "SFXVolume": 0.7082687020301819,
+    "musicVolume": 0.09511175751686096,
+    "SFXVolume": 1.0,
     "stars": [
         0,
-        1,
+        3,
         0
     ],
     "isFirstEntry": false
