@@ -95,7 +95,7 @@ public class Labubu : MonoBehaviour
             if (Random.Range(0f, 1f) < .1f) audioManager.PlaySFX(audioManager.labubu2);
             Destroy(gameObject);
 
-            if (50 <= type.coinDropPercent)
+            if (Random.Range(0, 100) < 50)
             {
                 GameObject coinObj = Instantiate(coinPrefab, transform.position, Quaternion.identity);
                 audioManager.PlaySFX(audioManager.coinDropped);

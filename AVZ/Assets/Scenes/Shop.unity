@@ -4592,6 +4592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1612685256}
   - component: {fileID: 1612685257}
+  - component: {fileID: 1612685258}
   m_Layer: 0
   m_Name: MANAGERS
   m_TagString: Untagged
@@ -4647,6 +4648,18 @@ MonoBehaviour:
   _activePreviewSO: {fileID: 0}
   _activeShopItemSOInPreview: {fileID: 11400000, guid: e83df9ab7faab594996a7496e1348e2d, type: 2}
   coinDisplay: {fileID: 200057325}
+--- !u!114 &1612685258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612685255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc211b84a5572894299fab44923a87ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1630094397
 GameObject:
   m_ObjectHideFlags: 0

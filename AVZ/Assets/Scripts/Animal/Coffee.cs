@@ -5,7 +5,7 @@ public class Coffee : MonoBehaviour
     public int coffeeCost = 25;
 
     public float dropToYPos;
-    private float speed = .15f;
+    private float speed = .45f;
     public LayerMask coffeeMask;
     private Gamemanager gameManager;
 

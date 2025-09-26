@@ -23986,8 +23986,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasAnimal: 0
   infMode: 0
-  actNums: 
-  lvlNums: 
+  actNums: 01000000
+  lvlNums: 01000000020000000300000004000000
 --- !u!212 &824495274
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -47415,6 +47415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1741770228}
   - component: {fileID: 1741770229}
+  - component: {fileID: 1741770230}
   m_Layer: 0
   m_Name: LEVEL 1
   m_TagString: Untagged
@@ -47456,6 +47457,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actNum: 1
   lvlNum: 1
+--- !u!114 &1741770230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741770227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595fca0c04aec944da2ae442b776d88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1742291932
 GameObject:
   m_ObjectHideFlags: 0
@@ -53617,6 +53630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1948343185}
   - component: {fileID: 1948343186}
+  - component: {fileID: 1948343187}
   m_Layer: 0
   m_Name: LEVEL 3
   m_TagString: Untagged
@@ -53658,6 +53672,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actNum: 1
   lvlNum: 3
+--- !u!114 &1948343187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948343184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595fca0c04aec944da2ae442b776d88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1950242325
 GameObject:
   m_ObjectHideFlags: 0

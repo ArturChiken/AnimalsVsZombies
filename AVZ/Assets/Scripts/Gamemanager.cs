@@ -29,6 +29,7 @@ public class Gamemanager : MonoBehaviour
     public int cardAmount;
     public bool isGameStarted;
     public bool isGamePaused;
+    public bool gameWon;
     private bool _canRevive = true;
 
     [SerializeField] CanvasGroup _fadeCanvasGroup, Canvas;
@@ -65,6 +66,7 @@ public class Gamemanager : MonoBehaviour
     }
     public void Win(int starsAquired)
     {
+        gameWon = true;
         audioManager.PlaySFX(audioManager.endOfLvl);
         StartCoroutine(DelayBeforeWin());
         isGameStarted = false;

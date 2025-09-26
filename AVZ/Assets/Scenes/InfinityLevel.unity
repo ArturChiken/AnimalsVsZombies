@@ -1026,8 +1026,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2561835ea0a22ad4c88901ef4633379e, type: 2}
   - {fileID: 11400000, guid: 3c79d446275fa2a44930e2b48f2de732, type: 2}
   progressBar: {fileID: 1450838722}
-  labubuDelay: 2
-  labubuSpawnTime: 2
+  labubuDelay: 30
+  labubuSpawnTime: 7
   labubuMax: 5
   labubuSpawned: 0
   labubuDead: 0
