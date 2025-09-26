@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efc082d5-2a8d-452d-91aa-72b56641f300" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/UraBumBumSP SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/UraBumBumSP SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ReviewLevel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ReviewLevel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PluginYourGames/Editor/BuildLogYG2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PluginYourGames/Editor/BuildLogYG2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PluginYourGames/Editor/SavesEditorYG2.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PluginYourGames/Editor/SavesEditorYG2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PluginYourGames/Resources/SettingsYG2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PluginYourGames/Resources/SettingsYG2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Leaderboard/LB player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Leaderboard/LB player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InfinityLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InfinityLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Leaderboard.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Leaderboard.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/KillBoxInLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/KillBoxInLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Shop.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Shop.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animal/Coffee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Animal/Coffee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gamemanager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gamemanager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labubu/Labubu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labubu/Labubu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labubu/LabubuType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labubu/LabubuType.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,10 +26,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/games/AnimalsVsZombies/AVZ/Assets/Scripts/Gamemanager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/games/AnimalsVsZombies/AVZ/Assets/Scripts/Gamemanager.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="32ZRe1GKixJM9eE0cEKKHcUBGBR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -26,7 +42,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging ArturBranch2",
+    "git-widget-placeholder": "Merging burdaBranch5",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -78,6 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1757626201041</updated>
       <workItem from="1757626202863" duration="24000" />
+      <workItem from="1758906852809" duration="128000" />
     </task>
     <servers />
   </component>
