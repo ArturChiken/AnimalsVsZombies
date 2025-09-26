@@ -241,6 +241,7 @@ public class MainMenuManager : MonoBehaviour
     }
 
 
+    //  Õóäîæíèê: https://t.me/Jimmywest
     public void CreditsButtonClicked(CreditsButtons buttonClicked)
     {
         string websiteLink = "";
@@ -251,7 +252,7 @@ public class MainMenuManager : MonoBehaviour
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 break;
             case CreditsButtons.dmitriy:
-                websiteLink = "https://t.me/Jimmywest";
+                websiteLink = "https://t.me/afterpartygames/20";
                 if (websiteLink != "")
                 {
                     audioManager.PlaySFX(audioManager.buttonClicked);
@@ -274,6 +275,7 @@ public class MainMenuManager : MonoBehaviour
     // êíîïêè ìåíş
     public void PlayAdvClicked()
     {
+        //çäåñü áûë https://t.me/ArturChiken
         StartCoroutine(TransitionScene(1));
     }
     public void PlayInfClicked()
@@ -281,7 +283,7 @@ public class MainMenuManager : MonoBehaviour
         StartCoroutine(TransitionScene(2));
     }
     //êîä https://t.me/bburda1
-    public void ShopClicked()
+    public void ShopClicked() // ÑÂÎ ÃÎÉÄÀ ZÎÌÁÈ, ÏÓÒÈÍ ÒÎÏ, ÅÑËÈ ÑÎÃËÀÑÍÛ ÎÄÎÁĞÈÒÅ ÈÃĞÓ
     {
         StartCoroutine(TransitionScene(3));
     }

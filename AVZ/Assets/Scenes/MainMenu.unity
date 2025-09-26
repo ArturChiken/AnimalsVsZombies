@@ -4751,7 +4751,7 @@ MonoBehaviour:
       hi: 
   text: Adventure mode
   ru: "\u0420\u0435\u043D\u0430\u0442 \u0421\u0442\u0435\u043F\u0430\u043D\u043E\u0432"
-  en: Renat Stepanov
+  en: "\u0420\u0435\u043D\u0430\u0442 \u0421\u0442\u0435\u043F\u0430\u043D\u043E\u0432"
   tr: Ana mod
   az: 
   be: 
@@ -10685,8 +10685,8 @@ MonoBehaviour:
       de: 
       hi: 
   text: Adventure mode
-  ru: "\u0414\u043C\u0438\u0442\u0440\u0438\u0439 \"Jimmy\""
-  en: Dmitriy "Jimmy"
+  ru: "\u0414\u043C\u0438\u0442\u0440\u0438\u0439 \u0413\u0440\u0438\u0433\u043E\u0440\u044C\u0435\u0432"
+  en: "\u0414\u043C\u0438\u0442\u0440\u0438\u0439 \u0413\u0440\u0438\u0433\u043E\u0440\u044C\u0435\u0432"
   tr: Ana mod
   az: 
   be: 
@@ -10717,9 +10717,9 @@ MonoBehaviour:
   uniqueFont: {fileID: 0}
   additionalText: {fileID: 0}
   textHeight: 20
-  processTranslateLabel: 0/2 completed
+  processTranslateLabel: 1/2 completed
   componentTextField: 1
-  countLang: 0
+  countLang: 1
 --- !u!1 &1665492594
 GameObject:
   m_ObjectHideFlags: 0
@@ -10908,9 +10908,8 @@ MonoBehaviour:
       hi: 
   text: "\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435 \u0432 \u043D\u0430\u0448\u0435\u043C
     TG"
-  ru: "\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435 \u0432 \u043D\u0430\u0448\u0435\u043C
-    TG"
-  en: Read more in our TG
+  ru: "\u041E \u043D\u0435\u043C \u0432 \u043D\u0430\u0448\u0435\u043C TG"
+  en: About him in our TG
   tr: 
   az: 
   be: 
@@ -10941,9 +10940,9 @@ MonoBehaviour:
   uniqueFont: {fileID: 0}
   additionalText: {fileID: 0}
   textHeight: 20
-  processTranslateLabel: 
+  processTranslateLabel: 1/2 completed
   componentTextField: 1
-  countLang: 0
+  countLang: 1
 --- !u!1 &1689096339
 GameObject:
   m_ObjectHideFlags: 0
@@ -11577,7 +11576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9bb57bdb949da541a0f87996c6e9789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonType: 3
+  _buttonType: 1
 --- !u!224 &1935785430 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5825473130954363674, guid: 7ffe8c348dc9b3b4aa63a5f55f855cda, type: 3}
@@ -12662,7 +12661,7 @@ MonoBehaviour:
       hi: 
   text: Adventure mode
   ru: "\u0410\u0440\u0442\u0443\u0440 \u042F\u043A\u0438\u043C\u0435\u043D\u043A\u043E"
-  en: Arthur Yakimenko
+  en: "\u0410\u0440\u0442\u0443\u0440 \u042F\u043A\u0438\u043C\u0435\u043D\u043A\u043E"
   tr: Ana mod
   az: 
   be: 
@@ -13024,7 +13023,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: v. 1.0.0
+  m_text: v. 1.0.1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
