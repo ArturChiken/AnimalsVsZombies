@@ -40,8 +40,6 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
-        YG2.ConsumePurchases();
-
         StartCoroutine(Fade(1f, 0f));
         _MainMenuContainer.SetActive(_MainMenuContainer);
         _LeaderboardFrame.SetActive(false);
