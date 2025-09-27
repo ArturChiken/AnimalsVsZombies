@@ -40,13 +40,29 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
+        YG2.ConsumePurchases();
+
         StartCoroutine(Fade(1f, 0f));
         _MainMenuContainer.SetActive(_MainMenuContainer);
         _LeaderboardFrame.SetActive(false);
         _OptionsContainer.SetActive(false);
         _CreditsContainer.SetActive(false);
         _BlurFrame.SetActive(false);
-        _NameholderText.SetText(YG2.player.name);
+
+        if (YG2.player.auth) _NameholderText.SetText(YG2.player.name);
+        else
+        {
+            switch (YG2.lang)
+            {
+                case "ru":
+                    _NameholderText.SetText("Не авторизован");
+                    break;
+                case "en":
+                    _NameholderText.SetText("Unauthorized");
+                    break;
+            }
+        }
+
         _SBs.SetActive(true);
 
         if (Random.Range(0f, 1f) < .3f) _reviewB.SetActive(true);
@@ -131,7 +147,15 @@ public class MainMenuManager : MonoBehaviour
                         _ClickOnMeSB.SetActive(false);
                         if (!YG2.player.auth)
                         {
-                             _leaderboardText.SetText("Авторизоваться");
+                            switch (YG2.lang)
+                            {
+                            case "ru":
+                                _leaderboardText.SetText("Авторизоваться");
+                                break;
+                            case "en":
+                                _leaderboardText.SetText("Log in");
+                                break;
+                            }
                              _AuthorizeToOpenLeaderboardSB.SetActive(true);
                         }
                         else
