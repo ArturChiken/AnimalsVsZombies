@@ -231,10 +231,12 @@ public class MainMenuManager : MonoBehaviour
             case OptionsButtons.ru:
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 YG2.SwitchLanguage("ru");
+                if (!YG2.player.auth) _NameholderText.SetText("Не авторизован");
                 break;
             case OptionsButtons.en:
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 YG2.SwitchLanguage("en");
+                if (!YG2.player.auth) _NameholderText.SetText("Unauthorized");
                 break;
             case OptionsButtons.back:
                 audioManager.PlaySFX(audioManager.buttonClicked);
