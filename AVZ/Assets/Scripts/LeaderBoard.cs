@@ -4,47 +4,29 @@ using YG;
 
 public class LeaderBoard : MonoBehaviour
 {
-    private Gamemanager gameManager;
-    private Lose lose;
-    public TextMeshProUGUI timer;
-    private bool isGameStarted;
-    private float score;
-    private float time = 0f;
+    private LabubuSpawnerInfMode spawner;
+    public TextMeshProUGUI wave;
 
     private void Start()
     {
-        gameManager = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
-        lose = GameObject.Find("LoseTrigger").GetComponent<Lose>();
+        spawner = GameObject.Find("LabubuSpawner").GetComponent<LabubuSpawnerInfMode>();
     }
 
     private void Update()
     {
-        timer.text = time.ToString("F2");
+        wave.text = spawner.waveCount.ToString();
 
-        if (isGameStarted && !gameManager.isGameStarted && lose.isGameFinish) isGameStarted = false;
-
-        if (!isGameStarted && gameManager.isGameStarted) isGameStarted = true;
-
-        if (isGameStarted && gameManager.isGameStarted && !lose.isGameFinish)
-        {
-            time += Time.deltaTime;
-        }
-
-        if (!gameManager.isGameStarted && lose.isGameFinish)
-        {
-            score = time;
-            LeaderBoardScoreSave();
-        }
+        LeaderBoardScoreSave();
     }
 
     private void LeaderBoardScoreSave()
     {
         if (YG2.player.auth)
         {
-            if (score > YG2.saves.score)
+            if (spawner.waveCount > YG2.saves.maxWaves)
             {
-                YG2.saves.score = score;
-                YG2.SetLBTimeConvert("EndlessMode", score);
+                YG2.saves.maxWaves = spawner.waveCount;
+                YG2.SetLBTimeConvert("EndlessModeWaves", spawner.waveCount);
             }
 
             YG2.SaveProgress();

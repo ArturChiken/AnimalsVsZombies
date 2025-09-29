@@ -16,7 +16,7 @@ namespace YG
         public int crocodiloUses = 0;
         public int playerStars = 0;
 
-        public float score = 0;
+        public int maxWaves = 0;
         public float musicVolume = 0.700f;
         public float SFXVolume = 0.700f;
 
