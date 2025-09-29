@@ -28,7 +28,7 @@ public class Gamemanager : MonoBehaviour
     public TMP_Text coinDisplay;
 
     public int cardAmount;
-    public int crocodileCount = 2;
+    public int crocodileCount;
     public bool isGameStarted;
     public bool isGamePaused;
     public bool gameWon;
@@ -133,7 +133,7 @@ public class Gamemanager : MonoBehaviour
             tile.GetComponent<SpriteRenderer>().enabled = false;
         }
 
-        if (hit.collider && currentAnimal && !currentCrocodile)
+        if (hit.collider && currentAnimal && !currentCrocodile && !hit.collider.GetComponent<CrocoTile>())
         {
             hit.collider.GetComponent<SpriteRenderer>().sprite = currentAnimalSprite;
             hit.collider.GetComponent<SpriteRenderer>().enabled = true;
@@ -141,15 +141,18 @@ public class Gamemanager : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && !hit.collider.GetComponent<Tile>().hasAnimal)
             {
                 Animal(hit.collider.gameObject);
+                currentCrocodile = null;
             }
         }
 
-        if (hit.collider && currentCrocodile && !currentAnimal)
+        if (hit.collider && currentCrocodile && !currentAnimal && !hit.collider.GetComponent<Tile>())
         {
             if (Input.GetMouseButtonDown(0))
             {
                 hit.collider.GetComponent<CrocoTile>().SpawnCrocodilo();
                 currentCrocodile = null;
+                currentAnimal = null;
+                currentAnimalSprite = null;
             }
         }
     }

@@ -24,9 +24,14 @@ public class CrocoSlot : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
+    private void Update()
+    {
+        countText.text = gameManager.crocodileCount.ToString();
+    }
+
     private void BuyAnimal()
     {
-        //
+        Debug.Log(gameManager.crocodileCount);
         if (true && !gameManager.currentCrocodile && !gameManager.currentAnimal && gameManager.crocodileCount > 0)
         {
             gameManager.crocodileCount--;
