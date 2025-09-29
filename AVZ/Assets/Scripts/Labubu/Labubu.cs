@@ -14,6 +14,7 @@ public class Labubu : MonoBehaviour
     public bool infMode;
 
     public GameObject coinPrefab;
+    public GameObject infCoinPrefab;
 
     public LabubuType type;
     private Animator animator;
@@ -87,20 +88,22 @@ public class Labubu : MonoBehaviour
             if (infMode)
             {
                 GameObject.Find("LabubuSpawner").GetComponent<LabubuSpawnerInfMode>().labubuDead++;
+                GameObject coinObj = Instantiate(infCoinPrefab, transform.position, Quaternion.identity);
+                audioManager.PlaySFX(audioManager.coinDropped);
+                coinObj.transform.SetParent(null);
             }
             else if (!infMode)
             {
                 GameObject.Find("LabubuSpawner").GetComponent<LabubuSpawner>().labubuDead++;
+                if (Random.Range(0, 100) < 50)
+                {
+                    GameObject coinObj = Instantiate(coinPrefab, transform.position, Quaternion.identity);
+                    audioManager.PlaySFX(audioManager.coinDropped);
+                    coinObj.transform.SetParent(null);
+                }
             }
             if (Random.Range(0f, 1f) < .1f) audioManager.PlaySFX(audioManager.labubu2);
             Destroy(gameObject);
-
-            if (Random.Range(0, 100) < 50)
-            {
-                GameObject coinObj = Instantiate(coinPrefab, transform.position, Quaternion.identity);
-                audioManager.PlaySFX(audioManager.coinDropped);
-                coinObj.transform.SetParent(null);
-            }
         }
     }
     void Freeze()

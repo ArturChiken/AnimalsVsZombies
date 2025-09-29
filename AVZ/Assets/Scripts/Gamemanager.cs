@@ -130,6 +130,15 @@ public class Gamemanager : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (preCurrentAmount != YG2.saves.playerCoins)
+        {
+            preCurrentAmount = YG2.saves.playerCoins;
+            coinDisplay.SetText(YG2.saves.playerCoins + "");
+        }
+    }
+
     void Animal(GameObject hit)
     {
         GameObject plant = Instantiate(currentAnimal, hit.transform.position, Quaternion.identity);
