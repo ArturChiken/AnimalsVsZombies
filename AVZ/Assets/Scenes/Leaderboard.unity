@@ -665,7 +665,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8316451672082894416, guid: fa0dd60d5a9ad5c4d9b84a5c7e516f1f, type: 3}
       propertyPath: nameLB
-      value: test
+      value: EndlessMode
       objectReference: {fileID: 0}
     - target: {fileID: 8316451672082894416, guid: fa0dd60d5a9ad5c4d9b84a5c7e516f1f, type: 3}
       propertyPath: maxQuantityPlayers
@@ -923,7 +923,7 @@ GameObject:
   - component: {fileID: 1192023659}
   - component: {fileID: 1192023658}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -946,8 +946,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.010009766, y: -123.94}
-  m_SizeDelta: {x: 672.0531, y: 247.88513}
+  m_AnchoredPosition: {x: -0.010009766, y: -97.92908}
+  m_SizeDelta: {x: 672.0531, y: 195.8633}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1192023658
 MonoBehaviour:
@@ -1238,8 +1238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.4713, y: -30.1794}
-  m_SizeDelta: {x: 587.9392, y: 112.5768}
+  m_AnchoredPosition: {x: 6.4713, y: -21.2382}
+  m_SizeDelta: {x: 587.9392, y: 94.6944}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294290543
 MonoBehaviour:

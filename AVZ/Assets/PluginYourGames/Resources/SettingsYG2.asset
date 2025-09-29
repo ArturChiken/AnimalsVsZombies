@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Authorization:
     playerPhotoSize: 1
-    authorized: 0
-    playerName: Player current
+    authorized: 1
+    playerName: "\u043F\u0438\u0434\u043E\u0440 \u0433\u043B\u0430\u0432\u043D\u044B\u0439"
     uniqueID: 000
     playerPhoto: demo image
     payingStatus: 0
