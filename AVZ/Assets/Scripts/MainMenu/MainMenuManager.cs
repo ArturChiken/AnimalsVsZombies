@@ -63,7 +63,7 @@ public class MainMenuManager : MonoBehaviour
 
         _SBs.SetActive(true);
 
-        if (Random.Range(0f, 1f) < .3f) _reviewB.SetActive(true);
+        if (Random.Range(0f, 1f) < .3f && YG2.reviewCanShow) _reviewB.SetActive(true);
 
         if (YG2.saves.isFirstEntry)
         {
@@ -86,12 +86,39 @@ public class MainMenuManager : MonoBehaviour
             _YouCanOpenInfLevelSB.SetActive(false);
             if (YG2.player.auth)
             {
-                if (Random.Range(0f, 1f) <= .35f)
+                if (YG2.saves.unlockedShopItems.Count(c => c == ',') < 2)
                 {
-                    _clickOnMeText.text = "Узнай свое место в таблице лидеров!";
-                    _clickOnMeText.fontSize = 20f;
-                    _ClickOnMeSB.SetActive(true);
+                    switch (YG2.lang)
+                    {
+                        case "ru":
+                            _clickOnMeText.text = "Узнай свое место в таблице лидеров!";
+                            _clickOnMeText.fontSize = 20f;
+                            break;
+                        case "en":
+                            _clickOnMeText.text = "Find out your place on the leaderboard!";
+                            _clickOnMeText.fontSize = 20f;
+                            break;
+                    }
+                    if (Random.Range(0f, 1f) <= .15f)
+                    {
+                        _ClickOnMeSB.SetActive(true);
+                    }
                 }
+            }
+            else
+            {
+                switch (YG2.lang)
+                {
+                    case "ru":
+                        _clickOnMeText.text = "Нажми на меня!";
+                        _clickOnMeText.fontSize = 52f;
+                        break;
+                    case "en":
+                        _clickOnMeText.text = "Click on me!";
+                        _clickOnMeText.fontSize = 52f;
+                        break;
+                }
+                _ClickOnMeSB.SetActive(true);
             }
         }
     }
