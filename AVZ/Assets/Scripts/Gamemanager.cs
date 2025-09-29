@@ -105,10 +105,15 @@ public class Gamemanager : MonoBehaviour
         StartCoroutine(PlayLoseAnimation());
     }
 
-    public void BuyAnimal(GameObject animal, Sprite sprite = null)
+    public void BuyAnimal(GameObject animal, Sprite sprite)
     {
         currentAnimal = animal;
         currentAnimalSprite = sprite;
+    }
+
+    public void UseCroco(GameObject croco)
+    {
+        currentCrocodile = croco;
     }
 
     private void Update()
@@ -139,11 +144,12 @@ public class Gamemanager : MonoBehaviour
             }
         }
 
-        if (hit.collider && currentCrocodile && currentAnimal)
+        if (hit.collider && currentCrocodile && !currentAnimal)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 hit.collider.GetComponent<CrocoTile>().SpawnCrocodilo();
+                currentCrocodile = null;
             }
         }
     }

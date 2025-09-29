@@ -13,24 +13,24 @@ public class Crocodillo : MonoBehaviour
     public GameObject bomb;
     public Transform shootOrigin;
     private BoxCollider2D boxCollider;
+    private Collider2D collision;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 7)
         {
             collision.GetComponent<Labubu>().LabubuGetHit(damage);
-
-            isMoving = true;
-            Destroy(gameObject, 8);
         }
     }
 
     private void Start()
     {
+        boxCollider = GetComponent<BoxCollider2D>();
+
+        isMoving = true;
         yPos = transform.position.y;
         yPos2 = yPos + 1;
-
-        boxCollider = GetComponent<BoxCollider2D>();
+        Destroy(gameObject, 8);
     }
 
     private void Update()

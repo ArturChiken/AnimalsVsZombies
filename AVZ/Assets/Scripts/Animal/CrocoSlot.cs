@@ -30,7 +30,7 @@ public class CrocoSlot : MonoBehaviour
         if (true && !gameManager.currentCrocodile && !gameManager.currentAnimal && gameManager.crocodileCount > 0)
         {
             gameManager.crocodileCount--;
-            gameManager.BuyAnimal(crocoObject, animalSprite);
+            gameManager.UseCroco(crocoObject);
             audioManager.PlaySFX(soundToPlay);
         }
     }
