@@ -146,7 +146,7 @@ public class ShopManager : MonoBehaviour
 
     public static bool BuyInfiniteItem(ShopItemScriptableObject item, out bool isBuyed)
     {
-        if (YG2.saves.playerCoins < item.cost)
+        if (YG2.saves.playerCoins < item.cost && !SaveSystem.IsItemUnlocked(item.itemId))
         {
             _.NoLCSpeechBubble.SetActive(true);
             _.DonateSpeechbubble.SetActive(true);
@@ -160,7 +160,6 @@ public class ShopManager : MonoBehaviour
             isBuyed = false;
             return false;
         }
-
 
         YG2.saves.playerCoins -= item.cost;
         SaveSystem.UnlockItem(item.itemId);
