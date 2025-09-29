@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f3347665c516ee4c91793dd34b8fc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 8
+  cooldown: 12
   canShoot: 0
   range: 0.5
   bullet: {fileID: 2288399777816096277, guid: 5e5d452a9cd2e764391e5910ce2525e5, type: 3}

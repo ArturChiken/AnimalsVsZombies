@@ -101,8 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9133b5ddd7183a43b20640caf482d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisLabubuSO: {fileID: 0}
+  infMode: 0
   coinPrefab: {fileID: 3628097019084104979, guid: 88d7d123a7a58c64bb0c9d8179cc8d90, type: 3}
+  infCoinPrefab: {fileID: 3628097019084104979, guid: 1dc8fb7fbe6708c4c9d94898bbcc32fe, type: 3}
   type: {fileID: 0}
   animalMask:
     serializedVersion: 2
