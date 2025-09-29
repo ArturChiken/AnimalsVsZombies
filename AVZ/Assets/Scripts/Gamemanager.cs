@@ -17,6 +17,7 @@ public class Gamemanager : MonoBehaviour
     AudioManager audioManager;
 
     public GameObject currentAnimal;
+    public GameObject currentCrocodile;
     public Sprite currentAnimalSprite;
     public Transform tiles;
     public LayerMask tileMask;
@@ -27,6 +28,7 @@ public class Gamemanager : MonoBehaviour
     public TMP_Text coinDisplay;
 
     public int cardAmount;
+    public int crocodileCount = 2;
     public bool isGameStarted;
     public bool isGamePaused;
     public bool gameWon;
@@ -63,6 +65,14 @@ public class Gamemanager : MonoBehaviour
         _exitText.SetActive(false);
 
         lose = GameObject.Find("LoseTrigger").GetComponent<Lose>();
+
+        foreach (string word in YG2.saves.consumableItems)
+        {
+            if (word == "crocodilo")
+            {
+                crocodileCount++;
+            }
+        }
     }
     public void Win(int starsAquired)
     {
@@ -95,7 +105,7 @@ public class Gamemanager : MonoBehaviour
         StartCoroutine(PlayLoseAnimation());
     }
 
-    public void BuyAnimal(GameObject animal, Sprite sprite)
+    public void BuyAnimal(GameObject animal, Sprite sprite = null)
     {
         currentAnimal = animal;
         currentAnimalSprite = sprite;
@@ -118,7 +128,7 @@ public class Gamemanager : MonoBehaviour
             tile.GetComponent<SpriteRenderer>().enabled = false;
         }
 
-        if (hit.collider && currentAnimal)
+        if (hit.collider && currentAnimal && !currentCrocodile)
         {
             hit.collider.GetComponent<SpriteRenderer>().sprite = currentAnimalSprite;
             hit.collider.GetComponent<SpriteRenderer>().enabled = true;
@@ -126,6 +136,14 @@ public class Gamemanager : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && !hit.collider.GetComponent<Tile>().hasAnimal)
             {
                 Animal(hit.collider.gameObject);
+            }
+        }
+
+        if (hit.collider && currentCrocodile && currentAnimal)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                hit.collider.GetComponent<CrocoTile>().SpawnCrocodilo();
             }
         }
     }

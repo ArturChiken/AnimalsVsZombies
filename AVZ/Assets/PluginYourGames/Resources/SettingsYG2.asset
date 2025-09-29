@@ -262,7 +262,7 @@ MonoBehaviour:
       players:
       - rank: 1
         name: Max
-        score: 7123
+        score: 459684651
         photo: demo image
         uniqueID: 789
         extraData: 

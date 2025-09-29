@@ -2,18 +2,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class AnimalSlot : MonoBehaviour
+public class CrocoSlot : MonoBehaviour
 {
-    public int price;
-
     AudioManager audioManager;
+    public AudioClip soundToPlay;
 
     public Sprite animalSprite;
-    public GameObject animalObject;
+    public GameObject crocoObject;
     public Image icon;
-    public TextMeshProUGUI priceText;
+    public TextMeshProUGUI countText;
     private Gamemanager gameManager;
-    public AudioClip soundToPlay;
 
     private void Start()
     {
@@ -28,10 +26,11 @@ public class AnimalSlot : MonoBehaviour
 
     private void BuyAnimal()
     {
-        if (gameManager.coffees >= price && !gameManager.currentCrocodile && !gameManager.currentAnimal)
+        //
+        if (true && !gameManager.currentCrocodile && !gameManager.currentAnimal && gameManager.crocodileCount > 0)
         {
-            gameManager.coffees -= price;
-            gameManager.BuyAnimal(animalObject, animalSprite);
+            gameManager.crocodileCount--;
+            gameManager.BuyAnimal(crocoObject, animalSprite);
             audioManager.PlaySFX(soundToPlay);
         }
     }
@@ -42,7 +41,6 @@ public class AnimalSlot : MonoBehaviour
         {
             icon.enabled = true;
             icon.sprite = animalSprite;
-            priceText.text = price.ToString();
         }
         else
         {
