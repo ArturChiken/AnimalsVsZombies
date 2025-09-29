@@ -26,6 +26,8 @@ public class Gamemanager : MonoBehaviour
     public int preCurrentAmount = -1;
     public TMP_Text coinDisplay;
 
+    public int crocodileCount;
+
     public int cardAmount;
     public bool isGameStarted;
     public bool isGamePaused;
@@ -61,6 +63,15 @@ public class Gamemanager : MonoBehaviour
 
         _homeB.SetActive(false);
         _exitText.SetActive(false);
+
+        foreach (string word in YG2.saves.consumableItems)
+        {
+            crocodileCount = 0;
+            if (word == "crocodilo")
+            {
+                crocodileCount++;
+            }
+        }
 
         lose = GameObject.Find("LoseTrigger").GetComponent<Lose>();
     }
@@ -106,13 +117,6 @@ public class Gamemanager : MonoBehaviour
         coffeeText.text = coffees.ToString();
 
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, tileMask);
-
-        if (preCurrentAmount != YG2.saves.playerCoins)
-        {
-            preCurrentAmount = YG2.saves.playerCoins;
-            coinDisplay.SetText(YG2.saves.playerCoins + "");
-        }
-
         foreach (Transform tile in tiles)
         {
             tile.GetComponent<SpriteRenderer>().enabled = false;

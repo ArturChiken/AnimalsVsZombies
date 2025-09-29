@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class LabubuSpawnerInfMode : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class LabubuSpawnerInfMode : MonoBehaviour
         if (!isGameStarted && gameManager.isGameStarted)
         {
             isGameStarted = true;
-            InvokeRepeating("SpawnLabubu", labubuDelay, labubuSpawnTime);
+            StartCoroutine(RandomRepeatLabubuSpawn());
         }
     }
 
@@ -46,7 +47,7 @@ public class LabubuSpawnerInfMode : MonoBehaviour
     {
         if (labubuSpawned >= labubuMax)
         {
-            CancelInvoke("SpawnLabubu");
+            StopRepeating();
             WavePause();
         }
         labubuSpawned++;
@@ -69,8 +70,24 @@ public class LabubuSpawnerInfMode : MonoBehaviour
         labubuDead = 0;
         labubuMax *= (int)(1.35f);
 
-        gameManager.coffees += 15*waveCount;
+        gameManager.coffees += 25*waveCount;
 
-        InvokeRepeating("SpawnLabubu", labubuDelay, labubuSpawnTime);
+        StartCoroutine(RandomRepeatLabubuSpawn());
+    }
+
+    private IEnumerator RandomRepeatLabubuSpawn()
+    {
+        yield return new WaitForSeconds(labubuDelay);
+        while (true)
+        {
+            SpawnLabubu();
+
+            float randomDelay = Random.Range(labubuSpawnTime - 3f, labubuSpawnTime + 3f);
+            yield return new WaitForSeconds(randomDelay);
+        }
+    }
+    public void StopRepeating()
+    {
+        StopAllCoroutines();
     }
 }

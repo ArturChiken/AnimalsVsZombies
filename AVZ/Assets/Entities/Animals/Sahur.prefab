@@ -118,9 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f3347665c516ee4c91793dd34b8fc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 4
+  cooldown: 3
   canShoot: 0
-  range: 10
+  range: 7
   bullet: {fileID: 2288399777816096277, guid: 19c14489b5c03574a811260aaa626a75, type: 3}
   shootOrigin: {fileID: 4739207746550016192}
   shootMask:

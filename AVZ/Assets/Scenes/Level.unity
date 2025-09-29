@@ -14640,10 +14640,11 @@ MonoBehaviour:
   tileMask:
     serializedVersion: 2
     m_Bits: 64
-  coffees: 100
+  coffees: 75
   coffeeText: {fileID: 36411959}
   preCurrentAmount: -1
   coinDisplay: {fileID: 1498099414}
+  crocodileCount: 0
   cardAmount: 0
   isGameStarted: 0
   isGamePaused: 0
