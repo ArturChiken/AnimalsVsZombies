@@ -862,6 +862,7 @@ MonoBehaviour:
   labubuMax: 2
   labubuSpawned: 0
   labubuDead: 0
+  wavePause: 0
   waveCount: 1
 --- !u!1 &134297917
 GameObject:
@@ -24347,7 +24348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4837452174757105149, guid: 1d661808be2a0654ab1c5215d64098d0, type: 3}
       propertyPath: m_fontSize
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4837452174757105149, guid: 1d661808be2a0654ab1c5215d64098d0, type: 3}
       propertyPath: m_margin.w
@@ -24371,7 +24372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4837452174757105149, guid: 1d661808be2a0654ab1c5215d64098d0, type: 3}
       propertyPath: m_fontSizeBase
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4837452174757105149, guid: 1d661808be2a0654ab1c5215d64098d0, type: 3}
       propertyPath: m_enableAutoSizing
