@@ -173,7 +173,7 @@ MonoBehaviour:
         10.
         Player 10: 90'
       isDefault: 0
-      isInvertSortOrder: 0
+      isInvertSortOrder: 1
       decimalOffset: 0
       type: numeric
       players:
@@ -230,6 +230,546 @@ MonoBehaviour:
         score: 20
         photo: demo image
         uniqueID: 329
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
+        extraData: 
+      - rank: 10
+        name: Player 10
+        score: 10
+        photo: demo image
+        uniqueID: 330
         extraData: 
       - rank: 10
         name: Player 10
