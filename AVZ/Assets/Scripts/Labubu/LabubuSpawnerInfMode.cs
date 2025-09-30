@@ -17,6 +17,7 @@ public class LabubuSpawnerInfMode : MonoBehaviour
     public int labubuMax;
     public int labubuSpawned;
     public int labubuDead;
+    public float wavePause;
     private bool isGameStarted;
 
     public int waveCount = 1;
@@ -39,7 +40,7 @@ public class LabubuSpawnerInfMode : MonoBehaviour
         if (!isGameStarted && gameManager.isGameStarted)
         {
             isGameStarted = true;
-            StartCoroutine(RandomRepeatLabubuSpawn());
+            StartCoroutine(FirstWave());
         }
     }
 
@@ -47,8 +48,12 @@ public class LabubuSpawnerInfMode : MonoBehaviour
     {
         if (labubuSpawned >= labubuMax)
         {
-            StopRepeating();
-            WavePause();
+            if (labubuDead >= labubuMax)
+            {
+                StopRepeating();
+                WavePause();
+            }
+            return;
         }
         labubuSpawned++;
 
@@ -60,15 +65,19 @@ public class LabubuSpawnerInfMode : MonoBehaviour
 
     private void WavePause()
     {
-        Invoke("WaveTide", 10f);
-        waveCount++;
+        if (wavePause <= 20f) wavePause *= 1.35f;
+        else wavePause = 20f;
+
+            Invoke("WaveTide", wavePause);
     }
 
     private void WaveTide()
     {
+        waveCount++;
+
         labubuSpawned = 0;
         labubuDead = 0;
-        labubuMax *= (int)(1.35f);
+        labubuMax *= (int)(2f);
 
         gameManager.coffees += 25*waveCount;
 
@@ -77,7 +86,6 @@ public class LabubuSpawnerInfMode : MonoBehaviour
 
     private IEnumerator RandomRepeatLabubuSpawn()
     {
-        yield return new WaitForSeconds(labubuDelay);
         while (true)
         {
             SpawnLabubu();
@@ -86,6 +94,13 @@ public class LabubuSpawnerInfMode : MonoBehaviour
             yield return new WaitForSeconds(randomDelay);
         }
     }
+
+    private IEnumerator FirstWave()
+    {
+        yield return new WaitForSeconds(labubuDelay);
+        StartCoroutine(RandomRepeatLabubuSpawn());
+    }
+
     public void StopRepeating()
     {
         StopAllCoroutines();

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 516404342670057224}
   - component: {fileID: 4163647330618151770}
   - component: {fileID: 4404246714253420217}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: CoinInf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 3
+  coinMask:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!58 &4404246714253420217
 CircleCollider2D:
   m_ObjectHideFlags: 0

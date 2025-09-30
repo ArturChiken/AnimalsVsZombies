@@ -859,7 +859,7 @@ MonoBehaviour:
   progressBar: {fileID: 1450838722}
   labubuDelay: 40
   labubuSpawnTime: 6
-  labubuMax: 6
+  labubuMax: 2
   labubuSpawned: 0
   labubuDead: 0
   waveCount: 1

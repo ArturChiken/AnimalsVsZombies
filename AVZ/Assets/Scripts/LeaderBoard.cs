@@ -27,9 +27,8 @@ public class LeaderBoard : MonoBehaviour
             {
                 YG2.saves.maxWaves = spawner.waveCount;
                 YG2.SetLBTimeConvert("EndlessModeWaves", spawner.waveCount);
+                YG2.SaveProgress();
             }
-
-            YG2.SaveProgress();
         }
     }
 }
