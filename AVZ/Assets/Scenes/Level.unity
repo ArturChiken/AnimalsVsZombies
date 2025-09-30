@@ -11364,7 +11364,7 @@ MonoBehaviour:
   tileMask:
     serializedVersion: 2
     m_Bits: 64
-  coffees: 75
+  coffees: 100
   coffeeText: {fileID: 36411959}
   preCurrentAmount: -1
   coinDisplay: {fileID: 1498099414}
@@ -52871,7 +52871,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3c79d446275fa2a44930e2b48f2de732, type: 2}
   progressBar: {fileID: 1793242436}
   labubuDelay: 25
-  labubuSpawnTime: 3
+  labubuSpawnTime: 4
   labubuMax: 20
   labubuSpawned: 0
   labubuDead: 0
