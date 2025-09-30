@@ -18,7 +18,7 @@ public class Shovel : MonoBehaviour
     private void Update()
     {
         if (gameManager.canKill) trans.localScale = new Vector3(2.3f, 2.3f, 2.3f);
-        else trans.localScale = new Vector3(2f, 2f, 2f);
+        else if (!gameManager.canKill) trans.localScale = new Vector3(2f, 2f, 2f);
     }
 
     private void Awake()
