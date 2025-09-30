@@ -862,7 +862,7 @@ MonoBehaviour:
   labubuMax: 2
   labubuSpawned: 0
   labubuDead: 0
-  wavePause: 0
+  wavePause: 5
   waveCount: 1
 --- !u!1 &134297917
 GameObject:
