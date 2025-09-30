@@ -31,7 +31,6 @@ public class CrocoSlot : MonoBehaviour
 
     private void BuyAnimal()
     {
-        Debug.Log(gameManager.crocodileCount);
         if (true && !gameManager.currentCrocodile && !gameManager.currentAnimal && gameManager.crocodileCount > 0)
         {
             gameManager.crocodileCount--;

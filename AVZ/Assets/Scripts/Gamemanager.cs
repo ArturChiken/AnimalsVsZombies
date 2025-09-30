@@ -27,13 +27,12 @@ public class Gamemanager : MonoBehaviour
     public int preCurrentAmount = -1;
     public TMP_Text coinDisplay;
 
-    public int crocodileCount;
-
     public int cardAmount;
     public int crocodileCount;
     public bool isGameStarted;
     public bool isGamePaused;
     public bool gameWon;
+    public bool canKill;
     private bool _canRevive = true;
 
     [SerializeField] CanvasGroup _fadeCanvasGroup, Canvas;
@@ -127,6 +126,12 @@ public class Gamemanager : MonoBehaviour
         currentCrocodile = croco;
     }
 
+    public void UseShovel()
+    {
+        if (!currentAnimal && !currentCrocodile && !canKill) canKill = true;
+        else if (!currentAnimal && !currentCrocodile && canKill) canKill = false;
+    }
+
     private void Update()
     {
         coffeeText.text = coffees.ToString();
@@ -146,6 +151,28 @@ public class Gamemanager : MonoBehaviour
             {
                 Animal(hit.collider.gameObject);
                 currentCrocodile = null;
+            }
+        }
+        else if (hit.collider && !currentAnimal && !currentCrocodile && !hit.collider.GetComponent<CrocoTile>() && canKill && Input.GetMouseButtonDown(0))
+        {
+            if (hit.collider.GetComponent<Tile>().hasAnimal)
+            {
+                Animal[] animals = FindObjectsByType<Animal>(FindObjectsSortMode.None);
+                Animal myAnimal = null;
+
+                foreach (Animal animal in animals)
+                {
+                    if (animal.tile == hit.collider.gameObject.GetComponent<Tile>())
+                    {
+                        myAnimal = animal;
+                    }
+                }
+                AnimalDestroy(myAnimal);
+                canKill = false;
+            }
+            else
+            {
+                canKill = false;
             }
         }
 
@@ -177,6 +204,11 @@ public class Gamemanager : MonoBehaviour
         plant.GetComponent<Animal>().tile = hit.GetComponent<Tile>();
         currentAnimal = null;
         currentAnimalSprite = null;
+    }
+
+    void AnimalDestroy(Animal animal)
+    {
+        if (animal != null) animal.AnimalGetHit(999);
     }
 
     public static void IncrementCoins(int value)
