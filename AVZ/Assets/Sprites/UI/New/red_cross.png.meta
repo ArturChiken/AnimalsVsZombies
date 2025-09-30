@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c917058638a56b74ea727c50a100998b
+guid: 9ab6b7add77560a488bf18bf8756798f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5322005325143110406
-    second: cappuccino (2)_0
+      213: 6911794167301903363
+    second: red_cross_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -76,7 +76,7 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
-    compressionQuality: 0
+    compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cappuccino (2)_0
+      name: red_cross_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 65
-        height: 96
+        x: 12
+        y: 12
+        width: 75
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60374e165af8bd940800000000000000
-      internalID: 5322005325143110406
+      spriteID: 30495a6cc20abef50800000000000000
+      internalID: 6911794167301903363
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cappuccino (2)_0: 5322005325143110406
+      red_cross_0: 6911794167301903363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

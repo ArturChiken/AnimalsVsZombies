@@ -5,7 +5,8 @@ using TMPro;
 public class Shovel : MonoBehaviour
 {
     AudioManager audioManager;
-    public Transform trans;
+    public Image icon;
+    public Image image;
     public AudioClip soundToPlay;
     private Gamemanager gameManager;
 
@@ -17,8 +18,16 @@ public class Shovel : MonoBehaviour
 
     private void Update()
     {
-        if (gameManager.canKill) trans.localScale = new Vector3(2.3f, 2.3f, 2.3f);
-        else if (!gameManager.canKill) trans.localScale = new Vector3(2f, 2f, 2f);
+        if (gameManager.canKill)
+        {
+            icon.color = new Color(0.24f, 0.24f, 0.24f);
+            image.color = new Color(0.16f, 0.16f, 0.16f);
+        }
+        else if (!gameManager.canKill)
+        {
+            icon.color = new Color(1f, 1f, 1f);
+            image.color = new Color(1f, 1f, 1f);
+        }
     }
 
     private void Awake()

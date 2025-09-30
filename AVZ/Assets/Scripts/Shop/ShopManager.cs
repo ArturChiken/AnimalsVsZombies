@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Data.SqlTypes;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -133,21 +134,17 @@ public class ShopManager : MonoBehaviour
     }
 
     //смена SO в превью
-    public void ChangePreviewSO(PreviewScriptableObject _newPreviewSO)
+    public void ChangePreviewSO(PreviewScriptableObject _newPreviewSO, ShopItemScriptableObject _newShopItemSOInPreview)
     {
         _activePreviewSO = _newPreviewSO;
+        _activeShopItemSOInPreview = _newShopItemSOInPreview;
         PreviewCard._?.UpdateUI();
     }
-
-    public void ChangeShopItemSOInPreview(ShopItemScriptableObject _newShopItemSOInPreview)
-    {
-        _activeShopItemSOInPreview = _newShopItemSOInPreview;
-    }
-
     public static bool BuyInfiniteItem(ShopItemScriptableObject item, out bool isBuyed)
     {
         if (YG2.saves.playerCoins < item.cost && !SaveSystem.IsItemUnlocked(item.itemId))
         {
+            if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
             _.NoLCSpeechBubble.SetActive(true);
             _.DonateSpeechbubble.SetActive(true);
             isBuyed = false;
@@ -172,22 +169,23 @@ public class ShopManager : MonoBehaviour
 
     }
 
-    public static bool BuyCrocodilo(ShopItemScriptableObject crocodilo)
+    public static bool BuyFiniteItem(ShopItemScriptableObject item, out bool isBuyed)
     {
-        if (YG2.saves.playerCoins < crocodilo.cost)
+        if (YG2.saves.playerCoins < item.cost)
         {
-            Debug.LogWarning("Not enough coins or already bought");
             if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+            _.NoLCSpeechBubble.SetActive(true);
+            _.DonateSpeechbubble.SetActive(true);
+            isBuyed = false;
             return false;
         }
-        YG2.saves.playerCoins -= crocodilo.cost;
-        SaveSystem.UnlockItem(crocodilo.itemId);
+        YG2.saves.playerCoins -= item.cost;
+        SaveSystem.AddFiniteItem(item.itemId);
+        PreviewCard._?.UpdateUI();
 
-        YG2.saves.crocodiloUses += 1;
-
-        Debug.Log($"Item {crocodilo.name} purchased successfully!");
         YG2.SaveProgress();
         if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+        isBuyed = true;
         return true;
     }
 

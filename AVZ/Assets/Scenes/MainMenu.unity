@@ -4701,6 +4701,7 @@ MonoBehaviour:
   writing: {fileID: 8300000, guid: bb2f4746c729823418b480055e8f7ea8, type: 3}
   purchase: {fileID: 8300000, guid: 12d81746d0cb6aa4faadd82ee6c2a31c, type: 3}
   leaderboardEntry: {fileID: 8300000, guid: 401c45ddb7fd3d148baeee2773a8d83c, type: 3}
+  deleteSound: {fileID: 8300000, guid: dca9ad6b3a85a5c44a6276a734c25364, type: 3}
   win: {fileID: 8300000, guid: af7b8a68935cd88448510d78b49cac09, type: 3}
   endOfLvl: {fileID: 8300000, guid: aff4cdd1a83924648a7d34810a9cb475, type: 3}
   lose: {fileID: 8300000, guid: 435426e83a7110c49bd250e0d40d8665, type: 3}
@@ -4714,6 +4715,8 @@ MonoBehaviour:
   bobrito: {fileID: 8300000, guid: 95e30106d203125438217db979bd02e0, type: 3}
   bobrito_attack: {fileID: 8300000, guid: bbd2499b84c7f354aa16a72cb8af4a36, type: 3}
   bombordiro: {fileID: 8300000, guid: e60f321e86384b448b579931639730eb, type: 3}
+  bombordiro_attack: {fileID: 8300000, guid: b92d20004d2fb66409cf50beae75ce5b, type: 3}
+  bombordiro_attack2: {fileID: 8300000, guid: 22b549f2d9e8b6e42a45a8e18440b13f, type: 3}
   cappuccinoA: {fileID: 8300000, guid: b82268f64b1ac224db0e016ba46cda0c, type: 3}
   cappuccinoA_attack: {fileID: 8300000, guid: f48ff5e4cc70d1644b7bc2d57a11cd9a, type: 3}
   sahur: {fileID: 8300000, guid: 1f6e6e2f4f61d2344829df0499603f88, type: 3}

@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using YG;
 
 public class CrocoSlot : MonoBehaviour
 {
     AudioManager audioManager;
-    public AudioClip soundToPlay;
 
     public Sprite animalSprite;
     public GameObject crocoObject;
@@ -34,8 +34,9 @@ public class CrocoSlot : MonoBehaviour
         if (true && !gameManager.currentCrocodile && !gameManager.currentAnimal && gameManager.crocodileCount > 0)
         {
             gameManager.crocodileCount--;
+            YG2.saves.consumableItems.Remove("crocodilo");
             gameManager.UseCroco(crocoObject);
-            audioManager.PlaySFX(soundToPlay);
+            audioManager.PlaySFX(audioManager.bombordiro);
         }
     }
 

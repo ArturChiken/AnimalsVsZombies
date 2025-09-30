@@ -10,6 +10,10 @@ public class PreviewCard : MonoBehaviour
     [SerializeField] public TMP_Text _itemLabel;
     [SerializeField] public TMP_Text _itemCost;
     [SerializeField] public TMP_Text _itemDescription;
+    [SerializeField] public TMP_Text _usageCounter;
+    [SerializeField] public GameObject IsInStockLabel, IsInStockCounter;
+
+    public int useCount;
 
     public static PreviewCard _;
     private void Awake()
@@ -29,14 +33,37 @@ public class PreviewCard : MonoBehaviour
         if (_itemLabel == null) return false;
         if (_itemCost == null) return false;
         if (_itemDescription == null) return false;
+        if (_usageCounter == null) return false;
 
         return true;
+
     }
+
 
     public void UpdateUI()
     {
         if (!IsValid()) return;
+        if (ShopManager._._activeShopItemSOInPreview.useCount == -1)
+        {
+            IsInStockLabel.SetActive(false);
+            IsInStockCounter.SetActive(false);
+        }
+        else
+        {
+            IsInStockLabel.SetActive(true);
+            IsInStockCounter.SetActive(true);
+        }
+        useCount = 0;
+        foreach (string item in YG2.saves.consumableItems)
+        {
+            if (item == ShopManager._._activeShopItemSOInPreview.itemId)
+            {
+                useCount++;
+            }
+        }
+        
 
+        _usageCounter.text = useCount.ToString();
         _itemIcon.sprite = ShopManager._._activePreviewSO.icon;
         switch(YG2.lang)
         {
@@ -51,10 +78,19 @@ public class PreviewCard : MonoBehaviour
         }
         _itemCost.text = $"{ShopManager._._activePreviewSO.cost}";
     }
-    public void BuyI()
+    public void BuyItem()
     {
         bool isItBuyed;
-        ShopManager.BuyInfiniteItem(ShopManager._._activeShopItemSOInPreview, out isItBuyed);
+        if (ShopManager._._activeShopItemSOInPreview.useCount == -1)
+        {
+            ShopManager.BuyInfiniteItem(ShopManager._._activeShopItemSOInPreview, out isItBuyed);
+            Debug.Log("infinite");
+        }
+        else
+        {
+            ShopManager.BuyFiniteItem(ShopManager._._activeShopItemSOInPreview, out isItBuyed);
+            Debug.Log("finite");
+        }
         if (isItBuyed)
         {
             audioManager.PlaySFX(audioManager.purchase);
@@ -63,11 +99,6 @@ public class PreviewCard : MonoBehaviour
         {
             audioManager.PlaySFX(audioManager.buttonClicked);
         }
-    }
-
-    public void BuyNI()
-    {
-        ShopManager.BuyCrocodilo(ShopManager._._activeShopItemSOInPreview);
     }
 
 }

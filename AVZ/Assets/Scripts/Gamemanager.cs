@@ -65,9 +65,9 @@ public class Gamemanager : MonoBehaviour
         _homeB.SetActive(false);
         _exitText.SetActive(false);
 
+        crocodileCount = 0;
         foreach (string word in YG2.saves.consumableItems)
         {
-            crocodileCount = 0;
             if (word == "crocodilo")
             {
                 crocodileCount++;
@@ -75,14 +75,6 @@ public class Gamemanager : MonoBehaviour
         }
 
         lose = GameObject.Find("LoseTrigger").GetComponent<Lose>();
-
-        foreach (string word in YG2.saves.consumableItems)
-        {
-            if (word == "crocodilo")
-            {
-                crocodileCount++;
-            }
-        }
     }
     public void Win(int starsAquired)
     {
@@ -208,6 +200,7 @@ public class Gamemanager : MonoBehaviour
 
     void AnimalDestroy(Animal animal)
     {
+        audioManager.PlaySFX(audioManager.deleteSound);
         if (animal != null) animal.AnimalGetHit(999);
     }
 

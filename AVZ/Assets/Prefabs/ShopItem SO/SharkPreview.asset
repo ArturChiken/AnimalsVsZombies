@@ -23,4 +23,4 @@ MonoBehaviour:
   descriptionEn: THE MOST fashionable and popular shark in the world of Brainrot.
     It has high health and damage, but only attacks at close range!
   icon: {fileID: 8861480726252175340, guid: a59762b6bf69c4f41abb59d4ad408c4f, type: 3}
-  cost: 500
+  cost: 350

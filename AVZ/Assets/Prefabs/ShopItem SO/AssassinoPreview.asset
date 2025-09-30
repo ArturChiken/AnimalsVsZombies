@@ -27,4 +27,4 @@ MonoBehaviour:
     He appears on the field and cuts down everything that moves, leaving nothing
     alive!
   icon: {fileID: 518365762053865977, guid: 612dcb86bb9fb0b42b65fe1bf9e1da15, type: 3}
-  cost: 1000
+  cost: 600

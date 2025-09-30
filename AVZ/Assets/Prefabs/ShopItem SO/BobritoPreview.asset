@@ -24,4 +24,4 @@ MonoBehaviour:
   descriptionEn: The most dangerous and influential beaver in the world, with criminal
     connections everywhere! Fires three projectiles at a time!
   icon: {fileID: -6244348089769218222, guid: 63c185542f916e7489f26f8757a3e328, type: 3}
-  cost: 250
+  cost: 200

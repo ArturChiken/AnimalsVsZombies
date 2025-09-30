@@ -7,8 +7,7 @@ public class ShopCardButtonsManager : MonoBehaviour
 
     public void ButtonClicked()
     {
-        ShopManager._.ChangePreviewSO(_thisPreview);
-        ShopManager._.ChangeShopItemSOInPreview(_thisShopItem);
+        ShopManager._.ChangePreviewSO(_thisPreview, _thisShopItem);
     }
 }
 

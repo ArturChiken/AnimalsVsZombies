@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMoving: 0
   speed: 4
-  damage: 25
+  damage: 30
   cooldown: 0.5
   bomb: {fileID: 7458330131974459092, guid: 8c22c6b2058e66d49990b02c055da5e8, type: 3}
   shootOrigin: {fileID: 1540250048476221261}

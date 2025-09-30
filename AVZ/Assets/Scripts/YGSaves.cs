@@ -11,7 +11,6 @@ namespace YG
         public int unlockedLevels = 1;
         public int unlockedActs = 1;
         public int playerCoins = 5;
-        public int crocodiloUses = 0;
         public int playerStars = 0;
 
         public int maxWaves = 0;
