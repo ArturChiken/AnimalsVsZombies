@@ -186,15 +186,14 @@ public class Gamemanager : MonoBehaviour
                 currentAnimalSprite = null;
             }
         }
-    }
-
-    private void FixedUpdate()
-    {
+        /*
         if (preCurrentAmount != YG2.saves.playerCoins)
         {
             preCurrentAmount = YG2.saves.playerCoins;
-            coinDisplay.SetText(YG2.saves.playerCoins + "");
+            coinDisplay.text = YG2.saves.playerCoins.ToString();
         }
+        */
+        coinDisplay.text = YG2.saves.playerCoins.ToString();
     }
 
     void Animal(GameObject hit)
@@ -211,8 +210,9 @@ public class Gamemanager : MonoBehaviour
         if (animal != null) animal.AnimalGetHit(999);
     }
 
-    public static void IncrementCoins(int value)
+    public void IncrementCoins(int value)
     {
+        Debug.Log("csfbkjnsfgkljb");
         YG2.saves.playerCoins += value;
     }
 

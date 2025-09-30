@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coffeeObject: {fileID: 6979453337980670918, guid: b8167815cad3cbe47877d08e6907bab6, type: 3}
-  cooldown: 15
+  cooldown: 16
 --- !u!61 &2465476438290959676
 BoxCollider2D:
   m_ObjectHideFlags: 0
