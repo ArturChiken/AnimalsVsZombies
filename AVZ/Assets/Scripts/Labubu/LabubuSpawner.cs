@@ -35,7 +35,6 @@ public class LabubuSpawner : MonoBehaviour
                 {
                     labubuDelay /= 1.15f;
                     labubuMax *= 2;
-                    labubuSpawnTime /= 1.25f;
                     break;
                 }
         }
