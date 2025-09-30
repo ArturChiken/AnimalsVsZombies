@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: shark
   displayName: "\u0422\u0440\u0430\u043B\u0430\u043B\u0435\u0440\u043E \u0422\u0440\u0430\u043B\u0430\u043B\u0430"
   displayNameEn: Tralalero Tralala
-  cost: 500
+  cost: 350
   useCount: -1
   icon: {fileID: -293961232951849327, guid: bdb494a4460688d44bce1282a0491581, type: 3}
   prefab: {fileID: 5830543898693129935, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}

@@ -28,7 +28,7 @@ public class AnimalSlot : MonoBehaviour
 
     private void BuyAnimal()
     {
-        if (gameManager.coffees >= price && !gameManager.currentAnimal)
+        if (gameManager.coffees >= price && !gameManager.currentCrocodile && !gameManager.currentAnimal)
         {
             gameManager.coffees -= price;
             gameManager.BuyAnimal(animalObject, animalSprite);

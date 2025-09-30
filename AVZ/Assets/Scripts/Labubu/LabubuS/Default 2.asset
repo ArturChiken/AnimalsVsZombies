@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca5691b35500c84d9e9ae3602b70412, type: 3}
   m_Name: Default 2
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
   speed: 0.005
   damage: 2
   range: 0.5
-  eatCooldown: 4
+  eatCooldown: 3
   sprite: {fileID: 0}
   animation: {fileID: 7400000, guid: cd4683385cfacf044996dbfcea0df936, type: 2}
   animatorController: {fileID: 9100000, guid: 070960f85bc12a042803ba319ffc2434, type: 2}

@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: dove
   displayName: "\u0428\u043F\u0438\u043E\u043D\u0438\u0440\u043E \u0413\u043E\u043B\u0443\u0431\u0438\u0440\u043E"
   displayNameEn: Spioniro Golubiro
-  cost: 750
+  cost: 400
   useCount: -1
   icon: {fileID: 450813239511852411, guid: 5ea05297c4ffd53469278658bff95e2f, type: 3}
   prefab: {fileID: 5830543898693129935, guid: d6dcf2d3e66344d42abe89f0eab0f7cd, type: 3}

@@ -7,17 +7,16 @@
         false,
         false
     ],
-    "idSave": 5603,
+    "idSave": 44837,
     "unlockedShopItems": "sahur,cappuccino,larila,bobritto,assassino,camelo,shark",
     "unlockedAchievements": "",
     "unlockedLevels": 11,
     "unlockedActs": 2,
-    "playerCoins": 555,
-    "crocodiloUses": 0,
+    "playerCoins": 18,
     "playerStars": 20,
-    "score": 0.0,
-    "musicVolume": 0.21024475991725923,
-    "SFXVolume": 0.37037351727485659,
+    "maxWaves": 3,
+    "musicVolume": 0.3078315854072571,
+    "SFXVolume": 0.27332255244255068,
     "stars": [
         0,
         2,
@@ -32,5 +31,6 @@
         2,
         0
     ],
+    "consumableItems": [],
     "isFirstEntry": false
 }

@@ -17,6 +17,7 @@ public class Gamemanager : MonoBehaviour
     AudioManager audioManager;
 
     public GameObject currentAnimal;
+    public GameObject currentCrocodile;
     public Sprite currentAnimalSprite;
     public Transform tiles;
     public LayerMask tileMask;
@@ -27,9 +28,11 @@ public class Gamemanager : MonoBehaviour
     public TMP_Text coinDisplay;
 
     public int cardAmount;
+    public int crocodileCount;
     public bool isGameStarted;
     public bool isGamePaused;
     public bool gameWon;
+    public bool canKill;
     private bool _canRevive = true;
 
     [SerializeField] CanvasGroup _fadeCanvasGroup, Canvas;
@@ -61,6 +64,15 @@ public class Gamemanager : MonoBehaviour
 
         _homeB.SetActive(false);
         _exitText.SetActive(false);
+
+        crocodileCount = 0;
+        foreach (string word in YG2.saves.consumableItems)
+        {
+            if (word == "crocodilo")
+            {
+                crocodileCount++;
+            }
+        }
 
         lose = GameObject.Find("LoseTrigger").GetComponent<Lose>();
     }
@@ -101,24 +113,28 @@ public class Gamemanager : MonoBehaviour
         currentAnimalSprite = sprite;
     }
 
+    public void UseCroco(GameObject croco)
+    {
+        currentCrocodile = croco;
+    }
+
+    public void UseShovel()
+    {
+        if (!currentAnimal && !currentCrocodile && !canKill) canKill = true;
+        else if (!currentAnimal && !currentCrocodile && canKill) canKill = false;
+    }
+
     private void Update()
     {
         coffeeText.text = coffees.ToString();
 
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, tileMask);
-
-        if (preCurrentAmount != YG2.saves.playerCoins)
-        {
-            preCurrentAmount = YG2.saves.playerCoins;
-            coinDisplay.SetText(YG2.saves.playerCoins + "");
-        }
-
         foreach (Transform tile in tiles)
         {
             tile.GetComponent<SpriteRenderer>().enabled = false;
         }
 
-        if (hit.collider && currentAnimal)
+        if (hit.collider && currentAnimal && !currentCrocodile && !hit.collider.GetComponent<CrocoTile>())
         {
             hit.collider.GetComponent<SpriteRenderer>().sprite = currentAnimalSprite;
             hit.collider.GetComponent<SpriteRenderer>().enabled = true;
@@ -126,8 +142,50 @@ public class Gamemanager : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && !hit.collider.GetComponent<Tile>().hasAnimal)
             {
                 Animal(hit.collider.gameObject);
+                currentCrocodile = null;
             }
         }
+        else if (hit.collider && !currentAnimal && !currentCrocodile && !hit.collider.GetComponent<CrocoTile>() && canKill && Input.GetMouseButtonDown(0))
+        {
+            if (hit.collider.GetComponent<Tile>().hasAnimal)
+            {
+                Animal[] animals = FindObjectsByType<Animal>(FindObjectsSortMode.None);
+                Animal myAnimal = null;
+
+                foreach (Animal animal in animals)
+                {
+                    if (animal.tile == hit.collider.gameObject.GetComponent<Tile>())
+                    {
+                        myAnimal = animal;
+                    }
+                }
+                AnimalDestroy(myAnimal);
+                canKill = false;
+            }
+            else
+            {
+                canKill = false;
+            }
+        }
+
+        if (hit.collider && currentCrocodile && !currentAnimal && !hit.collider.GetComponent<Tile>())
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                hit.collider.GetComponent<CrocoTile>().SpawnCrocodilo();
+                currentCrocodile = null;
+                currentAnimal = null;
+                currentAnimalSprite = null;
+            }
+        }
+        /*
+        if (preCurrentAmount != YG2.saves.playerCoins)
+        {
+            preCurrentAmount = YG2.saves.playerCoins;
+            coinDisplay.text = YG2.saves.playerCoins.ToString();
+        }
+        */
+        coinDisplay.text = YG2.saves.playerCoins.ToString();
     }
 
     void Animal(GameObject hit)
@@ -139,8 +197,15 @@ public class Gamemanager : MonoBehaviour
         currentAnimalSprite = null;
     }
 
-    public static void IncrementCoins(int value)
+    void AnimalDestroy(Animal animal)
     {
+        audioManager.PlaySFX(audioManager.deleteSound);
+        if (animal != null) animal.AnimalGetHit(999);
+    }
+
+    public void IncrementCoins(int value)
+    {
+        Debug.Log("csfbkjnsfgkljb");
         YG2.saves.playerCoins += value;
     }
 

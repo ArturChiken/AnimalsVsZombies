@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73900f80b0dfd2a4f86bca8b0470ccc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 30
   blow: {fileID: 882373431499595884, guid: 20a3acc6dee606c48ace7815192e0ea9, type: 3}
   blowOrigin: {fileID: 8972033744171184913}
   soundToPlay: {fileID: 8300000, guid: 5dce044cf3981654184408014f3a6ba2, type: 3}

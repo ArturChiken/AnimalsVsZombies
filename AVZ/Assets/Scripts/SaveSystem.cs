@@ -17,13 +17,9 @@ public static class SaveSystem
         return YG2.saves.unlockedShopItems.Contains(itemId);
     }
 
-    public static bool UseCrocodilo(string itemId)
+    public static void AddFiniteItem(string itemId)
     {
-        if (YG2.saves.crocodiloUses > 0)
-        {
-            YG2.saves.crocodiloUses -= 1;
-            return true;
-        }
-        return false;
+        YG2.saves.consumableItems.Add(itemId);
     }
+
 }

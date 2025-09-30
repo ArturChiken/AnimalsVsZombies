@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Crocodillo : MonoBehaviour
 {
+    AudioManager audioManager;
+
     public bool isMoving;
     public float speed;
     public int damage;
@@ -13,24 +15,36 @@ public class Crocodillo : MonoBehaviour
     public GameObject bomb;
     public Transform shootOrigin;
     private BoxCollider2D boxCollider;
+    private Collider2D collision;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 7)
         {
             collision.GetComponent<Labubu>().LabubuGetHit(damage);
-
-            isMoving = true;
-            Destroy(gameObject, 8);
         }
+    }
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Start()
     {
+        boxCollider = GetComponent<BoxCollider2D>();
+        if (Random.Range(0f, 1f) <= .5f)
+        {
+            audioManager.PlaySFX(audioManager.bombordiro_attack);
+        }
+        else
+        {
+            audioManager.PlaySFX(audioManager.bombordiro_attack2);
+        }
+        isMoving = true;
         yPos = transform.position.y;
         yPos2 = yPos + 1;
-
-        boxCollider = GetComponent<BoxCollider2D>();
+        Destroy(gameObject, 8);
     }
 
     private void Update()

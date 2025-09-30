@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 1
-  damage: 25
+  damage: 30
   soundToPlay: {fileID: 8300000, guid: f48ff5e4cc70d1644b7bc2d57a11cd9a, type: 3}
 --- !u!61 &1147369939973657181
 BoxCollider2D:

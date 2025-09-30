@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip writing;
     public AudioClip purchase;
     public AudioClip leaderboardEntry;
+    public AudioClip deleteSound;
     [Header("InGame")]
     public AudioClip win;
     public AudioClip endOfLvl;
@@ -36,7 +37,7 @@ public class AudioManager : MonoBehaviour
     [Header("Animals")]
     public AudioClip balerina;
     public AudioClip bobrito, bobrito_attack;
-    public AudioClip bombordiro;
+    public AudioClip bombordiro, bombordiro_attack, bombordiro_attack2;
     public AudioClip cappuccinoA, cappuccinoA_attack;
     public AudioClip sahur, sahur_attack;
     public AudioClip shark, shark_attack;
