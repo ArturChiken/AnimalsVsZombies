@@ -35,7 +35,7 @@ public class LeaderboardManager : MonoBehaviour
         switch (buttonType)
         {
             case LeaderboardContainerButtons.back:
-                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                YG2.InterstitialAdvShow();
                 StartCoroutine(TransitionScene());
                 audioManager.PlaySFX(audioManager.buttonClicked2);
                 break;
