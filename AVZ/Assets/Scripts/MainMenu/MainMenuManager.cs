@@ -21,7 +21,7 @@ public class MainMenuManager : MonoBehaviour
     public enum OptionsButtons { back, credits, ru, en };
 
     [SerializeField] CanvasGroup _MainMenuCanvasGroup, _fadeCanvasGroup;
-    [SerializeField] GameObject _BlurFrame, _MainMenuContainer, _OptionsContainer, _CreditsContainer, _LeaderboardFrame, _Speechbubbles, _ClickOnMeSB, _YouCanOpenInfLevelSB, _AuthorizeToOpenLeaderboardSB, _SBs, _reviewB;
+    [SerializeField] GameObject _BlurFrame, _MainMenuContainer, _OptionsContainer, _CreditsContainer, _LeaderboardFrame, _Speechbubbles, _ClickOnMeSB, _YouCanOpenInfLevelSB, _AuthorizeToOpenLeaderboardSB, _SBs, _CheckLBSB, _reviewB;
     [SerializeField] TMP_Text _NameholderText;
     [SerializeField] Animator _nameholderAnimator;
     [SerializeField] int _sceneToLoadAfterPlayAdvPressed, _sceneToLoadAfterShopPressed, _sceneToLoadAfterPlayInfPressed, _sceneToLoadAfterLeaderboardPressed;
@@ -86,39 +86,17 @@ public class MainMenuManager : MonoBehaviour
             _YouCanOpenInfLevelSB.SetActive(false);
             if (YG2.player.auth)
             {
-                if (YG2.saves.unlockedShopItems.Count(c => c == ',') < 2)
+                if (Random.Range(0f, 1f) <= .25f)
                 {
-                    switch (YG2.lang)
-                    {
-                        case "ru":
-                            _clickOnMeText.text = "Узнай свое место в таблице лидеров!";
-                            _clickOnMeText.fontSize = 20f;
-                            break;
-                        case "en":
-                            _clickOnMeText.text = "Find out your place on the leaderboard!";
-                            _clickOnMeText.fontSize = 20f;
-                            break;
-                    }
-                    if (Random.Range(0f, 1f) <= .15f)
-                    {
-                        _ClickOnMeSB.SetActive(true);
-                    }
+                    _CheckLBSB.SetActive(true);
                 }
             }
             else
             {
-                switch (YG2.lang)
+                if (Random.Range(0f, 1f) <= .25f)
                 {
-                    case "ru":
-                        _clickOnMeText.text = "Нажми на меня!";
-                        _clickOnMeText.fontSize = 52f;
-                        break;
-                    case "en":
-                        _clickOnMeText.text = "Click on me!";
-                        _clickOnMeText.fontSize = 52f;
-                        break;
+                    _ClickOnMeSB.SetActive(true);
                 }
-                _ClickOnMeSB.SetActive(true);
             }
         }
     }
@@ -128,15 +106,15 @@ public class MainMenuManager : MonoBehaviour
         switch (buttonClicked)
         {
             case MenuButtons.playAdv:
-                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                YG2.InterstitialAdvShow();
                 PlayAdvClicked();
                 break;
             case MenuButtons.playInf:
-                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                YG2.InterstitialAdvShow();
                 PlayInfClicked();
                 break;
             case MenuButtons.shop:
-                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                YG2.InterstitialAdvShow();
                 ShopClicked();
                 break;
             default:
@@ -152,7 +130,7 @@ public class MainMenuManager : MonoBehaviour
         switch (buttonClicked)
         {
             case OtherButtons.options:
-                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                YG2.InterstitialAdvShow();
                 audioManager.PlaySFX(audioManager.buttonClicked2);
                 _MainMenuCanvasGroup.interactable = false;
                 _MainMenuCanvasGroup.blocksRaycasts = false;
@@ -161,6 +139,7 @@ public class MainMenuManager : MonoBehaviour
                 break;
             case OtherButtons.nameholder:
                     audioManager.PlaySFX(audioManager.woodtable);
+                    YG2.InterstitialAdvShow();
                     if (nameholderIsActive)
                     {
                         StartCoroutine(PlayNameholderAnimation(!nameholderIsActive));
@@ -199,7 +178,7 @@ public class MainMenuManager : MonoBehaviour
                 {
                     if (YG2.player.auth)
                     {
-                        if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                        YG2.InterstitialAdvShow();
                         LeaderboardClicked();
                     }
                     else
@@ -251,21 +230,25 @@ public class MainMenuManager : MonoBehaviour
         switch (buttonClicked)
         {
             case OptionsButtons.credits:
+                YG2.InterstitialAdvShow();
                 _CreditsContainer.SetActive(true);
                 StartCoroutine(DelayedCreditsAction());
                 audioManager.PlaySFX(audioManager.buttonClicked2);
                 break;
             case OptionsButtons.ru:
+                YG2.InterstitialAdvShow();
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 YG2.SwitchLanguage("ru");
                 if (!YG2.player.auth) _NameholderText.SetText("Не авторизован");
                 break;
             case OptionsButtons.en:
+                YG2.InterstitialAdvShow();
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 YG2.SwitchLanguage("en");
                 if (!YG2.player.auth) _NameholderText.SetText("Unauthorized");
                 break;
             case OptionsButtons.back:
+                YG2.InterstitialAdvShow();
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(DelayedOptionsBackAction());
                 break;
@@ -299,6 +282,7 @@ public class MainMenuManager : MonoBehaviour
         switch (buttonClicked)
         {
             case CreditsButtons.back:
+                YG2.InterstitialAdvShow();
                 StartCoroutine(DelayedCreditsBackAction());
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 break;

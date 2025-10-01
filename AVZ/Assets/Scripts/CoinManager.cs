@@ -20,10 +20,8 @@ public class CoinManager : MonoBehaviour
 
         if (hit.collider)
         {
-            Debug.Log("1111111");
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("DSFGUIDFG");
                 gameManager.IncrementCoins(value);
                 audioManager.PlaySFX(audioManager.coinCollect);
                 Destroy(this.gameObject);
