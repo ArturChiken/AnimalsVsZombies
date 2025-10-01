@@ -178,13 +178,6 @@ public class Gamemanager : MonoBehaviour
                 currentAnimalSprite = null;
             }
         }
-        /*
-        if (preCurrentAmount != YG2.saves.playerCoins)
-        {
-            preCurrentAmount = YG2.saves.playerCoins;
-            coinDisplay.text = YG2.saves.playerCoins.ToString();
-        }
-        */
         coinDisplay.text = YG2.saves.playerCoins.ToString();
     }
 
@@ -205,7 +198,6 @@ public class Gamemanager : MonoBehaviour
 
     public void IncrementCoins(int value)
     {
-        Debug.Log("csfbkjnsfgkljb");
         YG2.saves.playerCoins += value;
     }
 
@@ -214,6 +206,7 @@ public class Gamemanager : MonoBehaviour
         switch (buttonClicked)
         {
             case PauseScreenContainer.mainmenu:
+                YG2.InterstitialAdvShow();
                 Time.timeScale = 1;
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 isGamePaused = false;
@@ -224,16 +217,19 @@ public class Gamemanager : MonoBehaviour
                 StartCoroutine(PlayPauseAnimation(isGamePaused));
                 break;
             case PauseScreenContainer.restart:
+                YG2.InterstitialAdvShow();
                 Time.timeScale = 1;
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 isGamePaused = false;
                 StartCoroutine(TransitionScene(1));
                 break;
             case PauseScreenContainer.ru:
+                YG2.InterstitialAdvShow();
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 YG2.SwitchLanguage("ru");
                 break;
             case PauseScreenContainer.en:
+                YG2.InterstitialAdvShow();
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 YG2.SwitchLanguage("en");
                 break;
@@ -245,11 +241,13 @@ public class Gamemanager : MonoBehaviour
         switch (buttonClicked)
         {
             case WinScreenContainer.mainmenu:
+                YG2.InterstitialAdvShow();
                 Time.timeScale = 1;
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(TransitionScene(0));
                 break;
             case WinScreenContainer.nextlvl:
+                YG2.InterstitialAdvShow();
                 Time.timeScale = 1;
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 LevelMenuButtonManager.currLevel += 1;
@@ -263,11 +261,13 @@ public class Gamemanager : MonoBehaviour
         switch (buttonClicked)
         {
             case LoseScreenContainer.mainmenu:
+                YG2.InterstitialAdvShow();
                 Time.timeScale = 1;
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(TransitionScene(0));
                 break;
             case LoseScreenContainer.restart:
+                YG2.InterstitialAdvShow();
                 Time.timeScale = 1;
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(TransitionScene(1));
@@ -362,7 +362,6 @@ public class Gamemanager : MonoBehaviour
         //_WinScreenA.Play("WinScreenDown");
         audioManager.PlaySFX(audioManager.win);
         yield return new WaitForSeconds(_WinScreenA.GetCurrentAnimatorStateInfo(0).length);
-        if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
         Canvas.interactable = true;
         Canvas.blocksRaycasts = true;
         Time.timeScale = 0;
