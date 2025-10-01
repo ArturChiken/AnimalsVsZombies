@@ -74,7 +74,7 @@ public class ShopManager : MonoBehaviour
                 break;
             case ShopContainerButtons.back:
                 audioManager.PlaySFX(audioManager.buttonClicked2);
-                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                YG2.InterstitialAdvShow();
                 StartCoroutine(TransitionScene());
                 break;
             case ShopContainerButtons.tg:
@@ -117,7 +117,7 @@ public class ShopManager : MonoBehaviour
         switch (buttonClicked)
         {
             case DonateContainerButtons.back:
-                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                YG2.InterstitialAdvShow();
                 if (previewIsActive)
                 {
                     audioManager.PlaySFX(audioManager.buttonClicked2);
@@ -144,7 +144,7 @@ public class ShopManager : MonoBehaviour
     {
         if (YG2.saves.playerCoins < item.cost && !SaveSystem.IsItemUnlocked(item.itemId))
         {
-            if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+            YG2.InterstitialAdvShow();
             _.NoLCSpeechBubble.SetActive(true);
             _.DonateSpeechbubble.SetActive(true);
             isBuyed = false;
@@ -163,7 +163,7 @@ public class ShopManager : MonoBehaviour
 
 
         YG2.SaveProgress();
-        if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+        YG2.InterstitialAdvShow();
         isBuyed = true;
         return true;
 
@@ -173,7 +173,7 @@ public class ShopManager : MonoBehaviour
     {
         if (YG2.saves.playerCoins < item.cost)
         {
-            if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+            YG2.InterstitialAdvShow();
             _.NoLCSpeechBubble.SetActive(true);
             _.DonateSpeechbubble.SetActive(true);
             isBuyed = false;
@@ -184,7 +184,7 @@ public class ShopManager : MonoBehaviour
         PreviewCard._?.UpdateUI();
 
         YG2.SaveProgress();
-        if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+        YG2.InterstitialAdvShow();
         isBuyed = true;
         return true;
     }

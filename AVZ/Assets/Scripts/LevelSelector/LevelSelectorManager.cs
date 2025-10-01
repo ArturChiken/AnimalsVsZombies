@@ -78,7 +78,7 @@ public class LevelSelectorManager : MonoBehaviour
         {
             case ActContainerButtons.back:
                 audioManager.PlaySFX(audioManager.buttonClicked2);
-                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                YG2.InterstitialAdvShow();
                 StartCoroutine(TransitionScene(0));
                 break;
             case ActContainerButtons.fstAct:
@@ -96,7 +96,7 @@ public class LevelSelectorManager : MonoBehaviour
             case ActContainerButtons.trdAct:
                 break;
             case ActContainerButtons.right:
-                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                YG2.InterstitialAdvShow();
                 switch (whatActRN)
                 {
                     case 1:
@@ -123,7 +123,7 @@ public class LevelSelectorManager : MonoBehaviour
                 }
                 break;
             case ActContainerButtons.left:
-                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                YG2.InterstitialAdvShow();
                 switch (whatActRN)
                 {
                     case 1:
@@ -159,10 +159,11 @@ public class LevelSelectorManager : MonoBehaviour
         {
             case LevelContainerButtons.back:
                 audioManager.PlaySFX(audioManager.buttonClicked2);
-                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                YG2.InterstitialAdvShow();
                 StartCoroutine(PlaySwitchLevelActAnimation(LevelIsActive));
                 break;
             case LevelContainerButtons.level:
+                YG2.InterstitialAdvShow();
                 audioManager.PlaySFX(audioManager.buttonClicked);
                 StartCoroutine(PlaySwitchLevelDiffAnimation(DiffIsActive));
                 break;
@@ -188,7 +189,7 @@ public class LevelSelectorManager : MonoBehaviour
                 break;
             case DiffContainerButtons.back:
                 audioManager.PlaySFX(audioManager.buttonClicked2);
-                if (Random.Range(0f, 1f) <= .35f) YG2.InterstitialAdvShow();
+                YG2.InterstitialAdvShow();
                 StartCoroutine(PlaySwitchLevelDiffAnimation(DiffIsActive));
                 break;
         }
