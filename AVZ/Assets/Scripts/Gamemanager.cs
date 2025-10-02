@@ -36,7 +36,7 @@ public class Gamemanager : MonoBehaviour
     private bool _canRevive = true;
 
     [SerializeField] CanvasGroup _fadeCanvasGroup, Canvas;
-    [SerializeField] GameObject _pauseScreen, _winScreen, _loseScreen, _blurFrameInGameGO, _pauseB, _homeB, _exitText;
+    [SerializeField] GameObject _pauseScreen, _winScreen, _loseScreen, _blurFrameInGameGO, _pauseB, _homeB;
     [SerializeField] int _sceneToLoadAfterPressedBack, _sceneToLoadAfterPressedRestartAndNextLvl;
     [SerializeField] float _fadeDuration = 1f;
     [SerializeField] Animator _PauseScreenA, _LoseScreenA, _WinScreenA;
@@ -63,7 +63,6 @@ public class Gamemanager : MonoBehaviour
         blurFrameInAnimalCardSelectorGO.SetActive(true);
 
         _homeB.SetActive(false);
-        _exitText.SetActive(false);
 
         crocodileCount = 0;
         foreach (string word in YG2.saves.consumableItems)
@@ -308,7 +307,6 @@ public class Gamemanager : MonoBehaviour
             _PauseScreenA.Play("PauseScreenDown");
             _homeB.SetActive(true);
             _pauseB.SetActive(false);
-            _exitText.SetActive(true);
             yield return new WaitForSeconds(_PauseScreenA.GetCurrentAnimatorStateInfo(0).length);
             Time.timeScale = 0;
             Canvas.interactable = true;
@@ -324,7 +322,6 @@ public class Gamemanager : MonoBehaviour
             _blurFrameInGameGO.SetActive(false);
             _pauseB.SetActive(true);
             _homeB.SetActive(false);
-            _exitText.SetActive(false);
             yield return new WaitForSeconds(_PauseScreenA.GetCurrentAnimatorStateInfo(0).length);
             _pauseScreen.SetActive(false);
             Canvas.interactable = true;
